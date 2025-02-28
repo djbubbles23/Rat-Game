@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
     {
         DirectionCheck();
         MovePlayer();
-        
+        RotatePlayer();
     }
 
     void CheckInputs() {
@@ -94,40 +94,83 @@ public class PlayerMovement : MonoBehaviour
         if (movement.x == 0 && movement.z == 0) {
             idle = true;
         }
-        else if (movement.x > 0) { //North
-            if (movement.z > 0) {
-                facing = (int) Direction.NorthEast;
+        else {
+            idle = false;
+            if (movement.x > 0) { //North
+                if (movement.z > 0) {
+                    facing = (int) Direction.NorthEast;
+                }
+                else if (movement.z < 0) {
+                    facing = (int) Direction.NorthWest;
+                }
+                else
+                {
+                    facing = (int) Direction.North;
+                }
             }
-            else if (movement.z < 0) {
-                facing = (int) Direction.NorthWest;
+            else if (movement.x < 0) { //South
+                if (movement.z > 0) {
+                    facing = (int) Direction.SouthEast;
+                }
+                else if (movement.z < 0) {
+                    facing = (int) Direction.SouthWest;
+                }
+                else {
+                    facing = (int) Direction.South;
+                }
             }
-            else
-            {
-                facing = (int) Direction.North;
+            else { //East-West
+                if (movement.z > 0) {
+                    facing = (int) Direction.East;
+                }
+                else if (movement.z < 0) {
+                    facing = (int) Direction.West;
+                }
+                else {
+                    idle = true;
+                    Debug.Log("Fix Your Damn Code: Direction State Machine Reached Illegal Location");
+                }
             }
         }
-        else if (movement.x < 0) { //South
-            if (movement.z > 0) {
-                facing = (int) Direction.SouthEast;
-            }
-            else if (movement.z < 0) {
-                facing = (int) Direction.SouthWest;
-            }
-            else {
-                facing = (int) Direction.South;
-            }
+        Debug.Log("Facing Set: " + facing);
+    }
+
+    void RotatePlayer() {
+        Quaternion playerRot = transform.rotation;
+        switch (facing) {
+            case 0: //North
+                playerRot.y = 0;
+                break;
+
+            case 1:
+                playerRot.y = 45;
+                break;
+
+            case 2:
+                playerRot.y = 90;
+                break;
+
+            case 3:
+                playerRot.y = 90 + 45;
+                break;
+
+            case 4:
+                playerRot.y = 180;
+                break;
+
+            case 5:
+                playerRot.y = 180 + 45;
+                break;
+
+            case 6:
+                playerRot.y = 270;
+                break;
+
+            case 7:
+                playerRot.y = 270 + 45;
+                break;
         }
-        else { //East-West
-            if (movement.z > 0) {
-                facing = (int) Direction.East;
-            }
-            else if (movement.z < 0) {
-                facing = (int) Direction.West;
-            }
-            else {
-                Debug.Log("Fix Your Damn Code: Direction State Machine Reached Illegal Location");
-            }
-        }
+        transform.rotation = playerRot;
     }
 
     void OnCollisionEnter(Collision collision)
