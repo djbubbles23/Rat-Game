@@ -1,4 +1,4 @@
-using System.ComponentModel.Design.Serialization;
+
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -132,45 +132,52 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-        Debug.Log("Facing Set: " + facing);
+        
     }
 
     void RotatePlayer() {
-        Quaternion playerRot = transform.rotation;
+        //Quaternion playerRot = transform.rotation;
+        Vector3 playerRot = new Vector3(0,0,0);
+        Debug.Log("Facing Read: " + facing);
         switch (facing) {
             case 0: //North
-                playerRot.y = 0;
+                playerRot.z = 1f;
                 break;
 
             case 1:
-                playerRot.y = 45;
+                playerRot.x = -1f;
+                playerRot.z = 1f;
                 break;
 
             case 2:
-                playerRot.y = 90;
+                playerRot.x = -1f;
                 break;
 
             case 3:
-                playerRot.y = 90 + 45;
+                playerRot.x = -1f;
+                playerRot.z = -1f;
                 break;
 
             case 4:
-                playerRot.y = 180;
+                playerRot.z = -1f;
                 break;
 
             case 5:
-                playerRot.y = 180 + 45;
+                playerRot.x = 1f;
+                playerRot.z = -1f;                
                 break;
 
             case 6:
-                playerRot.y = 270;
+                playerRot.x = 1f;
                 break;
 
             case 7:
-                playerRot.y = 270 + 45;
+                playerRot.x = 1f;
+                playerRot.z = 1f;
                 break;
         }
-        transform.rotation = playerRot;
+        transform.LookAt(transform.position + playerRot);
+        
     }
 
     void OnCollisionEnter(Collision collision)
