@@ -1,4 +1,6 @@
 
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -6,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;            //Movement speed
     public float jumpForce = 7f;            //Jump strength
+    public GameObject attackHitbox;         //object that represents player attack hitbox
     private Rigidbody rb;                   //Rigidbody of the player gameobject
     private VisualEffect atc;               //VisualEffect component that creates the player's attacks
     private Vector3 movement;               //movement vector based on player inputs
@@ -85,9 +88,21 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = false;
     }
 
-    void Attack() {
+    void Attack()
+    {
         canAttack = false;
         atc.Play();
+        
+        // handle attacking enemy
+        StartCoroutine(ActivateAttackHb());
+    }
+
+    IEnumerator ActivateAttackHb()
+    {
+        // activate attack hitbox for 0.1 seconds
+        attackHitbox.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        attackHitbox.SetActive(false);
     }
 
     void DirectionCheck() { //Direction State Machine
