@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class EnemyBehavior : MonoBehaviour
 {
+    public ParticleSystem bloodParticles;
     public float maxHealth = 100f;
     public float damage = 10f;
     public float knockback = 10f;
@@ -29,6 +30,11 @@ public class EnemyBehavior : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        // make blood splatter;
+        ParticleSystem blood = Instantiate(bloodParticles, transform.position, Quaternion.identity);
+        blood.transform.SetParent(this.transform);
+        
+        // handle health stats
         health -= damage;
 
         if (health <= 0)
