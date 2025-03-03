@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RockPlatform1Corner
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fe74bd959d3a0f540933cb4f8036170b, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fe74bd959d3a0f540933cb4f8036170b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.147049
@@ -84,5 +88,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.4352083, y: 4.4459324, z: 5.4352098}
-  m_Center: {x: -2.7176046, y: -1.8092262, z: 2.717602}
+  m_Size: {x: 5.4352083, y: 4.0370994, z: 5.4352098}
+  m_Center: {x: -2.7176046, y: -2.0136425, z: 2.717602}

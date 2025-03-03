@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RockPlatform2Sidless
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5535cde355c073a499e465af6a57216c, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5535cde355c073a499e465af6a57216c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.1815577
@@ -84,5 +88,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.2737885, y: 4.9972515, z: 4.000001}
-  m_Center: {x: 1.3631068, y: -1.5013742, z: -2.0000014}
+  m_Size: {x: 5.2737885, y: 3.982699, z: 4.000001}
+  m_Center: {x: 1.3631067, y: -2.0086505, z: -2.0000014}
