@@ -6,7 +6,7 @@
       <xs:restriction base="engine:VisualElementType">
         <xs:attribute default="" name="name" type="xs:string" use="optional" />
         <xs:attribute default="true" name="enabled" type="xs:boolean" use="optional" />
-        <xs:attribute default="9f1964c4-ce4c-417c-bd98-4b29312799b1" name="view-data-key" type="xs:string" use="optional" />
+        <xs:attribute default="95991e83-b79c-42e1-8c82-e9a1037fef2d" name="view-data-key" type="xs:string" use="optional" />
         <xs:attribute default="Ignore" name="picking-mode" type="engine:VisualElement_picking-mode_Type" use="optional" />
         <xs:attribute default="" name="tooltip" type="xs:string" use="optional" />
         <xs:attribute default="None" name="usage-hints" type="engine:VisualElement_usage-hints_Type" use="optional" />
@@ -74,7 +74,7 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="VFXComponentBoardEventUI" substitutionGroup="engine:VisualElement" xmlns:q3="UnityEditor.VFX.UI" type="q3:VFXComponentBoardEventUIType" />
-  <xs:complexType name="VFXBoundsRecorderFieldType">
+  <xs:complexType name="VFXBoundsSelectorType">
     <xs:complexContent mixed="false">
       <xs:restriction base="engine:VisualElementType">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -98,7 +98,7 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="VFXBoundsRecorderField" substitutionGroup="engine:VisualElement" xmlns:q4="UnityEditor.VFX.UI" type="q4:VFXBoundsRecorderFieldType" />
+  <xs:element name="VFXBoundsSelector" substitutionGroup="engine:VisualElement" xmlns:q4="UnityEditor.VFX.UI" type="q4:VFXBoundsSelectorType" />
   <xs:complexType name="VFXContextBorderType">
     <xs:complexContent mixed="false">
       <xs:restriction base="engine:VisualElementType">
@@ -124,7 +124,7 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="VFXContextBorder" substitutionGroup="engine:VisualElement" xmlns:q5="UnityEditor.VFX.UI" type="q5:VFXContextBorderType" />
-  <xs:complexType name="VFXBoundsSelectorType">
+  <xs:complexType name="VFXBoundsRecorderFieldType">
     <xs:complexContent mixed="false">
       <xs:restriction base="engine:VisualElementType">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -148,5 +148,5 @@
       </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="VFXBoundsSelector" substitutionGroup="engine:VisualElement" xmlns:q6="UnityEditor.VFX.UI" type="q6:VFXBoundsSelectorType" />
+  <xs:element name="VFXBoundsRecorderField" substitutionGroup="engine:VisualElement" xmlns:q6="UnityEditor.VFX.UI" type="q6:VFXBoundsRecorderFieldType" />
 </xs:schema>
