@@ -17,4 +17,5 @@ public class CheckCollision : MonoBehaviour
             enemy.TakeKnockback(knockbackDirection);
         }
     }
+    
 }
