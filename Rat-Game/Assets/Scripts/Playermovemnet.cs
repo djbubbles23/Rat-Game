@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;            //Movement speed
     public float jumpForce = 7f;            //Jump strength
     public GameObject attackHitbox;         //object that represents player attack hitbox
+    public AudioClip swordSwipeSfx;         //sword swipe sound
     private Rigidbody rb;                   //Rigidbody of the player gameobject
     private VisualEffect atc;               //VisualEffect component that creates the player's attacks
     private Vector3 movement;               //movement vector based on player inputs
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private bool idle;                      //state flag that the player is not moving
     private bool jumpInput;                 //state flag that the player has pressed the jump button
     
+    private AudioSource audioSource;        //player's audiosource
     private bool attackInput;               //state flag that the player has pressed the attack button
     private bool canAttack = true;          //state flag of weather or not the player can attack
     public float attackDelay = 1f;          //delay between attacks in seconds
@@ -38,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         atc = gameObject.GetComponentInChildren<VisualEffect>();
+        audioSource = GetComponent<AudioSource>();
 
         if (atc == null)
         {
@@ -98,6 +101,10 @@ public class PlayerMovement : MonoBehaviour
         canAttack = false;
         atc.Play();
         
+        //play audio clip
+        audioSource.PlayOneShot(swordSwipeSfx);
+        
+        //TODO: change player attack to be in-line with enemy implementation
         // handle attacking enemy
         StartCoroutine(ActivateAttackHb());
     }

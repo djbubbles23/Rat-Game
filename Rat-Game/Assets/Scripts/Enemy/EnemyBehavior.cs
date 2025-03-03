@@ -9,6 +9,8 @@ public class EnemyBehavior : MonoBehaviour
 {
     public ParticleSystem bloodParticles;       // Blood particles that play when enemy is damaged
     private VisualEffect atc;                   // VisualEffect component that creates the enemy's attacks
+    public AudioClip takeDamageSound;           // sound to play when hurt
+    
     public float maxHealth = 100f;              // Starting health of the enemy
     public float damage = 10f;                  // How powerful enemy's attack is
     public float knockback = 10f;               // How far back an enemy flies when hit
@@ -19,6 +21,8 @@ public class EnemyBehavior : MonoBehaviour
 
     private Rigidbody rb;                       // Enemy rigidbody
     private Collider attackCollider;            // the attack hb attached to the swipe
+    private AudioSource audioSource;            // enemy audio source
+    
     private float health;                       // Current health
     private float attackTimer;                  // current time until next attack
     private bool canAttack;
@@ -29,6 +33,7 @@ public class EnemyBehavior : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         atc = gameObject.GetComponentInChildren<VisualEffect>();
         attackCollider = GetComponentInChildren<BoxCollider>();
+        audioSource = GetComponent<AudioSource>();
         health = maxHealth;
     }
 
@@ -71,6 +76,9 @@ public class EnemyBehavior : MonoBehaviour
         
         // handle health stats
         health -= damage;
+        
+        // play sfx
+        audioSource.PlayOneShot(takeDamageSound);
 
         if (health <= 0)
         {
