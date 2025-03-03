@@ -38,6 +38,11 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         atc = gameObject.GetComponentInChildren<VisualEffect>();
+
+        if (atc == null)
+        {
+            Debug.LogError("Attack effect not found");
+        }
     }
 
     void Update()
@@ -153,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
     void RotatePlayer() {
         //Quaternion playerRot = transform.rotation;
         Vector3 playerRot = new Vector3(0,0,0);
-        Debug.Log("Facing Read: " + facing);
+        //Debug.Log("Facing Read: " + facing);
         switch (facing) {
             case 0: //North
                 playerRot.z = 1f;
