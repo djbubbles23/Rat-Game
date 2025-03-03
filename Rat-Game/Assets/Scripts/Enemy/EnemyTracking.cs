@@ -44,9 +44,7 @@ public class EnemyTracking : MonoBehaviour
 
         if (distance < attackRange && canAttack)
         {
-            Debug.Log("Entered attack range");
             // begin attack windup
-            canAttack = false;
             StartCoroutine(StartAttacking());
         }
 
@@ -86,7 +84,8 @@ public class EnemyTracking : MonoBehaviour
 
     IEnumerator StartAttacking()
     {
-        Debug.Log("Starting attacking");
+        //Debug.Log("Starting attacking");
+        canAttack = false;
         yield return new WaitForSeconds(attackWindup);
         
         // check enemy is still within attacking range
@@ -94,7 +93,7 @@ public class EnemyTracking : MonoBehaviour
 
         if (distance < attackRange)
         {
-            Debug.Log("Attacking now!");
+            //Debug.Log("Trying attack now!");
             EnemyBehavior.Attack();
         }
         

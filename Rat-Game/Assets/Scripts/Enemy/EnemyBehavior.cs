@@ -14,20 +14,43 @@ public class EnemyBehavior : MonoBehaviour
     public float knockback = 10f;               // How far back an enemy flies when hit
     public float upwardKnockback = 10f;         // How far up an enemy moves when hit
 
-    public float attackDelay = 2.0f;            // time between attack
+    public float attackDelay = 5.0f;            // time between attack
 
     private Rigidbody rb;                       // Enemy rigidbody
     private float health;                       // Current health
+    private float attackTimer;                  // current time until next attack
+    private bool canAttack;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        atc = gameObject.GetComponentInChildren<VisualEffect>();
         health = maxHealth;
     }
 
     public void Attack()
     {
-        atc.Play();
+        if (canAttack)
+        {
+            canAttack = false;
+            atc.Play();
+        }
+    }
+
+    private void Update()
+    {
+        // keep track of attack cooldown
+        if (!canAttack)
+        {
+            attackTimer -= Time.deltaTime;
+        }
+
+        // reset attack
+        if (attackTimer <= 0)
+        {
+            canAttack = true;
+            attackTimer = attackDelay;
+        }
     }
 
     public void TakeDamage(float damage)
