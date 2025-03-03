@@ -15,16 +15,20 @@ public class EnemyBehavior : MonoBehaviour
     public float upwardKnockback = 10f;         // How far up an enemy moves when hit
 
     public float attackDelay = 5.0f;            // time between attack
+    public float attackLength = 0.2f;           // how long the attack hb is active
 
     private Rigidbody rb;                       // Enemy rigidbody
+    private Collider attackCollider;            // the attack hb attached to the swipe
     private float health;                       // Current health
     private float attackTimer;                  // current time until next attack
     private bool canAttack;
 
     private void Start()
     {
+        // initialize variables
         rb = GetComponent<Rigidbody>();
         atc = gameObject.GetComponentInChildren<VisualEffect>();
+        attackCollider = GetComponentInChildren<BoxCollider>();
         health = maxHealth;
     }
 
@@ -34,7 +38,11 @@ public class EnemyBehavior : MonoBehaviour
         {
             canAttack = false;
             atc.Play();
+            
+            // activate attack hitbox
+            StartCoroutine(ActivateAttackCollider());
         }
+        
     }
 
     private void Update()
@@ -75,5 +83,27 @@ public class EnemyBehavior : MonoBehaviour
         rb.AddForce(Vector3.up * upwardKnockback, ForceMode.Impulse);
         rb.AddForce(direction * knockback, ForceMode.Impulse);
     }
+
+    IEnumerator ActivateAttackCollider()
+    {
+        attackCollider.enabled = true;
+        yield return new WaitForSeconds(attackLength);
+        attackCollider.enabled = false;
+    }
     
+    // damage player if attack connects
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            PlayerStats player = other.GetComponent<PlayerStats>();
+            player.TakeDamage(damage);
+            
+            Debug.Log("Dealt " + damage + " damage to player");
+            
+            // calculate knockback direction
+            //Vector3 knockbackDirection = other.transform.position - transform.position;
+            //player.TakeKnockback(knockbackDirection);
+        }
+    }
 }

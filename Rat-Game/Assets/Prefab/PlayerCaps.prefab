@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2767191771685661168}
   - component: {fileID: 863995855211446680}
   - component: {fileID: 856515651544659543}
+  - component: {fileID: 1063571004168409459}
   - component: {fileID: 1533131608898961698}
   m_Layer: 0
   m_Name: PlayerCaps
@@ -130,6 +131,19 @@ MonoBehaviour:
   jumpForce: 7
   attackHitbox: {fileID: 9170238739665784607}
   attackDelay: 1
+--- !u!114 &1063571004168409459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3082459267581247369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9137a7d78ae164d8a76d47e18f0167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!54 &1533131608898961698
 Rigidbody:
   m_ObjectHideFlags: 0
