@@ -27,7 +27,8 @@ public class EnemyBehavior : MonoBehaviour
     private float attackTimer;                  // current time until next attack
     private bool canAttack;
 
-    public int score;                           // score given to player when enemy is killed
+    private PlayerStats playerScore;            // player object
+
 
     private void Start()
     {
@@ -37,6 +38,17 @@ public class EnemyBehavior : MonoBehaviour
         attackCollider = GetComponentInChildren<BoxCollider>();
         audioSource = GetComponent<AudioSource>();
         health = maxHealth;
+
+        // find the player object and get the PlayerStats component
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerScore = player.GetComponent<PlayerStats>();
+        }
+        else
+        {
+            Debug.LogError("Player object not found!");
+        }
     }
 
     public void Attack()
@@ -84,8 +96,8 @@ public class EnemyBehavior : MonoBehaviour
 
         if (health <= 0)
         {
-            score += 100;
-            Debug.Log("Enemy killed! Score: " + score);
+            playerScore.score += 100;
+            Debug.Log("Enemy killed! Score: " + playerScore.score);
             Destroy(gameObject);
         }
     }

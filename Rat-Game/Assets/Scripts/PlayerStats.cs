@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Text = TMPro.TextMeshProUGUI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -13,12 +14,23 @@ public class PlayerStats : MonoBehaviour
     private AudioSource audioSource;     // player audiosource
     private float currentHealth;        // current health of the player
 
+    public int score;                   // player score
+    public Text scoreText;              // score text object
+
     public Image healthBar;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         currentHealth = maxHealth;
+    }
+
+    private void Update()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + score;
+        }
     }
 
     public void TakeDamage(float damage)
