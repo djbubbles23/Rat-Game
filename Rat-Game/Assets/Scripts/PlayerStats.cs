@@ -44,7 +44,7 @@ public class PlayerStats : MonoBehaviour
         {
             Debug.Log("PLAYER DIED!");
             clip = deathSound;
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
         }
         
         audioSource.PlayOneShot(clip);
