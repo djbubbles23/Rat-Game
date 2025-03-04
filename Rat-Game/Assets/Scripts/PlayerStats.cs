@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
@@ -31,6 +32,7 @@ public class PlayerStats : MonoBehaviour
         {
             Debug.Log("PLAYER DIED!");
             clip = deathSound;
+            SceneManager.LoadScene(3);
         }
         
         audioSource.PlayOneShot(clip);

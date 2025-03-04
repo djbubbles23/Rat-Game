@@ -27,6 +27,8 @@ public class EnemyBehavior : MonoBehaviour
     private float attackTimer;                  // current time until next attack
     private bool canAttack;
 
+    public int score;                           // score given to player when enemy is killed
+
     private void Start()
     {
         // initialize variables
@@ -82,6 +84,8 @@ public class EnemyBehavior : MonoBehaviour
 
         if (health <= 0)
         {
+            score += 100;
+            Debug.Log("Enemy killed! Score: " + score);
             Destroy(gameObject);
         }
     }
