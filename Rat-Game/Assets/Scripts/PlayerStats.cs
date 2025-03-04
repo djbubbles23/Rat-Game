@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerStats : MonoBehaviour
     private AudioSource audioSource;     // player audiosource
     private float currentHealth;        // current health of the player
 
+    public Image healthBar;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -20,6 +23,7 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        healthBar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 1);
         
         AudioClip clip = takeDamageSound;
 
