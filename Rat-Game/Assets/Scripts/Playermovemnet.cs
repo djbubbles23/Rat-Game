@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpInput;                 //state flag that the player has pressed the jump button
     
     private AudioSource audioSource;        //player's audiosource
+    private Animator animator;              //player animator
+    
     private bool attackInput;               //state flag that the player has pressed the attack button
     private bool canAttack = true;          //state flag of weather or not the player can attack
     public float attackDelay = 1f;          //delay between attacks in seconds
@@ -39,8 +41,9 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        atc = gameObject.GetComponentInChildren<VisualEffect>();
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponentInChildren<Animator>();
+        atc = gameObject.GetComponentInChildren<VisualEffect>();
 
         if (atc == null)
         {
@@ -98,6 +101,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Attack()
     {
+        // fire and reset attack anim
+        animator.SetTrigger("Attack");
+        
         canAttack = false;
         atc.Play();
         
