@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     public float minSpawnDistance = 5f;    // closest enemy can spawn from player on x-axis
     public float maxSpawnDistance = 10f;    // furthest enemy can spawn from player on x-axis
     public float maxZDistance = 4f;         // width of the plane
+    public float spawnHeight = 2.5f;        // spawn height
     public float startSpawnRate = 5f;       // time between enemy spawns (seconds)
     public float growthRate = 0.05f;        // rate at which spawn rate speeds up 
     
@@ -55,7 +56,7 @@ public class EnemySpawner : MonoBehaviour
         float zPosition = player.position.z + Random.Range(-maxZDistance, maxZDistance);
         
         // create enemy at random position
-        Vector3 spawnPosition = new Vector3(xPosition, 1f, zPosition);
+        Vector3 spawnPosition = new Vector3(xPosition, spawnHeight, zPosition);
         Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
         spawnCount++;
     }
