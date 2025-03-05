@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public Transform player;                // reference to the player
     public GameObject enemyPrefab;          // enemy prefab (can make a list if more 1 enemy type)
     public float minSpawnDistance = 5f;    // closest enemy can spawn from player on x-axis
     public float maxSpawnDistance = 10f;    // furthest enemy can spawn from player on x-axis
@@ -16,6 +15,7 @@ public class EnemySpawner : MonoBehaviour
     public float startSpawnRate = 5f;       // time between enemy spawns (seconds)
     public float growthRate = 0.05f;        // rate at which spawn rate speeds up 
     
+    private Transform player;                // reference to the player
     private Vector3 playerPos;              // player's current position
     private float spawnTimer;               // time until next enemy spawns
     private int spawnCount;                 // number of total enemies spawned
@@ -24,6 +24,7 @@ public class EnemySpawner : MonoBehaviour
     {
         // set spawn timer equal to first spawn rate
         spawnTimer = startSpawnRate;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     
     private void Update()
