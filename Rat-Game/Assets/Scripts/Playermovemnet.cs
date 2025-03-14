@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;            //Movement speed
     public float jumpForce = 7f;            //Jump strength
     public GameObject attackHitbox;         //object that represents player attack hitbox
-    public AudioClip swordSwipeSfx;         //sword swipe sound
     private Rigidbody rb;                   //Rigidbody of the player gameobject
     private VisualEffect atc;               //VisualEffect component that creates the player's attacks
     private Vector3 movement;               //movement vector based on player inputs
@@ -17,14 +16,19 @@ public class PlayerMovement : MonoBehaviour
     private bool idle;                      //state flag that the player is not moving
     private bool jumpInput;                 //state flag that the player has pressed the jump button
     
-    private AudioSource audioSource;        //player's audiosource
-    private Animator animator;              //player animator
-    
     private bool attackInput;               //state flag that the player has pressed the attack button
     private bool canAttack = true;          //state flag of weather or not the player can attack
     public float attackDelay = 1f;          //delay between attacks in seconds
     private float attackCounter;            //counted progress of the delay between attacks in seconds
     private int facing;                     //state holder for the direction the player is facing
+
+    //Animation State Machine
+    Animator playerAnim;
+
+    public void Awake()
+    {
+        playerAnim = GetComponent<Animator>();
+    }
 
     private enum Direction                  //Enum for the direction the player is facing
     {
@@ -41,14 +45,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
-        animator = GetComponentInChildren<Animator>();
         atc = gameObject.GetComponentInChildren<VisualEffect>();
-
-        if (atc == null)
-        {
-            Debug.LogError("Attack effect not found");
-        }
     }
 
     void Update()
@@ -70,6 +67,18 @@ public class PlayerMovement : MonoBehaviour
                 attackCounter = 0;
             }
         } 
+
+        Vector3 movementDirection = new Vector3(movement.x, 0, movement.z);
+        float magniture =  Mathf.Clamp01(movementDirection.magnitude)*moveSpeed;
+        movementDirection.Normalize();
+        if(movementDirection.magnitude > 0)
+        {
+            playerAnim.SetBool("isMoving", true);
+        }
+        else
+        {
+            playerAnim.SetBool("isMoving", false);
+        }
     }
 
     void FixedUpdate()
@@ -101,26 +110,25 @@ public class PlayerMovement : MonoBehaviour
 
     void Attack()
     {
-        // fire and reset attack anim
-        animator.SetTrigger("Attack");
-        
+
         canAttack = false;
         atc.Play();
         
-        //play audio clip
-        audioSource.PlayOneShot(swordSwipeSfx);
-        
-        //TODO: change player attack to be in-line with enemy implementation
         // handle attacking enemy
         StartCoroutine(ActivateAttackHb());
+
     }
 
     IEnumerator ActivateAttackHb()
     {
+        Debug.Log("Attacking t");
+        playerAnim.SetBool("Attack1", true);
         // activate attack hitbox for 0.1 seconds
         attackHitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         attackHitbox.SetActive(false);
+        Debug.Log("Attacking f");
+        playerAnim.SetBool("Attack1", false);
     }
 
     void DirectionCheck() { //Direction State Machine
@@ -171,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
     void RotatePlayer() {
         //Quaternion playerRot = transform.rotation;
         Vector3 playerRot = new Vector3(0,0,0);
-        //Debug.Log("Facing Read: " + facing);
+        Debug.Log("Facing Read: " + facing);
         switch (facing) {
             case 0: //North
                 playerRot.z = 1f;

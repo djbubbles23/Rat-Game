@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 1533131608898961698}
   - component: {fileID: 633124268819634083}
   - component: {fileID: 7888201354188527400}
+  - component: {fileID: 3147966590235942965}
   m_Layer: 0
   m_Name: PlayerCaps
   m_TagString: Player
@@ -486,8 +487,29 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 20
   attackHitbox: {fileID: 9170238739665784607}
-  swordSwipeSfx: {fileID: 8300000, guid: 4906fbbc8d02dff47a2600ee3feddf98, type: 3}
   attackDelay: 1
+--- !u!95 &3147966590235942965
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3082459267581247369}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
+  m_Controller: {fileID: 9100000, guid: 7e7fa00dd559b1346848f17f5e34db3c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9170238739665784607
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +853,8 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 7e7fa00dd559b1346848f17f5e34db3c, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
     m_RemovedGameObjects:
     - {fileID: 886352342711834100, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
     m_AddedGameObjects:
