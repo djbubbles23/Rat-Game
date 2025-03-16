@@ -17,9 +17,14 @@ public class FlickeringLight : MonoBehaviour
     {
         delta += Time.deltaTime;
         if (delta >= flickerTime) {
+            if (l.enabled) {
+                flickerTime = Random.Range(.1f, .3f);
+            }
+            else {
+                flickerTime = Random.Range(.5f, 1f);
+            }
             l.enabled = !l.enabled;
             delta = 0;
-            flickerTime = Random.Range(.1f, 1f);
         }
     }
 }
