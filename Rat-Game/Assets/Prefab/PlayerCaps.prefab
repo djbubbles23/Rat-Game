@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 633124268819634083}
   - component: {fileID: 7888201354188527400}
   - component: {fileID: 3147966590235942965}
+  - component: {fileID: 528690494092413208}
   m_Layer: 0
   m_Name: PlayerCaps
   m_TagString: Player
@@ -510,6 +511,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &528690494092413208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3082459267581247369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cf7844263c48f4b831f6ad20e97c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diceSlot1: {fileID: 5755973521994180765, guid: 7dc4620ff7724a14d8edb8af8b7d86ad, type: 3}
+  diceSlot2: {fileID: 0}
+  diceSlot3: {fileID: 0}
+  invSlot1: {fileID: 0}
+  invSlot2: {fileID: 0}
 --- !u!1 &9170238739665784607
 GameObject:
   m_ObjectHideFlags: 0
