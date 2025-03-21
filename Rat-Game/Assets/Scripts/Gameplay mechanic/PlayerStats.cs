@@ -19,6 +19,12 @@ public class PlayerStats : MonoBehaviour
 
     public Image healthBar;
 
+    public void Heal(float amount)
+    {
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth); // Prevent overheal
+        healthBar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 1);
+    }
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
