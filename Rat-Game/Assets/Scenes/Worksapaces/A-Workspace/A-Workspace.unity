@@ -528,6 +528,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2767191771685661168, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3082459267581247369, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_Name
       value: PlayerCaps
@@ -536,10 +540,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5070016024077139606, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.000000023841858
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070016024077139606, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.24098714
+      objectReference: {fileID: 0}
     - target: {fileID: 7694816110394073679, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 7e7fa00dd559b1346848f17f5e34db3c, type: 2}
+    - target: {fileID: 7765078375558358482, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.009670998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765078375558358482, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0025849342
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765078375558358482, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.50741917
+      objectReference: {fileID: 0}
     - target: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
