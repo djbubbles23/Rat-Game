@@ -853,10 +853,15 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 7e7fa00dd559b1346848f17f5e34db3c, type: 2}
+    - target: {fileID: 8973395753036335677, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fc05dbeaabd6874ca4ee11fb030fc28, type: 2}
     m_RemovedComponents:
     - {fileID: 5866666021909216657, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
     m_RemovedGameObjects:
     - {fileID: 886352342711834100, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
+    - {fileID: -1526010196628957507, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -2349476437193732044, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
       insertIndex: 0
