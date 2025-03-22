@@ -9,29 +9,32 @@ public class CheckCollision : MonoBehaviour
     private string popupText = "Hit";
 
     private EnemyBehavior enemy;
-    private weaponController weaponController;
+    public weaponController weaponController;
 
     private void OnTriggerEnter(Collider other)
+{
+    enemy = other.GetComponent<EnemyBehavior>();
+    //weaponController = GetComponent<weaponController>();
+
+    if (other.CompareTag("Enemy") && enemy != null && weaponController != null)
     {
-        enemy = other.GetComponent<EnemyBehavior>();
-        weaponController = GetComponent<weaponController>();
+        int damage = weaponController.calculateDmg();
+        enemy.TakeDamage(damage);
 
-        if (other.tag == "Enemy")
+        Vector3 knockbackDirection = other.transform.position - transform.position;
+        enemy.TakeKnockback(knockbackDirection);
+
+        if (floatingTextPrefab)
         {
-            int damage = weaponController.calculateDmg();
-            enemy.TakeDamage(damage);
-
-            // Calculate knockback direction
-            Vector3 knockbackDirection = other.transform.position - transform.position;
-            enemy.TakeKnockback(knockbackDirection);
-
-            // Show floating text on the enemy
-            if (floatingTextPrefab)
-            {
-                showFloatingText(damage, other.transform.position);
-            }
+            Debug.Log("Floating text prefab is assigned");
+            showFloatingText(damage, other.transform.position);
+        }
+        else
+        {
+            Debug.LogError("floatingTextPrefab is not assigned!");
         }
     }
+}
 
     public void showFloatingText(int damage, Vector3 enemyPosition)
     {
