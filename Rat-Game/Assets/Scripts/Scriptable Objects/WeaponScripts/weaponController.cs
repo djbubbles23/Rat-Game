@@ -1,12 +1,47 @@
+using JetBrains.Annotations;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class weaponController : MonoBehaviour
 {
     public weaponScriptableObject weapon;
     private GameObject weaponInstance;
     public Vector3 weaponScale = Vector3.one;
+
+    // On weapon equip
+    public diceScriptableObject diceSlot1;
+    public diceScriptableObject diceSlot2;
+    public diceScriptableObject diceSlot3;
+
+    // On inventory equip
+    public diceScriptableObject invSlot1;
+    public diceScriptableObject invSlot2;
+    public diceScriptableObject invSlot3;
     void Start()
     {
+        //debugging dice slots
+        if(diceSlot1==null){
+            Debug.Log("Dice 1 is null");
+        }
+        else{
+            Debug.Log("Dice 1 is equiped");
+            diceSlot1.displayAll();
+        }
+        if(diceSlot2==null){
+            Debug.Log("Dice 2 is null");
+        }
+        else{
+            Debug.Log("Dice 2 is equiped");
+            diceSlot2.displayAll();
+        }        
+        if(diceSlot3==null){
+            Debug.Log("Dice 3 is null");
+        }
+        else{
+            Debug.Log("Dice 3 is equiped");
+            diceSlot3.displayAll();
+        }
+
         // Check if the weapon object is valid
         if (weapon.weaponObj is GameObject)
         {
@@ -20,5 +55,20 @@ public class weaponController : MonoBehaviour
         {
             Debug.LogError("weaponObj is not a valid");
         }
+
+    }
+    public int calculateDmg(){
+        int totalDamage = 0;
+        if (diceSlot1 != null) {
+            totalDamage += diceSlot1.diceValue[Random.Range(0, diceSlot1.diceValue.Length)];
+        }
+        if (diceSlot2 != null) {
+            totalDamage += diceSlot2.diceValue[Random.Range(0, diceSlot2.diceValue.Length)];
+        }
+        if (diceSlot3 != null) {
+            totalDamage += diceSlot3.diceValue[Random.Range(0, diceSlot3.diceValue.Length)];
+        }
+        Debug.Log("Total Damage: " + totalDamage);
+        return totalDamage;
     }
 }

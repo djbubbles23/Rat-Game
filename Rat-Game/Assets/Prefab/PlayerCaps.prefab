@@ -264,7 +264,6 @@ GameObject:
   - component: {fileID: 633124268819634083}
   - component: {fileID: 7888201354188527400}
   - component: {fileID: 3147966590235942965}
-  - component: {fileID: 528690494092413208}
   m_Layer: 0
   m_Name: PlayerCaps
   m_TagString: Player
@@ -547,24 +546,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &528690494092413208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3082459267581247369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6cf7844263c48f4b831f6ad20e97c8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diceSlot1: {fileID: 0}
-  diceSlot2: {fileID: 0}
-  diceSlot3: {fileID: 0}
-  invSlot1: {fileID: 0}
-  invSlot2: {fileID: 0}
-  invSlot3: {fileID: 0}
 --- !u!1 &6936556726027502809
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +742,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ce7c529626fca4fb9548a28f06bec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  floatingTextPrefab: {fileID: 6489115522640370829, guid: 4f7c9025bd6c9d84781c4e6650e42dd4, type: 3}
+  attcHitbox: {fileID: 9170238739665784607}
 --- !u!1001 &994366177372830873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -902,34 +884,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8027839626576383461, guid: b66a3b02d2b394546a5aed8be731d9b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 553699669519951778}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5925962352964251136, guid: b66a3b02d2b394546a5aed8be731d9b8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5807722304501515415}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b66a3b02d2b394546a5aed8be731d9b8, type: 3}
 --- !u!224 &2398887329896097887 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3208319490552763590, guid: b66a3b02d2b394546a5aed8be731d9b8, type: 3}
   m_PrefabInstance: {fileID: 994366177372830873}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6913462595324072601 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5925962352964251136, guid: b66a3b02d2b394546a5aed8be731d9b8, type: 3}
-  m_PrefabInstance: {fileID: 994366177372830873}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5807722304501515415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6913462595324072601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16020e7816752b547b2fa395373be786, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInvUI: {fileID: 1735997035762347557}
 --- !u!4 &7107858194769883516 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8027839626576383461, guid: b66a3b02d2b394546a5aed8be731d9b8, type: 3}
@@ -1194,6 +1155,26 @@ PrefabInstance:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 11400000, guid: ba14e0b4a7768754eb558e431b072942, type: 2}
+    - target: {fileID: 5902776537691132780, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
+      propertyPath: diceSlot1
+      value: 
+      objectReference: {fileID: 11400000, guid: 4545706638c51cb4190bcf20b0457d82, type: 2}
+    - target: {fileID: 5902776537691132780, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
+      propertyPath: weaponScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5902776537691132780, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
+      propertyPath: weaponScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5902776537691132780, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
+      propertyPath: weaponScale.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5902776537691132780, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
+      propertyPath: diceSlots.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

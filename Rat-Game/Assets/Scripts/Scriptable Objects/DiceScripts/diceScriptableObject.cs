@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 [CreateAssetMenu(fileName = "ScriptableObjects", menuName = "Dice")]
@@ -9,7 +11,7 @@ public class diceScriptableObject : ScriptableObject
     //public effectValue
     public int diceType;
     public int[] diceValue;
-    public int diceCost;
+    public float diceCost;
 
     private void OnEnable()
     {
@@ -54,26 +56,26 @@ public class diceScriptableObject : ScriptableObject
             case 1:
                 return diceType = 4; //4 sided dice
             case 2:
-                return diceCost = 6; //6 sided dice
+                return diceType = 6; //6 sided dice
             case 3:
-                return diceCost = 8; //8 sided dice
+                return diceType = 8; //8 sided dice
             default:
-                return diceCost = 0; //0 sided dice
+                return diceType = 0; //0 sided dice
         }
     }
 
     public int[] createDiceValues() {
         diceValue = new int[diceType]; // Array size matches diceType
-        Debug.Log("Dice Type createdicevalues: d" + diceType);
+        //Debug.Log("Dice Type createdicevalues: d" + diceType);
         for (int i = 0; i < diceType; i++) { // Loop runs from 0 to diceType - 1
             diceValue[i] = Random.Range(0, diceType);
         }
         return diceValue;
     }
 
-    public int createDiceCost()
+    public float createDiceCost()
     {
-        int totalCost = 0;
+        float totalCost = 0f;
         if (diceValue != null && diceValue.Length > 0)
         {
             foreach (int diceValue in diceValue)
@@ -82,7 +84,7 @@ public class diceScriptableObject : ScriptableObject
             }
         }
         //avg of values
-        return totalCost/diceType;
+        return (totalCost/diceValue.Length)*10;
     }
 
 }

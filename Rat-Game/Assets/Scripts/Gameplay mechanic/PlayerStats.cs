@@ -19,7 +19,6 @@ public class PlayerStats : MonoBehaviour
 
     public Image healthBar;
 
-    public float damage;
     public void Heal(float amount)
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth); // Prevent overheal
