@@ -3,14 +3,14 @@ using UnityEngine;
 public class playerDiceInv : MonoBehaviour
 {
     // On weapon equip
-    public GameObject diceSlot1;
-    public GameObject diceSlot2;
-    public GameObject diceSlot3;
+    public diceScriptableObject diceSlot1;
+    public diceScriptableObject diceSlot2;
+    public diceScriptableObject diceSlot3;
 
     // On inventory equip
-    public GameObject invSlot1;
-    public GameObject invSlot2;
-    public GameObject invSlot3;
+    public diceScriptableObject invSlot1;
+    public diceScriptableObject invSlot2;
+    public diceScriptableObject invSlot3;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,21 +20,21 @@ public class playerDiceInv : MonoBehaviour
         }
         else{
             Debug.Log("Dice 1 is equiped");
-            diceSlot1.GetComponent<Dice>().displayAll();
+            diceSlot1.displayAll();
         }
         if(diceSlot2==null){
             Debug.Log("Dice 2 is null");
         }
         else{
             Debug.Log("Dice 2 is equiped");
-            diceSlot2.GetComponent<Dice>().displayAll();
+            diceSlot2.displayAll();
         }        
         if(diceSlot3==null){
             Debug.Log("Dice 3 is null");
         }
         else{
             Debug.Log("Dice 3 is equiped");
-            diceSlot3.GetComponent<Dice>().displayAll();
+            diceSlot3.displayAll();
         }
     }
 }

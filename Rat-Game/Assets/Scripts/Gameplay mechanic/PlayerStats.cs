@@ -19,8 +19,7 @@ public class PlayerStats : MonoBehaviour
 
     public Image healthBar;
 
-    public float damage = 10f;
-
+    public float damage;
     public void Heal(float amount)
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth); // Prevent overheal
@@ -57,4 +56,17 @@ public class PlayerStats : MonoBehaviour
         
         audioSource.PlayOneShot(clip);
     }
+
+    /*
+    public int dealDamage(GameObject dice1, GameObject dice2, GameObject dice3){
+        int[] diceRolls = new int[3];
+
+        if (dice1 != null)
+        {
+            for (int i=0; i<dice1.)
+        }
+
+        return diceRoll1 + diceRoll2 + diceRoll3;
+    }
+    */
 }
