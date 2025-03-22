@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class playerDiceInv : MonoBehaviour
 {
+    // On weapon equip
     public GameObject diceSlot1;
     public GameObject diceSlot2;
     public GameObject diceSlot3;
+
+    // On inventory equip
     public GameObject invSlot1;
     public GameObject invSlot2;
+    public GameObject invSlot3;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,12 +27,14 @@ public class playerDiceInv : MonoBehaviour
         }
         else{
             Debug.Log("Dice 2 is equiped");
+            diceSlot2.GetComponent<Dice>().displayAll();
         }        
         if(diceSlot3==null){
             Debug.Log("Dice 3 is null");
         }
         else{
             Debug.Log("Dice 3 is equiped");
+            diceSlot3.GetComponent<Dice>().displayAll();
         }
     }
 }

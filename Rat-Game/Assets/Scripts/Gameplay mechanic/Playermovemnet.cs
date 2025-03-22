@@ -121,13 +121,13 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator ActivateAttackHb()
     {
-        Debug.Log("Attacking t");
+        //Debug.Log("Attacking t");
         playerAnim.SetBool("Attack1", true);
         // activate attack hitbox for 0.1 seconds
         attackHitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         attackHitbox.SetActive(false);
-        Debug.Log("Attacking f");
+        //Debug.Log("Attacking f");
         playerAnim.SetBool("Attack1", false);
     }
 
@@ -179,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
     void RotatePlayer() {
         //Quaternion playerRot = transform.rotation;
         Vector3 playerRot = new Vector3(0,0,0);
-        Debug.Log("Facing Read: " + facing);
+        //Debug.Log("Facing Read: " + facing);
         switch (facing) {
             case 0: //North
                 playerRot.z = 1f;
