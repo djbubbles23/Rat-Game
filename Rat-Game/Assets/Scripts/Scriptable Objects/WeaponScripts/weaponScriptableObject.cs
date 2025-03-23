@@ -9,4 +9,5 @@ public class weaponScriptableObject : ScriptableObject
     public GameObject weaponObj;
     public int tier;
     //public int weaponCost;
+
 }

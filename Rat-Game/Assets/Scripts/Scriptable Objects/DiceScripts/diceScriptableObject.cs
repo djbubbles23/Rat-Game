@@ -8,7 +8,7 @@ public class diceScriptableObject : ScriptableObject
 {
     public string diceName;
     public string diceDescription;
-    //public effectValue
+    public string effectValue;
     public int diceType;
     public int[] diceValue;
     public float diceCost;
@@ -19,6 +19,11 @@ public class diceScriptableObject : ScriptableObject
         diceType = createDiceType();
         diceValue = createDiceValues();
         diceCost = createDiceCost();
+
+        diceDescription = createDiceDescription();
+        diceName = "D" + diceType;
+
+        effectValue = createEffectValue();
     }
 
     
@@ -85,6 +90,38 @@ public class diceScriptableObject : ScriptableObject
         }
         //avg of values
         return (totalCost/diceValue.Length)*10;
+    }
+
+    public string createDiceDescription()
+    {
+        diceDescription = "This is a d"+diceType+". There is a 1/" + diceType + " to get one of these values: ";
+        for (int i = 0; i < diceValue.Length; i++)
+        {
+            diceDescription += diceValue[i];
+            if (i < diceValue.Length - 1)
+            {
+                diceDescription += ", ";
+            }
+        }
+        diceDescription += ".";
+        return diceDescription;
+    }
+
+    public string createEffectValue()
+    {
+        int effectValueRand = Random.Range(0,10);
+        if(effectValueRand == 0){
+            return "Ice";
+        }
+        else if(effectValueRand == 1){
+            return "Fire";
+        }
+        else if(effectValueRand == 2){
+            return "Toxic";
+        }
+        else{
+            return "None";
+        }
     }
 
 }
