@@ -32,6 +32,7 @@ public class diceScriptableObject : ScriptableObject
         showDiceType();
         showDiceValues();
         showDiceCost();
+        showDiceEffect();
     }
 
     public void showDiceType()
@@ -52,6 +53,9 @@ public class diceScriptableObject : ScriptableObject
                 Debug.Log($"dice.diceValue[{i}] = {diceValue[i]}");
             }
         }
+    }
+    public void showDiceEffect(){
+        Debug.Log("Dice Effect: "+ effectValue);
     }
 
     //create dice data
