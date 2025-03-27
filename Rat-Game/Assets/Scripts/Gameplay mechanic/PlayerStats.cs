@@ -55,4 +55,17 @@ public class PlayerStats : MonoBehaviour
         
         audioSource.PlayOneShot(clip);
     }
+
+    /*
+    public int dealDamage(GameObject dice1, GameObject dice2, GameObject dice3){
+        int[] diceRolls = new int[3];
+
+        if (dice1 != null)
+        {
+            for (int i=0; i<dice1.)
+        }
+
+        return diceRoll1 + diceRoll2 + diceRoll3;
+    }
+    */
 }
