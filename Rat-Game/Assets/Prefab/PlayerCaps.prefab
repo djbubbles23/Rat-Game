@@ -745,6 +745,7 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 6489115522640370829, guid: 4f7c9025bd6c9d84781c4e6650e42dd4, type: 3}
   attcHitbox: {fileID: 9170238739665784607}
   weaponController: {fileID: 448117206760779025}
+  weaponPrefab: {fileID: 6908588148150052046}
 --- !u!1001 &994366177372830873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1142,31 +1143,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2737944223136710541, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9627865
       objectReference: {fileID: 0}
     - target: {fileID: 2737944223136710541, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.26458058
       objectReference: {fileID: 0}
     - target: {fileID: 2737944223136710541, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.045401055
       objectReference: {fileID: 0}
     - target: {fileID: 2737944223136710541, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.031274706
       objectReference: {fileID: 0}
     - target: {fileID: 2737944223136710541, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -30.818
       objectReference: {fileID: 0}
     - target: {fileID: 2737944223136710541, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -4.734
       objectReference: {fileID: 0}
     - target: {fileID: 2737944223136710541, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -2.416
       objectReference: {fileID: 0}
     - target: {fileID: 5902776537691132780, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
       propertyPath: weapon
@@ -1202,12 +1203,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5902776537691132780, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
   m_PrefabInstance: {fileID: 6328357668375264893}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6908588148150052046}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df0d7e3fdff18d64e8fef6c5f9fb4935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6908588148150052046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 590793524020337331, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
+  m_PrefabInstance: {fileID: 6328357668375264893}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8227502603962221040 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2737944223136710541, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}

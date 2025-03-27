@@ -471,11 +471,11 @@ PrefabInstance:
     - target: {fileID: 448117206760779025, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: diceSlot2
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: a10c503d08e26284a8dfe6d110de82a9, type: 2}
     - target: {fileID: 448117206760779025, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: diceSlot3
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 9293208630c135247ac36f03ce14a983, type: 2}
     - target: {fileID: 448117206760779025, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: weaponScale.x
       value: 1.2
@@ -536,6 +536,10 @@ PrefabInstance:
       propertyPath: floatingTextPrefab
       value: 
       objectReference: {fileID: 6489115522640370829, guid: 4f7c9025bd6c9d84781c4e6650e42dd4, type: 3}
+    - target: {fileID: 3147966590235942965, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 641dd82bb15376b439986d53b0c8b3c7, type: 2}
     - target: {fileID: 4335091427055777845, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
