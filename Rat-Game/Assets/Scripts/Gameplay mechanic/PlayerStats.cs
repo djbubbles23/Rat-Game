@@ -1,23 +1,22 @@
 using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;  // Ensure this is included for Scene management
 using UnityEngine.UI;
 using Text = TMPro.TextMeshProUGUI;
 
 public class PlayerStats : MonoBehaviour
 {
     public float maxHealth = 100f;      // max health
-    
     public AudioClip takeDamageSound;
     public AudioClip deathSound;
-    
+
     private AudioSource audioSource;     // player audiosource
     private float currentHealth;        // current health of the player
-
     public int score;                   // player score
     public Text scoreText;              // score text object
-
     public Image healthBar;
+
+    private int unlockedLevel = 1;  // Starting unlocked level (Level 1 is always unlocked)
 
     public void Heal(float amount)
     {
@@ -29,6 +28,7 @@ public class PlayerStats : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         currentHealth = maxHealth;
+        unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1); // Get the unlocked level from PlayerPrefs
     }
 
     private void Update()
@@ -43,29 +43,43 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 1);
-        
+
         AudioClip clip = takeDamageSound;
 
         if (currentHealth <= 0)
         {
             Debug.Log("PLAYER DIED!");
             clip = deathSound;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(5);  // Scene 5 for death
         }
-        
+
         audioSource.PlayOneShot(clip);
     }
 
-    /*
-    public int dealDamage(GameObject dice1, GameObject dice2, GameObject dice3){
-        int[] diceRolls = new int[3];
+    // Method to unlock the next level
+    public void UnlockNextLevel()
+    {
+        unlockedLevel = Mathf.Min(unlockedLevel + 1, 3); // Unlock next level (up to level 3)
+        PlayerPrefs.SetInt("UnlockedLevel", unlockedLevel);  // Save the unlocked level in PlayerPrefs
+    }
 
-        if (dice1 != null)
+    // Method to be called when the EndLevelTrigger is triggered
+    public void EndLevel()
+    {
+        SceneManager.LoadScene(1);  // Load Scene 1 (Main Menu or start)
+    }
+
+    // Add OnTriggerEnter for EndLevelTrigger
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("EndLevel"))
         {
-            for (int i=0; i<dice1.)
+            EndLevel(); // Call EndLevel to switch to Scene 1
         }
 
-        return diceRoll1 + diceRoll2 + diceRoll3;
+        if (other.CompareTag("LevelUnlocked"))
+        {
+            UnlockNextLevel(); // Unlock the next level when LevelUnlockTrigger is entered
+        }
     }
-    */
 }
