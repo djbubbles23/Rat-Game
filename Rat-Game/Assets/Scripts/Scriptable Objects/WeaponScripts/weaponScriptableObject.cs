@@ -1,4 +1,3 @@
-using UnityEditor.AssetImporters;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ScriptableObjects", menuName = "Weapon")]
