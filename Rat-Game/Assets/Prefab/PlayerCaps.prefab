@@ -745,6 +745,7 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 6489115522640370829, guid: 4f7c9025bd6c9d84781c4e6650e42dd4, type: 3}
   attcHitbox: {fileID: 9170238739665784607}
   weaponController: {fileID: 448117206760779025}
+  weaponPrefab: {fileID: 6908588148150052046}
 --- !u!1001 &994366177372830873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1202,12 +1203,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5902776537691132780, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
   m_PrefabInstance: {fileID: 6328357668375264893}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6908588148150052046}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df0d7e3fdff18d64e8fef6c5f9fb4935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6908588148150052046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 590793524020337331, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
+  m_PrefabInstance: {fileID: 6328357668375264893}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8227502603962221040 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2737944223136710541, guid: 7981352bac3894a4ab1488e385766c1e, type: 3}
