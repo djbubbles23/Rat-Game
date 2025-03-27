@@ -1,6 +1,9 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
+
+// DEPRECIATED SCRIPT! PLEASE USE RATAI.cs INSTEAD!!!!!!!
 
 public class EnemyTracking : MonoBehaviour
 {

@@ -13,8 +13,8 @@ public class EnemyBehavior : MonoBehaviour
     
     public float maxHealth = 100f;              // Starting health of the enemy
     public float damage = 10f;                  // How powerful enemy's attack is
-    public float knockback = 10f;               // How far back an enemy flies when hit
-    public float upwardKnockback = 10f;         // How far up an enemy moves when hit
+    //public float knockback = 10f;               // How far back an enemy flies when hit
+    //public float upwardKnockback = 10f;         // How far up an enemy moves when hit
 
     public float attackDelay = 5.0f;            // time between attack
     public float attackLength = 0.2f;           // how long the attack hb is active
@@ -78,6 +78,14 @@ public class EnemyBehavior : MonoBehaviour
             canAttack = true;
             attackTimer = attackDelay;
         }
+
+        /*
+        // re-enable the agent if it was off the ground but is near again
+        if (agent.enabled == false)
+        {
+            agent.enabled = Physics.CheckSphere(transform.position, 0.1f, Ground);
+        }
+        */
     }
 
     public void TakeDamage(float damage)
@@ -102,11 +110,14 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
+    /*
     public void TakeKnockback(Vector3 direction)
     {
+        //agent.enabled = false; // disable agent so kb works
         rb.AddForce(Vector3.up * upwardKnockback, ForceMode.Impulse);
         rb.AddForce(direction * knockback, ForceMode.Impulse);
     }
+    */
 
     IEnumerator ActivateAttackCollider()
     {
