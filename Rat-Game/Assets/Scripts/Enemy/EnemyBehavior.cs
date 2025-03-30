@@ -7,19 +7,18 @@ using UnityEngine.VFX;
 
 public class EnemyBehavior : MonoBehaviour
 {
-    public ParticleSystem bloodParticles;       // Blood particles that play when enemy is damaged
     private VisualEffect atc;                   // VisualEffect component that creates the enemy's attacks
+    public GameObject bloodPrefab;              // Blood particles that play when enemy is damaged
     public AudioClip takeDamageSound;           // sound to play when hurt
     
     public float maxHealth = 100f;              // Starting health of the enemy
     public float damage = 10f;                  // How powerful enemy's attack is
-    //public float knockback = 10f;               // How far back an enemy flies when hit
-    //public float upwardKnockback = 10f;         // How far up an enemy moves when hit
+    //public float knockback = 10f;             // How far back an enemy flies when hit
+    //public float upwardKnockback = 10f;       // How far up an enemy moves when hit
 
     public float attackDelay = 5.0f;            // time between attack
     public float attackLength = 0.2f;           // how long the attack hb is active
 
-    private Rigidbody rb;                       // Enemy rigidbody
     private Collider attackCollider;            // the attack hb attached to the swipe
     private AudioSource audioSource;            // enemy audio source
     
@@ -33,7 +32,6 @@ public class EnemyBehavior : MonoBehaviour
     private void Start()
     {
         // initialize variables
-        rb = GetComponent<Rigidbody>();
         atc = gameObject.GetComponentInChildren<VisualEffect>();
         attackCollider = GetComponentInChildren<BoxCollider>();
         audioSource = GetComponent<AudioSource>();
@@ -90,11 +88,17 @@ public class EnemyBehavior : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        // make blood splatter;
+        // blood position;
         Vector3 bloodPosition = transform.position;
-        bloodPosition.y -= 0.2f;    //lower blood to rat
-        ParticleSystem blood = Instantiate(bloodParticles, bloodPosition, Quaternion.identity);
-        blood.transform.SetParent(this.transform);
+        bloodPosition.x += 0.65f;
+        bloodPosition.y = 1.5f;
+        Quaternion bloodRotation = transform.rotation * Quaternion.Euler(0, 180, 0);
+        
+        // create blood VFX
+        GameObject blood = Instantiate(bloodPrefab, bloodPosition, bloodRotation);
+        VisualEffect vfx = blood.GetComponentInChildren<VisualEffect>();
+        vfx.Play();
+        StartCoroutine(DestroyVFXAfterTime(vfx, 2.0f));
         
         // handle health stats
         health -= damage;
@@ -140,5 +144,12 @@ public class EnemyBehavior : MonoBehaviour
             //Vector3 knockbackDirection = other.transform.position - transform.position;
             //player.TakeKnockback(knockbackDirection);
         }
+    }
+    
+    // destory VFX effect i.e. blood
+    private IEnumerator DestroyVFXAfterTime(VisualEffect vfx, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(vfx.gameObject);
     }
 }
