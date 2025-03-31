@@ -9,6 +9,7 @@ public class EnemyBehavior : MonoBehaviour
 {
     private VisualEffect atc;                   // VisualEffect component that creates the enemy's attacks
     public GameObject bloodPrefab;              // Blood particles that play when enemy is damaged
+    public Transform bloodSpawnPoint;           // Where the blood should spawn from
     public AudioClip takeDamageSound;           // sound to play when hurt
     
     public float maxHealth = 100f;              // Starting health of the enemy
@@ -88,14 +89,8 @@ public class EnemyBehavior : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        // blood position;
-        Vector3 bloodPosition = transform.position;
-        bloodPosition.x += 0.65f;
-        bloodPosition.y = 1.5f;
-        Quaternion bloodRotation = transform.rotation * Quaternion.Euler(0, 180, 0);
-        
         // create blood VFX
-        GameObject blood = Instantiate(bloodPrefab, bloodPosition, bloodRotation);
+        GameObject blood = Instantiate(bloodPrefab, bloodSpawnPoint.position, bloodSpawnPoint.rotation);
         VisualEffect vfx = blood.GetComponentInChildren<VisualEffect>();
         vfx.Play();
         StartCoroutine(DestroyVFXAfterTime(vfx, 2.0f));
