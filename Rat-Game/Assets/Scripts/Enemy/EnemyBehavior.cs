@@ -19,6 +19,7 @@ public class EnemyBehavior : MonoBehaviour
 
     public float attackDelay = 5.0f;            // time between attack
     public float attackLength = 0.2f;           // how long the attack hb is active
+    public float flashDuration = 2f;            // how long damage flash should last
 
     private Collider attackCollider;            // the attack hb attached to the swipe
     private AudioSource audioSource;            // enemy audio source
@@ -28,6 +29,9 @@ public class EnemyBehavior : MonoBehaviour
     private bool canAttack;
 
     private PlayerStats playerScore;            // player object
+    public GameObject ratGeo;                  // rat geometry gameobject
+    private MeshRenderer renderer;
+    private Color originalColor;
 
 
     private void Start()
@@ -37,6 +41,8 @@ public class EnemyBehavior : MonoBehaviour
         attackCollider = GetComponentInChildren<BoxCollider>();
         audioSource = GetComponent<AudioSource>();
         health = maxHealth;
+        renderer = ratGeo.GetComponent<MeshRenderer>();
+        originalColor = renderer.material.color;
 
         // find the player object and get the PlayerStats component
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -95,6 +101,9 @@ public class EnemyBehavior : MonoBehaviour
         vfx.Play();
         StartCoroutine(DestroyVFXAfterTime(vfx, 2.0f));
         
+        // flash rat red
+        StartCoroutine(DamageFlash(flashDuration));
+        
         // handle health stats
         health -= damage;
         
@@ -123,6 +132,13 @@ public class EnemyBehavior : MonoBehaviour
         attackCollider.enabled = true;
         yield return new WaitForSeconds(attackLength);
         attackCollider.enabled = false;
+    }
+    
+    IEnumerator DamageFlash(float duration)
+    {
+        renderer.material.color = Color.red;
+        yield return new WaitForSeconds(duration);
+        renderer.material.color = originalColor;
     }
     
     // damage player if attack connects

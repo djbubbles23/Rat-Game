@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2425984600081003135}
   - component: {fileID: 5563544329339337386}
   - component: {fileID: 5013697190726950735}
+  - component: {fileID: 8873323257609780420}
   - component: {fileID: 7986319244481124253}
   - component: {fileID: 925057566190239509}
   - component: {fileID: 4293446888283231053}
@@ -117,6 +118,33 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &8873323257609780420
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2563368659214068315}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!195 &7986319244481124253
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -185,6 +213,8 @@ MonoBehaviour:
   damage: 10
   attackDelay: 2.5
   attackLength: 0.2
+  flashDuration: 0.5
+  ratGeo: {fileID: 7631045993562392537}
 --- !u!82 &9171713289002263120
 AudioSource:
   m_ObjectHideFlags: 0
@@ -537,6 +567,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ba08a857abfd434d969f20554e94c3b, type: 3}
+--- !u!1 &7631045993562392537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 424589672204871226, guid: 8ba08a857abfd434d969f20554e94c3b, type: 3}
+  m_PrefabInstance: {fileID: 7782952331081310691}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7748478986356459016 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8ba08a857abfd434d969f20554e94c3b, type: 3}
