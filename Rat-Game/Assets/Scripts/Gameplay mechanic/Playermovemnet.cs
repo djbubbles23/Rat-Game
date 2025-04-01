@@ -48,38 +48,43 @@ public class PlayerMovement : MonoBehaviour
         atc = gameObject.GetComponentInChildren<VisualEffect>();
     }
 
-    void Update()
+void Update()
+{
+    CheckInputs();
+
+    if (jumpInput && isGrounded)
     {
-        CheckInputs();
+        Jump();
+    }
 
-        if (jumpInput && isGrounded)
-        {
-            Jump();
-        }
-        if (attackInput && canAttack) {
-            Attack();
-        }
-        else if (!canAttack) {
-            attackCounter += Time.fixedDeltaTime;
+    // Prevent attacking while moving
+    if (attackInput && canAttack && movement == Vector3.zero)
+    {
+        Attack();
+    }
+    else if (!canAttack)
+    {
+        attackCounter += Time.fixedDeltaTime;
 
-            if (attackCounter >= attackDelay) {
-                canAttack = true;
-                attackCounter = 0;
-            }
-        } 
-
-        Vector3 movementDirection = new Vector3(movement.x, 0, movement.z);
-        float magniture =  Mathf.Clamp01(movementDirection.magnitude)*moveSpeed;
-        movementDirection.Normalize();
-        if(movementDirection.magnitude > 0)
+        if (attackCounter >= attackDelay)
         {
-            playerAnim.SetBool("isMoving", true);
-        }
-        else
-        {
-            playerAnim.SetBool("isMoving", false);
+            canAttack = true;
+            attackCounter = 0;
         }
     }
+
+    Vector3 movementDirection = new Vector3(movement.x, 0, movement.z);
+    float magniture = Mathf.Clamp01(movementDirection.magnitude) * moveSpeed;
+    movementDirection.Normalize();
+    if (movementDirection.magnitude > 0)
+    {
+        playerAnim.SetBool("isMoving", true);
+    }
+    else
+    {
+        playerAnim.SetBool("isMoving", false);
+    }
+}
 
     void FixedUpdate()
     {
@@ -121,13 +126,13 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator ActivateAttackHb()
     {
-        Debug.Log("Attacking t");
+        //Debug.Log("Attacking t");
         playerAnim.SetBool("Attack1", true);
         // activate attack hitbox for 0.1 seconds
         attackHitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         attackHitbox.SetActive(false);
-        Debug.Log("Attacking f");
+        //Debug.Log("Attacking f");
         playerAnim.SetBool("Attack1", false);
     }
 
@@ -179,7 +184,7 @@ public class PlayerMovement : MonoBehaviour
     void RotatePlayer() {
         //Quaternion playerRot = transform.rotation;
         Vector3 playerRot = new Vector3(0,0,0);
-        Debug.Log("Facing Read: " + facing);
+        //Debug.Log("Facing Read: " + facing);
         switch (facing) {
             case 0: //North
                 playerRot.z = 1f;
