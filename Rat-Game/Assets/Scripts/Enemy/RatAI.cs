@@ -13,17 +13,24 @@ public class RatAI : MonoBehaviour
     
     [Header("Patrolling")]
     public Vector3 walkPoint;
-    bool walkPointSet;
+    bool walkPointSet = false;
     public float walkPointRange;
     
     [Header("States")]
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
+    
+    private Collider agentCollider;
 
     private void Awake()
     {
+        // find and set player reference 
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        
+        // ignore collisions with player (causes bug where enemy flies backwards)
+        agentCollider = GetComponent<Collider>();
+        Physics.IgnoreCollision(agentCollider, player.GetComponent<Collider>(), true);
     }
 
     private void Update()
@@ -47,7 +54,8 @@ public class RatAI : MonoBehaviour
         
         // Reset walk point
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
-        if (distanceToWalkPoint.magnitude < 1f)
+        print(distanceToWalkPoint.magnitude);
+        if (distanceToWalkPoint.magnitude < 1.5f)
         {
             walkPointSet = false;
         }
@@ -82,7 +90,13 @@ public class RatAI : MonoBehaviour
     {
         walkPointSet = false; // stop patrolling
         agent.SetDestination(transform.position);
-        transform.LookAt(player);
+        
+        // face the player
+        Vector3 toPlayer = transform.position - player.position;
+        toPlayer.y = 0; // constrain vertically
+        toPlayer = -toPlayer; // flip 180
+        Quaternion lookRotation = Quaternion.LookRotation(toPlayer);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
 
         EnemyBehavior.Attack();
     }

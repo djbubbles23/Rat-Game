@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Unity.Cinemachine;  // Make sure to include Cinemachine namespace
 
 public class LevelMenu : MonoBehaviour
 {
     public Button[] buttons; // Assign all level buttons in the inspector
     public int[] levelUnlockMapping; // Assign level indexes corresponding to buttons
+    public CinemachineCamera vcam1; // Assign vcam1 in the inspector
 
     private string[] levelNames = { "A-Workspace", "C-Workspace", "J-Workspace" };
+    private bool isVcam1Active = false;
 
     private void Awake()
     {
@@ -32,24 +35,45 @@ public class LevelMenu : MonoBehaviour
         }
     }
 
-    public void OpenLevel(int levelId)
-    {
-        if (levelId >= 0 && levelId < levelNames.Length)
-        {
-            SceneManager.LoadScene(levelNames[levelId]);
-        }
-        else
-        {
-            Debug.LogError("Invalid level ID: " + levelId);
-        }
-    }
-
     private void Update()
     {
+        // Check if vcam1 is active by comparing its priority (higher priority means it's active)
+        bool isCurrentlyVcam1Active = vcam1.Priority > 0;
+
+        if (isCurrentlyVcam1Active != isVcam1Active)
+        {
+            isVcam1Active = isCurrentlyVcam1Active;
+            SetButtonsInteractable(!isVcam1Active);
+        }
+
         // Check for "P" key press to reset the unlocked level
         if (Input.GetKeyDown(KeyCode.P))
         {
             ResetUnlockedLevel();  // Reset the unlocked level to 1 when "P" is pressed
+        }
+    }
+
+    private void SetButtonsInteractable(bool state)
+    {
+        foreach (Button button in buttons)
+        {
+            button.interactable = state;
+        }
+    }
+
+    public void OpenLevel(int levelId)
+    {
+        if (!isVcam1Active && levelId >= 0 && levelId < levelNames.Length)
+        {
+            SceneManager.LoadScene(levelNames[levelId]);
+        }
+        else if (isVcam1Active)
+        {
+            Debug.LogWarning("Cannot open level while vcam1 is active.");
+        }
+        else
+        {
+            Debug.LogError("Invalid level ID: " + levelId);
         }
     }
 
