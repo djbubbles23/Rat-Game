@@ -56,20 +56,20 @@ public class PlayerStats : MonoBehaviour
         audioSource.PlayOneShot(clip);
     }
 
-    // Method to unlock the next level
+
     public void UnlockNextLevel()
     {
         unlockedLevel = Mathf.Min(unlockedLevel + 1, 3); // Unlock next level (up to level 3)
         PlayerPrefs.SetInt("UnlockedLevel", unlockedLevel);  // Save the unlocked level in PlayerPrefs
     }
 
-    // Method to be called when the EndLevelTrigger is triggered
+
     public void EndLevel()
     {
         SceneManager.LoadScene(1);  // Load Scene 1 (Main Menu or start)
     }
 
-    // Add OnTriggerEnter for EndLevelTrigger
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("EndLevel"))
