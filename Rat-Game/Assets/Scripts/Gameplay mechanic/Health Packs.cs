@@ -24,6 +24,17 @@ public class HealthPack : MonoBehaviour
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }
 
-   
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PlayerStats playerStats = other.GetComponent<PlayerStats>();
+
+            if (playerStats != null)
+            {
+                playerStats.Heal(healAmount);
+                Destroy(gameObject);
+            }
+        }
+    }
 }

@@ -6,9 +6,7 @@ public class FloatingPopup : MonoBehaviour
     public GameObject floatingTextPrefab;
     public GameObject Victim;
     public GameObject attcHitbox;
-    public string popupText = "Hit";
-    
-
+    public string popupText = "5";
     
     public void OnTriggerEnter(Collider other)
     {
