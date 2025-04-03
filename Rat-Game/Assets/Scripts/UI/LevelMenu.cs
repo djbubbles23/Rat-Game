@@ -9,7 +9,7 @@ public class LevelMenu : MonoBehaviour
     public int[] levelUnlockMapping; // Assign level indexes corresponding to buttons
     public CinemachineCamera vcam1; // Assign vcam1 in the inspector
 
-    private string[] levelNames = { "A-Workspace", "C-Workspace", "J-Workspace" };
+    private string[] levelNames = { "C-level-Work", "C-Workspace", "J-Workspace" };
     private bool isVcam1Active = false;
 
     private void Awake()
