@@ -122,13 +122,13 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator ActivateAttackHb()
     {
         Debug.Log("Attacking t");
-        playerAnim.SetBool("Attack1", true);
+        playerAnim.SetTrigger("isAttacking");
         // activate attack hitbox for 0.1 seconds
         attackHitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         attackHitbox.SetActive(false);
         Debug.Log("Attacking f");
-        playerAnim.SetBool("Attack1", false);
+        playerAnim.ResetTrigger("isAttacking");
     }
 
     void DirectionCheck() { //Direction State Machine
