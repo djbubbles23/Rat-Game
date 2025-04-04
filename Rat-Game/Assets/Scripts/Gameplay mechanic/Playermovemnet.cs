@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -58,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
-        if (attackInput && canAttack) {
+        if (attackInput && canAttack && movement == Vector3.zero) {
             Attack();
         }
         else if (!canAttack) {
@@ -81,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerAnim.SetBool("isMoving", false);
         }
+
     }
 
     void FixedUpdate()
@@ -96,8 +96,8 @@ public class PlayerMovement : MonoBehaviour
         jumpInput = Input.GetButtonDown("Jump");
         attackInput = Input.GetButtonDown("Fire1");
 
-    }
 
+    }
     void MovePlayer()
     {
         Vector3 move = movement * moveSpeed * Time.fixedDeltaTime;
@@ -106,31 +106,25 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         isGrounded = false;
+        playerAnim.SetTrigger("isJumping");
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
-
     void Attack()
     {
-
-        canAttack = false;
-        atc.Play();
-        
-        // handle attacking enemy
-        StartCoroutine(ActivateAttackHb());
-
+        if(canAttack) {
+            canAttack = false;
+            playerAnim.SetTrigger("isAttacking");
+            StartCoroutine(ActivateAttackHb());
+        }
     }
 
     IEnumerator ActivateAttackHb()
     {
-        Debug.Log("Attacking t");
-        playerAnim.SetTrigger("isAttacking");
-        // activate attack hitbox for 0.1 seconds
+        atc.Play();
         attackHitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         attackHitbox.SetActive(false);
-        Debug.Log("Attacking f");
-        playerAnim.ResetTrigger("isAttacking");
     }
 
     void DirectionCheck() { //Direction State Machine
