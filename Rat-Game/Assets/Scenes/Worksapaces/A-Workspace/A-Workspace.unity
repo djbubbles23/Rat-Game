@@ -119,14 +119,13 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
 --- !u!1001 &776029387
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1110758996}
+    m_TransformParent: {fileID: 1569445099}
     m_Modifications:
     - target: {fileID: 590793524020337331, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
       propertyPath: m_Name
@@ -138,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
       propertyPath: m_LocalPosition.z
@@ -150,15 +149,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -175,7 +174,7 @@ PrefabInstance:
     - target: {fileID: 5902776537691132780, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 11400000, guid: 6e01e9fe69ee5cb42bdf7a1553e939ba, type: 2}
+      objectReference: {fileID: 11400000, guid: 834358b48369b0d4a9599b0a684d4fcc, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -186,8 +185,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
   m_PrefabInstance: {fileID: 776029387}
   m_PrefabAsset: {fileID: 0}
-=======
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
 --- !u!1 &1049075033
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,11 +294,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1110758996 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5769233441149415880, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-  m_PrefabInstance: {fileID: 4450040300053032030}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1116879290
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d76b537cce3044aa62540a3019ba1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1523680298}
+  player: {fileID: 0}
 --- !u!114 &1116879295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,22 +445,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &1329281459 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 448117206760779025, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-  m_PrefabInstance: {fileID: 4450040300053032030}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0d7e3fdff18d64e8fef6c5f9fb4935, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1523680298 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3082459267581247369, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-  m_PrefabInstance: {fileID: 4450040300053032030}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1535216194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -530,7 +506,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
---- !u!1001 &4450040300053032030
+--- !u!1001 &1569445098
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -538,153 +514,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 448117206760779025, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: weapon
-      value: 
-      objectReference: {fileID: 11400000, guid: 6e01e9fe69ee5cb42bdf7a1553e939ba, type: 2}
-    - target: {fileID: 448117206760779025, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: diceSlot2
-      value: 
-      objectReference: {fileID: 11400000, guid: a10c503d08e26284a8dfe6d110de82a9, type: 2}
-    - target: {fileID: 448117206760779025, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: diceSlot3
-      value: 
-      objectReference: {fileID: 11400000, guid: 9293208630c135247ac36f03ce14a983, type: 2}
-    - target: {fileID: 448117206760779025, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: weaponScale.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 448117206760779025, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: weaponScale.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 448117206760779025, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: weaponScale.z
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 528690494092413208, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: dice1
-      value: 
-      objectReference: {fileID: 11400000, guid: 8ca715aac3030044eaf99e3fc1320445, type: 2}
-    - target: {fileID: 528690494092413208, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: dice2
-      value: 
-      objectReference: {fileID: 11400000, guid: 8ca715aac3030044eaf99e3fc1320445, type: 2}
-    - target: {fileID: 528690494092413208, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: dice3
-      value: 
-      objectReference: {fileID: 11400000, guid: 8ca715aac3030044eaf99e3fc1320445, type: 2}
-    - target: {fileID: 528690494092413208, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: diceSlot1
-      value: 
-      objectReference: {fileID: 5755973521994180765, guid: 7dc4620ff7724a14d8edb8af8b7d86ad, type: 3}
-    - target: {fileID: 528690494092413208, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: diceSlot2
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 528690494092413208, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: diceSlot3
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1533131608898961698, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2767191771685661168, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3082459267581247369, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_Name
       value: PlayerCaps
-      objectReference: {fileID: 0}
-    - target: {fileID: 3100957382819915146, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1523680298}
-    - target: {fileID: 3100957382819915146, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: weaponController
-      value: 
-<<<<<<< HEAD
-      objectReference: {fileID: 0}
-=======
-      objectReference: {fileID: 1329281459}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-    - target: {fileID: 3100957382819915146, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: floatingTextPrefab
-      value: 
-      objectReference: {fileID: 6489115522640370829, guid: 4f7c9025bd6c9d84781c4e6650e42dd4, type: 3}
-    - target: {fileID: 3147966590235942965, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_Controller
-      value: 
-<<<<<<< HEAD
-      objectReference: {fileID: 9100000, guid: 7e7fa00dd559b1346848f17f5e34db3c, type: 2}
-=======
-      objectReference: {fileID: 9100000, guid: 641dd82bb15376b439986d53b0c8b3c7, type: 2}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-    - target: {fileID: 4335091427055777845, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5070016024077139606, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.000000023841858
-      objectReference: {fileID: 0}
-    - target: {fileID: 5070016024077139606, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.24098714
-      objectReference: {fileID: 0}
-    - target: {fileID: 5707673515619567074, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7694816110394073679, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 7e7fa00dd559b1346848f17f5e34db3c, type: 2}
-    - target: {fileID: 7765078375558358482, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.009670998
-      objectReference: {fileID: 0}
-    - target: {fileID: 7765078375558358482, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0025849342
-      objectReference: {fileID: 0}
-    - target: {fileID: 7765078375558358482, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.50741917
-      objectReference: {fileID: 0}
-    - target: {fileID: 7888201354188527400, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8227502603962221040, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8227502603962221040, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8227502603962221040, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8227502603962221040, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.097
-      objectReference: {fileID: 0}
-    - target: {fileID: 8227502603962221040, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.006
-      objectReference: {fileID: 0}
-    - target: {fileID: 8227502603962221040, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.072
-      objectReference: {fileID: 0}
-    - target: {fileID: 8227502603962221040, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_LocalPosition.x
@@ -727,26 +559,23 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 6656160772315180802, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5769233441149415880, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      insertIndex: 0
+    - targetCorrespondingSourceObject: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 776029388}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+--- !u!4 &1569445099 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+  m_PrefabInstance: {fileID: 1569445098}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1116879293}
-  - {fileID: 4450040300053032030}
+  - {fileID: 1569445098}
   - {fileID: 1049075037}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   - {fileID: 1535216194}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
-  - {fileID: 1535216194}
->>>>>>> parent of 3bd4330 (Basic Animation)
