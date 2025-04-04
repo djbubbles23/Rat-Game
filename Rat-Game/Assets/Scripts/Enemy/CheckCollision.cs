@@ -13,8 +13,8 @@ public class CheckCollision : MonoBehaviour
             enemy.TakeDamage(damage);
             
             // calculate knockback direction
-            Vector3 knockbackDirection = other.transform.position - transform.position;
-            enemy.TakeKnockback(knockbackDirection);
+            //Vector3 knockbackDirection = other.transform.position - transform.position;
+            //enemy.TakeKnockback(knockbackDirection);
         }
     }
     
