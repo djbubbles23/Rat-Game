@@ -40,10 +40,18 @@ public class PlayerMovement : MonoBehaviour
         atc = gameObject.GetComponentInChildren<VisualEffect>();
     }
 
-    void Update()
-    {
-        CheckInputs();
+void Update()
+{
+    CheckInputs();
+<<<<<<< HEAD
+<<<<<<< HEAD
 
+    if (jumpInput && isGrounded)
+    {
+        Jump();
+    }
+
+<<<<<<< HEAD
         if (jumpInput && isGrounded)
         {
             Jump();
@@ -64,7 +72,94 @@ public class PlayerMovement : MonoBehaviour
         }
 
         HandleMovementAnimations();
+=======
+=======
+
+    if (jumpInput && isGrounded)
+    {
+        Jump();
     }
+
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+    // Prevent attacking while moving
+    if (attackInput && canAttack && movement == Vector3.zero)
+    {
+        Attack();
+<<<<<<< HEAD
+=======
+    }
+    else if (!canAttack)
+    {
+        attackCounter += Time.fixedDeltaTime;
+
+        if (attackCounter >= attackDelay)
+        {
+            canAttack = true;
+            attackCounter = 0;
+        }
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+    }
+    else if (!canAttack)
+    {
+        attackCounter += Time.fixedDeltaTime;
+
+        if (attackCounter >= attackDelay)
+        {
+            canAttack = true;
+            attackCounter = 0;
+        }
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+    }
+
+    Vector3 movementDirection = new Vector3(movement.x, 0, movement.z);
+    float magniture = Mathf.Clamp01(movementDirection.magnitude) * moveSpeed;
+    movementDirection.Normalize();
+    if (movementDirection.magnitude > 0)
+    {
+        playerAnim.SetBool("isMoving", true);
+    }
+    else
+    {
+        playerAnim.SetBool("isMoving", false);
+    }
+}
+
+=======
+
+    if (jumpInput && isGrounded)
+    {
+        Jump();
+    }
+
+    // Prevent attacking while moving
+    if (attackInput && canAttack && movement == Vector3.zero)
+    {
+        Attack();
+    }
+    else if (!canAttack)
+    {
+        attackCounter += Time.fixedDeltaTime;
+
+        if (attackCounter >= attackDelay)
+        {
+            canAttack = true;
+            attackCounter = 0;
+        }
+    }
+
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
+    Vector3 movementDirection = new Vector3(movement.x, 0, movement.z);
+    float magniture = Mathf.Clamp01(movementDirection.magnitude) * moveSpeed;
+    movementDirection.Normalize();
+    if (movementDirection.magnitude > 0)
+    {
+        playerAnim.SetBool("isMoving", true);
+    }
+    else
+    {
+        playerAnim.SetBool("isMoving", false);
+    }
+}
 
     void FixedUpdate()
     {
@@ -103,12 +198,35 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator ActivateAttackHb()
     {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
+        //Debug.Log("Attacking t");
+        playerAnim.SetBool("Attack1", true);
+        // activate attack hitbox for 0.1 seconds
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
         attackHitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f); // Duration of the attack hitbox
         atc.Play();
         attackHitbox.SetActive(false);
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
         yield return new WaitForSeconds(0.5f); // Wait for the attack animation to finish
         playerAnim.ResetTrigger("isAttacking");
+=======
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
+        //Debug.Log("Attacking f");
+        playerAnim.SetBool("Attack1", false);
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
     }
 
     void HandleMovementAnimations()
@@ -127,6 +245,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     void DirectionCheck()
     {
         if (movement.x == 0 && movement.z == 0)
@@ -168,6 +287,14 @@ public class PlayerMovement : MonoBehaviour
         switch (facing)
         {
             case (int)Direction.North:
+=======
+    void RotatePlayer() {
+        //Quaternion playerRot = transform.rotation;
+        Vector3 playerRot = new Vector3(0,0,0);
+        //Debug.Log("Facing Read: " + facing);
+        switch (facing) {
+            case 0: //North
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
                 playerRot.z = 1f;
                 break;
             case (int)Direction.NorthEast:
