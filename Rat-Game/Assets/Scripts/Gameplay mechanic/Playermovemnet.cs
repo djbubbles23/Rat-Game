@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -74,10 +75,36 @@ void Update()
 
         if (attackCounter >= attackDelay)
         {
+<<<<<<< HEAD
             canAttack = true;
             attackCounter = 0;
+=======
+            Jump();
         }
+        if (attackInput && canAttack) {
+            Attack();
+        }
+        else if (!canAttack) {
+            attackCounter += Time.fixedDeltaTime;
 
+            if (attackCounter >= attackDelay) {
+                canAttack = true;
+                attackCounter = 0;
+            }
+        } 
+
+        Vector3 movementDirection = new Vector3(movement.x, 0, movement.z);
+        float magniture =  Mathf.Clamp01(movementDirection.magnitude)*moveSpeed;
+        movementDirection.Normalize();
+        if(movementDirection.magnitude > 0)
+        {
+            playerAnim.SetBool("isMoving", true);
+        }
+        else
+        {
+            playerAnim.SetBool("isMoving", false);
+>>>>>>> parent of 3bd4330 (Basic Animation)
+        }
     }
 
     Vector3 movementDirection = new Vector3(movement.x, 0, movement.z);
@@ -106,8 +133,8 @@ void Update()
         jumpInput = Input.GetButtonDown("Jump");
         attackInput = Input.GetButtonDown("Fire1");
 
-
     }
+
     void MovePlayer()
     {
         Vector3 move = movement * moveSpeed * Time.fixedDeltaTime;
@@ -116,26 +143,35 @@ void Update()
 
     void Jump()
     {
-        isGrounded = false;
-        playerAnim.SetTrigger("isJumping");
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        isGrounded = false;
     }
+
     void Attack()
     {
-        if(canAttack) {
-            canAttack = false;
-            playerAnim.SetTrigger("isAttacking");
-            StartCoroutine(ActivateAttackHb());
-        }
+
+        canAttack = false;
+        atc.Play();
+        
+        // handle attacking enemy
+        StartCoroutine(ActivateAttackHb());
+
     }
 
     IEnumerator ActivateAttackHb()
     {
-        atc.Play();
+        Debug.Log("Attacking t");
+        playerAnim.SetTrigger("isAttacking");
+        // activate attack hitbox for 0.1 seconds
         attackHitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         attackHitbox.SetActive(false);
+<<<<<<< HEAD
 
+=======
+        Debug.Log("Attacking f");
+        playerAnim.ResetTrigger("isAttacking");
+>>>>>>> parent of 3bd4330 (Basic Animation)
     }
 
     void DirectionCheck() { //Direction State Machine
