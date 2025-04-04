@@ -4,53 +4,104 @@
 Physics2DSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 4
+  # Gravity vector (x, y) - Standard downward gravity, suitable for platformers
   m_Gravity: {x: 0, y: -9.81}
+  # Default physics material - Set to 0 (none) by default; consider assigning a material with friction/bounce
   m_DefaultMaterial: {fileID: 0}
+  # Number of velocity iterations - Default 8 is sufficient for most 2D games
   m_VelocityIterations: 8
-  m_PositionIterations: 3
+  # Number of position iterations - Increased to 4 for better stability with moving platforms
+  m_PositionIterations: 4
+  # Velocity threshold - Minimum speed for objects to stay awake
   m_VelocityThreshold: 1
+  # Maximum linear correction per step - Prevents overshooting
   m_MaxLinearCorrection: 0.2
+  # Maximum angular correction per step (degrees)
   m_MaxAngularCorrection: 8
+  # Maximum translation speed - Caps object movement speed
   m_MaxTranslationSpeed: 100
+  # Maximum rotation speed (degrees per second)
   m_MaxRotationSpeed: 360
+  # Baumgarte stabilization scale - Corrects positional errors
   m_BaumgarteScale: 0.2
+  # Baumgarte scale for time of impact - Improves collision response
   m_BaumgarteTimeOfImpactScale: 0.75
+  # Time (seconds) before objects sleep - Optimized for performance
   m_TimeToSleep: 0.5
+  # Linear velocity tolerance for sleeping - Low value ensures quick sleeping
   m_LinearSleepTolerance: 0.01
+  # Angular velocity tolerance (degrees) for sleeping
   m_AngularSleepTolerance: 2
+  # Default distance for contact generation between colliders
   m_DefaultContactOffset: 0.01
+  # Job options for physics multithreading and optimization
   m_JobOptions:
     serializedVersion: 2
-    useMultithreading: 0
+    # Enable multithreading - Set to 1 for better performance on multi-core systems
+    useMultithreading: 1
+    # Use consistency sorting - Disabled for performance; enable for determinism if needed
     useConsistencySorting: 0
+    # Interpolation poses per job - Default is fine for most cases
     m_InterpolationPosesPerJob: 100
+    # New contacts per job - Default is sufficient
     m_NewContactsPerJob: 30
+    # Collide contacts per job - Default is sufficient
     m_CollideContactsPerJob: 100
+    # Clear flags per job - Default is fine
     m_ClearFlagsPerJob: 200
+    # Clear body forces per job - Default is fine
     m_ClearBodyForcesPerJob: 200
+    # Sync discrete fixtures per job
     m_SyncDiscreteFixturesPerJob: 50
+    # Sync continuous fixtures per job
     m_SyncContinuousFixturesPerJob: 50
+    # Find nearest contacts per job
     m_FindNearestContactsPerJob: 100
+    # Update trigger contacts per job
     m_UpdateTriggerContactsPerJob: 100
+    # Island solver cost threshold
     m_IslandSolverCostThreshold: 100
+    # Island solver body cost scale
     m_IslandSolverBodyCostScale: 1
+    # Island solver contact cost scale
     m_IslandSolverContactCostScale: 10
+    # Island solver joint cost scale
     m_IslandSolverJointCostScale: 10
+    # Island solver bodies per job
     m_IslandSolverBodiesPerJob: 50
+    # Island solver contacts per job
     m_IslandSolverContactsPerJob: 50
+  # Automatically run physics simulation each frame
   m_AutoSimulation: 1
+  # Allow raycasts/queries to hit trigger colliders
   m_QueriesHitTriggers: 1
+  # Allow queries to start inside colliders
   m_QueriesStartInColliders: 1
+  # Enable callbacks when objects are disabled
   m_CallbacksOnDisable: 1
-  m_ReuseCollisionCallbacks: 0
+  # Reuse collision callbacks - Set to 1 to reduce memory allocations
+  m_ReuseCollisionCallbacks: 1
+  # Auto-sync transforms - Disabled for performance; sync manually if needed
   m_AutoSyncTransforms: 0
+  # Visualization settings for Unity editor
+  # Always show colliders - Disabled by default
   m_AlwaysShowColliders: 0
+  # Show sleeping colliders - Enabled for debugging
   m_ShowColliderSleep: 1
+  # Show collider contacts - Disabled; enable for physics debugging
   m_ShowColliderContacts: 0
+  # Show collider AABB - Disabled; enable for debugging
   m_ShowColliderAABB: 0
+  # Scale of contact arrows in editor
   m_ContactArrowScale: 0.2
+  # Color for awake colliders (RGBA)
   m_ColliderAwakeColor: {r: 0.5686275, g: 0.95686275, b: 0.54509807, a: 0.7529412}
+  # Color for asleep colliders (RGBA)
   m_ColliderAsleepColor: {r: 0.5686275, g: 0.95686275, b: 0.54509807, a: 0.36078432}
+  # Color for collider contacts (RGBA)
   m_ColliderContactColor: {r: 1, g: 0, b: 1, a: 0.6862745}
+  # Color for collider AABB (RGBA)
   m_ColliderAABBColor: {r: 1, g: 1, b: 0, a: 0.2509804}
+  # Layer collision matrix - All 'f's means all 32 layers collide with each other
+  # Customize in Unity editor for specific layer interactions (e.g., Player vs. Ground)
   m_LayerCollisionMatrix: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
