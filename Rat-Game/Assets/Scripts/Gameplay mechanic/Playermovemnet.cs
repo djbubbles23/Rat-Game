@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     private float attackCounter;            //counted progress of the delay between attacks in seconds
     private int facing;                     //state holder for the direction the player is facing
 
+    public GameObject Weapon;
+
     //Animation State Machine
     Animator playerAnim;
 

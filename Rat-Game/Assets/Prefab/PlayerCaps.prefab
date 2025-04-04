@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 633124268819634083}
   - component: {fileID: 7888201354188527400}
   - component: {fileID: 3147966590235942965}
+  - component: {fileID: 726236236749743304}
   m_Layer: 6
   m_Name: PlayerCaps
   m_TagString: Player
@@ -488,6 +489,7 @@ MonoBehaviour:
   jumpForce: 20
   attackHitbox: {fileID: 9170238739665784607}
   attackDelay: 1
+  Weapon: {fileID: 0}
 --- !u!95 &3147966590235942965
 Animator:
   serializedVersion: 7
@@ -510,6 +512,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &726236236749743304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3082459267581247369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a53b0a1488540543ae413f25f7cc566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatingTextPrefab: {fileID: 6489115522640370829, guid: 4f7c9025bd6c9d84781c4e6650e42dd4, type: 3}
+  Victim: {fileID: 2563368659214068315, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+  attcHitbox: {fileID: 9170238739665784607}
+  popupText: pow
 --- !u!1 &9170238739665784607
 GameObject:
   m_ObjectHideFlags: 0
