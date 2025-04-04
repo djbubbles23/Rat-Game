@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21ed0c23223e0b845860bfcc6ef2d6c6, type: 3}
-  m_Name: d8
+  m_Script: {fileID: 11500000, guid: a3270f2f4d91aee41b8abf6ced7179c7, type: 3}
+  m_Name: dagger 2
   m_EditorClassIdentifier: 
-  diceValue: 0000000000000000000000000000000000000000000000000000000000000000
-  diceType: 8
-  diceCost: 0
+  weaponName: 'Tier 2 Dagger '
+  weaponDescription: Dagger? I hardly know her...
+  weaponObj: {fileID: 2233568994793486216, guid: 29e48fa137c16ce43869b24638cbcc28, type: 3}
+  tier: 2
