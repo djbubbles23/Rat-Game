@@ -119,72 +119,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &776029387
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1110758996}
-    m_Modifications:
-    - target: {fileID: 590793524020337331, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
-      propertyPath: m_Name
-      value: Weapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5902776537691132780, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
-      propertyPath: weapon
-      value: 
-      objectReference: {fileID: 11400000, guid: 6e01e9fe69ee5cb42bdf7a1553e939ba, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
---- !u!4 &776029388 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
-  m_PrefabInstance: {fileID: 776029387}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+--- !u!1 &29230928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6656160772315180802, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+  m_PrefabInstance: {fileID: 1569445098}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &277401064 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6786733609769656331, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+  m_PrefabInstance: {fileID: 1569445098}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1018674717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3082459267581247369, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+  m_PrefabInstance: {fileID: 1569445098}
+  m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
 --- !u!1 &1049075033
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,11 +252,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1110758996 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5769233441149415880, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-  m_PrefabInstance: {fileID: 4450040300053032030}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1116879290
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d76b537cce3044aa62540a3019ba1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1523680298}
+  player: {fileID: 1018674717}
 --- !u!114 &1116879295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,12 +403,36 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+--- !u!1001 &1569445098
+=======
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
+--- !u!114 &1329281459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 448117206760779025, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+  m_PrefabInstance: {fileID: 4450040300053032030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df0d7e3fdff18d64e8fef6c5f9fb4935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1523680298 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3082459267581247369, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
   m_PrefabInstance: {fileID: 4450040300053032030}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4450040300053032030
+--- !u!1001 &1535216194
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -463,6 +440,205 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2563368659214068315, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013697190726950735, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+--- !u!1001 &4450040300053032030
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+<<<<<<< HEAD
+    - target: {fileID: 2563368659214068315, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013697190726950735, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+--- !u!1001 &4450040300053032030
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+<<<<<<< HEAD
+    - target: {fileID: 2563368659214068315, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013697190726950735, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+--- !u!1001 &4450040300053032030
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+<<<<<<< HEAD
+    - target: {fileID: 726236236749743304, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: attcHitbox
+      value: 
+      objectReference: {fileID: 277401064}
+    - target: {fileID: 841711952216082974, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+=======
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
     - target: {fileID: 448117206760779025, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: weapon
       value: 
@@ -516,13 +692,59 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2767191771685661168, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600552260200856247, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_InitialEventNameOverriden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600552260200856247, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600552260200856247, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Name
+      value: slash life time
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600552260200856247, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600552260200856247, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Overridden
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3082459267581247369, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_Name
       value: PlayerCaps
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    - target: {fileID: 3824486503609017436, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 06c729fdacd0b9a49a42183f0a0bf082, type: 2}
+    - target: {fileID: 3824486503609017436, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7cb9d766e7339a340a4672e66bdbe07d, type: 2}
+    - target: {fileID: 3824486503609017436, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 689d01be1b9552d4b868ec0f7f7ae442, type: 2}
+    - target: {fileID: 5233275402485369687, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233275402485369687, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+=======
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
     - target: {fileID: 3100957382819915146, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: player
       value: 
@@ -530,7 +752,7 @@ PrefabInstance:
     - target: {fileID: 3100957382819915146, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: weaponController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1329281459}
     - target: {fileID: 3100957382819915146, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: floatingTextPrefab
       value: 
@@ -538,11 +760,22 @@ PrefabInstance:
     - target: {fileID: 3147966590235942965, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 7e7fa00dd559b1346848f17f5e34db3c, type: 2}
+      objectReference: {fileID: 9100000, guid: 641dd82bb15376b439986d53b0c8b3c7, type: 2}
     - target: {fileID: 4335091427055777845, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
       propertyPath: m_LocalPosition.y
+      value: -0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490992159877298444, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+    - target: {fileID: 7888201354188527400, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: Weapon
+      value: 
+      objectReference: {fileID: 29230928}
+=======
     - target: {fileID: 5070016024077139606, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.000000023841858
@@ -603,6 +836,13 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
     - target: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -643,13 +883,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 6656160772315180802, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5769233441149415880, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 776029388}
+    - target: {fileID: 9170238739665784607, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2600552260200856247, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+    - {fileID: 6490992159877298444, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
 --- !u!1660057539 &9223372036854775807
@@ -657,5 +899,17 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1116879293}
-  - {fileID: 4450040300053032030}
+  - {fileID: 1569445098}
   - {fileID: 1049075037}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  - {fileID: 1535216194}
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+  - {fileID: 1535216194}
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+  - {fileID: 1535216194}
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)

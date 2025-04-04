@@ -24,15 +24,56 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2233568994793486216}
   serializedVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+=======
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
+=======
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 478684242941519599}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &85033708593496324
+=======
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
+  - {fileID: 2423786541133667147}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2749936275583171744
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -40,6 +81,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4697571407667284167}
     m_Modifications:
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: -8679921383154817045, guid: ceaa389efac58f34f96ccd5123ea5b8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -81,6 +126,64 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ceaa389efac58f34f96ccd5123ea5b8d, type: 3}
+=======
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
+    - target: {fileID: -8679921383154817045, guid: 21d7c6751753b8941854c20a7fa598e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21d7c6751753b8941854c20a7fa598e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21d7c6751753b8941854c20a7fa598e5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21d7c6751753b8941854c20a7fa598e5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21d7c6751753b8941854c20a7fa598e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21d7c6751753b8941854c20a7fa598e5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21d7c6751753b8941854c20a7fa598e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21d7c6751753b8941854c20a7fa598e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21d7c6751753b8941854c20a7fa598e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21d7c6751753b8941854c20a7fa598e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 21d7c6751753b8941854c20a7fa598e5, type: 3}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
       propertyPath: m_Name
       value: dagger
       objectReference: {fileID: 0}
@@ -88,9 +191,35 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   m_SourcePrefab: {fileID: 100100000, guid: ceaa389efac58f34f96ccd5123ea5b8d, type: 3}
 --- !u!4 &478684242941519599 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ceaa389efac58f34f96ccd5123ea5b8d, type: 3}
   m_PrefabInstance: {fileID: 85033708593496324}
+=======
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
+  m_SourcePrefab: {fileID: 100100000, guid: 21d7c6751753b8941854c20a7fa598e5, type: 3}
+--- !u!4 &2423786541133667147 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 21d7c6751753b8941854c20a7fa598e5, type: 3}
+  m_PrefabInstance: {fileID: 2749936275583171744}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
+=======
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_PrefabAsset: {fileID: 0}

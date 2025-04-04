@@ -10,6 +10,7 @@ public class LevelMenu : MonoBehaviour
     public CinemachineCamera vcam1; // Assign vcam1 in the inspector
 
     private string[] levelNames = { "C-level-Work", "C-Workspace", "J-Workspace" };
+
     private bool isVcam1Active = false;
 
     private void Awake()
