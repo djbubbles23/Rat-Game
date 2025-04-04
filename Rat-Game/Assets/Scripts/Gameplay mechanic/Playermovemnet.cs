@@ -98,7 +98,6 @@ public class PlayerMovement : MonoBehaviour
     {
         canAttack = false;
         playerAnim.SetTrigger("isAttacking");
-        atc.Play();
         StartCoroutine(ActivateAttackHb());
     }
 
@@ -106,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
     {
         attackHitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f); // Duration of the attack hitbox
+        atc.Play();
         attackHitbox.SetActive(false);
         yield return new WaitForSeconds(0.5f); // Wait for the attack animation to finish
         playerAnim.ResetTrigger("isAttacking");
