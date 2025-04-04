@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,42 +5,33 @@ using UnityEngine.VFX;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;            //Movement speed
-    public float jumpForce = 7f;            //Jump strength
-    public GameObject attackHitbox;         //object that represents player attack hitbox
-    private Rigidbody rb;                   //Rigidbody of the player gameobject
-    private VisualEffect atc;               //VisualEffect component that creates the player's attacks
-    private Vector3 movement;               //movement vector based on player inputs
-    private bool isGrounded;                //state flag that the player is on the ground
-    private bool idle;                      //state flag that the player is not moving
-    private bool jumpInput;                 //state flag that the player has pressed the jump button
-    
-    private bool attackInput;               //state flag that the player has pressed the attack button
-    private bool canAttack = true;          //state flag of weather or not the player can attack
-    public float attackDelay = 1f;          //delay between attacks in seconds
-    private float attackCounter;            //counted progress of the delay between attacks in seconds
-    private int facing;                     //state holder for the direction the player is facing
+    public float moveSpeed = 5f;            // Movement speed
+    public float jumpForce = 7f;           // Jump strength
+    public GameObject attackHitbox;        // Object that represents player attack hitbox
+    private Rigidbody rb;                  // Rigidbody of the player gameobject
+    private VisualEffect atc;              // VisualEffect component for player's attacks
+    private Vector3 movement;              // Movement vector based on player inputs
+    private bool isGrounded;               // State flag for whether the player is on the ground
+    private bool jumpInput;                // State flag for jump input
+    private bool attackInput;              // State flag for attack input
+    private bool canAttack = true;         // State flag for whether the player can attack
+    public float attackDelay = 1f;         // Delay between attacks in seconds
+    private float attackCounter;           // Counter for attack delay
+    private int facing;                    // Direction the player is facing
 
     public GameObject Weapon;
 
-    //Animation State Machine
-    Animator playerAnim;
+    // Animation State Machine
+    private Animator playerAnim;
+
+    private enum Direction
+    {
+        North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest
+    }
 
     public void Awake()
     {
         playerAnim = GetComponent<Animator>();
-    }
-
-    private enum Direction                  //Enum for the direction the player is facing
-    {
-        North, //Facing the +X direction (Right on the Camera)
-        NorthEast,
-        East, //Facing the +Z direction (Away From the Camera)
-        SouthEast,
-        South, //Facing the -X direction (Left on the Camera)
-        SouthWest,
-        West, //Facing the -Z direction (Towards the Camera)
-        NorthWest
     }
 
     void Start()
@@ -50,75 +40,31 @@ public class PlayerMovement : MonoBehaviour
         atc = gameObject.GetComponentInChildren<VisualEffect>();
     }
 
-void Update()
-{
-    CheckInputs();
+    void Update()
+    {
+        CheckInputs();
 
-    if (jumpInput && isGrounded)
-    {
-        Jump();
-    }
-    if (attackInput && canAttack && movement == Vector3.zero) {
-        Attack();
-    }
-    else if (!canAttack) {
-        attackCounter += Time.fixedDeltaTime;
-    }
-    // Prevent attacking while moving
-    if (attackInput && canAttack && movement == Vector3.zero)
-    {
-        Attack();
-    }
-    else if (!canAttack)
-    {
-        attackCounter += Time.fixedDeltaTime;
-
-        if (attackCounter >= attackDelay)
+        if (jumpInput && isGrounded)
         {
-<<<<<<< HEAD
-            canAttack = true;
-            attackCounter = 0;
-=======
             Jump();
         }
-        if (attackInput && canAttack) {
+
+        if (attackInput && canAttack && movement == Vector3.zero)
+        {
             Attack();
         }
-        else if (!canAttack) {
-            attackCounter += Time.fixedDeltaTime;
-
-            if (attackCounter >= attackDelay) {
+        else if (!canAttack)
+        {
+            attackCounter += Time.deltaTime;
+            if (attackCounter >= attackDelay)
+            {
                 canAttack = true;
                 attackCounter = 0;
             }
-        } 
-
-        Vector3 movementDirection = new Vector3(movement.x, 0, movement.z);
-        float magniture =  Mathf.Clamp01(movementDirection.magnitude)*moveSpeed;
-        movementDirection.Normalize();
-        if(movementDirection.magnitude > 0)
-        {
-            playerAnim.SetBool("isMoving", true);
         }
-        else
-        {
-            playerAnim.SetBool("isMoving", false);
->>>>>>> parent of 3bd4330 (Basic Animation)
-        }
-    }
 
-    Vector3 movementDirection = new Vector3(movement.x, 0, movement.z);
-    float magniture = Mathf.Clamp01(movementDirection.magnitude) * moveSpeed;
-    movementDirection.Normalize();
-    if (movementDirection.magnitude > 0)
-    {
-        playerAnim.SetBool("isMoving", true);
+        HandleMovementAnimations();
     }
-    else
-    {
-        playerAnim.SetBool("isMoving", false);
-    }
-}
 
     void FixedUpdate()
     {
@@ -127,12 +73,12 @@ void Update()
         RotatePlayer();
     }
 
-    void CheckInputs() {
+    void CheckInputs()
+    {
         movement.x = Input.GetAxis("Horizontal");
         movement.z = Input.GetAxis("Vertical");
         jumpInput = Input.GetButtonDown("Jump");
         attackInput = Input.GetButtonDown("Fire1");
-
     }
 
     void MovePlayer()
@@ -143,125 +89,115 @@ void Update()
 
     void Jump()
     {
+        playerAnim.SetTrigger("isJumping");
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         isGrounded = false;
     }
 
     void Attack()
     {
-
         canAttack = false;
+        playerAnim.SetTrigger("isAttacking");
         atc.Play();
-        
-        // handle attacking enemy
         StartCoroutine(ActivateAttackHb());
-
     }
 
     IEnumerator ActivateAttackHb()
     {
-        Debug.Log("Attacking t");
-        playerAnim.SetTrigger("isAttacking");
-        // activate attack hitbox for 0.1 seconds
         attackHitbox.SetActive(true);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.2f); // Duration of the attack hitbox
         attackHitbox.SetActive(false);
-<<<<<<< HEAD
-
-=======
-        Debug.Log("Attacking f");
+        yield return new WaitForSeconds(0.5f); // Wait for the attack animation to finish
         playerAnim.ResetTrigger("isAttacking");
->>>>>>> parent of 3bd4330 (Basic Animation)
     }
 
-    void DirectionCheck() { //Direction State Machine
-        if (movement.x == 0 && movement.z == 0) {
-            idle = true;
+    void HandleMovementAnimations()
+    {
+        Vector3 movementDirection = new Vector3(movement.x, 0, movement.z);
+        float magnitude = Mathf.Clamp01(movementDirection.magnitude) * moveSpeed;
+        movementDirection.Normalize();
+
+        if (magnitude > 0)
+        {
+            playerAnim.SetBool("isMoving", true);
         }
-        else {
-            idle = false;
-            if (movement.x > 0) { //North
-                if (movement.z > 0) {
-                    facing = (int) Direction.NorthEast;
-                }
-                else if (movement.z < 0) {
-                    facing = (int) Direction.NorthWest;
-                }
-                else
-                {
-                    facing = (int) Direction.North;
-                }
-            }
-            else if (movement.x < 0) { //South
-                if (movement.z > 0) {
-                    facing = (int) Direction.SouthEast;
-                }
-                else if (movement.z < 0) {
-                    facing = (int) Direction.SouthWest;
-                }
-                else {
-                    facing = (int) Direction.South;
-                }
-            }
-            else { //East-West
-                if (movement.z > 0) {
-                    facing = (int) Direction.East;
-                }
-                else if (movement.z < 0) {
-                    facing = (int) Direction.West;
-                }
-                else {
-                    idle = true;
-                    Debug.Log("Fix Your Damn Code: Direction State Machine Reached Illegal Location");
-                }
-            }
+        else
+        {
+            playerAnim.SetBool("isMoving", false);
         }
-        
     }
 
-    void RotatePlayer() {
-        //Quaternion playerRot = transform.rotation;
-        Vector3 playerRot = new Vector3(0,0,0);
-        //Debug.Log("Facing Read: " + facing);
-        switch (facing) {
-            case 0: //North
+    void DirectionCheck()
+    {
+        if (movement.x == 0 && movement.z == 0)
+        {
+            return; // No movement, no need to update direction
+        }
+
+        if (movement.x > 0) // North
+        {
+            if (movement.z > 0)
+                facing = (int)Direction.NorthEast;
+            else if (movement.z < 0)
+                facing = (int)Direction.NorthWest;
+            else
+                facing = (int)Direction.North;
+        }
+        else if (movement.x < 0) // South
+        {
+            if (movement.z > 0)
+                facing = (int)Direction.SouthEast;
+            else if (movement.z < 0)
+                facing = (int)Direction.SouthWest;
+            else
+                facing = (int)Direction.South;
+        }
+        else // East-West
+        {
+            if (movement.z > 0)
+                facing = (int)Direction.East;
+            else if (movement.z < 0)
+                facing = (int)Direction.West;
+        }
+    }
+
+    void RotatePlayer()
+    {
+        Vector3 playerRot = Vector3.zero;
+
+        switch (facing)
+        {
+            case (int)Direction.North:
                 playerRot.z = 1f;
                 break;
-
-            case 1:
+            case (int)Direction.NorthEast:
                 playerRot.x = -1f;
                 playerRot.z = 1f;
                 break;
-
-            case 2:
+            case (int)Direction.East:
                 playerRot.x = -1f;
                 break;
-
-            case 3:
+            case (int)Direction.SouthEast:
                 playerRot.x = -1f;
                 playerRot.z = -1f;
                 break;
-
-            case 4:
+            case (int)Direction.South:
                 playerRot.z = -1f;
                 break;
-
-            case 5:
+            case (int)Direction.SouthWest:
                 playerRot.x = 1f;
-                playerRot.z = -1f;                
+                playerRot.z = -1f;
                 break;
-
-            case 6:
+            case (int)Direction.West:
                 playerRot.x = 1f;
                 break;
-
-            case 7:
+            case (int)Direction.NorthWest:
                 playerRot.x = 1f;
                 playerRot.z = 1f;
                 break;
         }
+
         transform.LookAt(transform.position + playerRot);
-        
     }
 
     void OnCollisionEnter(Collision collision)
