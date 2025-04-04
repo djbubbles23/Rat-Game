@@ -62,15 +62,9 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
 <<<<<<< HEAD
-<<<<<<< HEAD
   - {fileID: -9192389277068315037}
   - {fileID: 258792254146897031}
   - {fileID: -4209995217071926000}
-=======
-  - {fileID: 3009078668792262080}
-  - {fileID: 4883768831082141029}
-  - {fileID: -4609278937042982417}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
 =======
   - {fileID: 3009078668792262080}
   - {fileID: 4883768831082141029}
@@ -92,11 +86,8 @@ AnimatorState:
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1101 &-8023699395987279276
 =======
-=======
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
 --- !u!1101 &-7390647639524904122
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -270,62 +261,6 @@ AnimatorStateMachine:
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -9014683350340567965}
 --- !u!1101 &2181179612027592023
-<<<<<<< HEAD
-=======
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: isDead
-    m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -150888120944435091}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.040266313
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 1
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
---- !u!1102 &2594326214313200415
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: SwordAndSlash
-  m_Speed: 3
-  m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: -7390647639524904122}
-  - {fileID: -3979898558562531008}
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 362a418c0df02d847ba02ddee71756b4, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1101 &3009078668792262080
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -451,7 +386,6 @@ AnimatorStateTransition:
   m_IsExit: 0
   serializedVersion: 3
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_TransitionDuration: 0.04160732
   m_TransitionOffset: 0
   m_ExitTime: 0.93413085
@@ -482,15 +416,10 @@ AnimatorStateTransition:
   m_ExitTime: 0.02775009
   m_HasExitTime: 1
 =======
-=======
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_TransitionDuration: 0.030000031
   m_TransitionOffset: 0.11525386
   m_ExitTime: 0.923149
   m_HasExitTime: 0
-<<<<<<< HEAD
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
 >>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_HasFixedDuration: 1
   m_InterruptionSource: 1
@@ -534,9 +463,6 @@ AnimatorState:
 =======
   - {fileID: 6640419389714968504}
   - {fileID: 2181179612027592023}
-<<<<<<< HEAD
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
 >>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
@@ -548,11 +474,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_Motion: {fileID: 7400000, guid: 071733e8eab3f0748b97ab0ec497441f, type: 2}
-=======
-  m_Motion: {fileID: 7400000, guid: b5e541c7cf71ecd409cf7d9ffe8872a0, type: 2}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
 =======
   m_Motion: {fileID: 7400000, guid: b5e541c7cf71ecd409cf7d9ffe8872a0, type: 2}
 >>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
@@ -561,7 +483,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
-<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1101 &-4209995217071926000
 AnimatorStateTransition:
@@ -817,7 +738,5 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
-=======
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
 =======
 >>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)

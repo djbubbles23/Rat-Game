@@ -52,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
 void Update()
 {
     CheckInputs();
-<<<<<<< HEAD
 
     if (jumpInput && isGrounded)
     {
@@ -70,31 +69,10 @@ void Update()
         else if (!canAttack) {
             attackCounter += Time.fixedDeltaTime;
 =======
-=======
-
-    if (jumpInput && isGrounded)
-    {
-        Jump();
-    }
-
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
     // Prevent attacking while moving
     if (attackInput && canAttack && movement == Vector3.zero)
     {
         Attack();
-<<<<<<< HEAD
-=======
-    }
-    else if (!canAttack)
-    {
-        attackCounter += Time.fixedDeltaTime;
-
-        if (attackCounter >= attackDelay)
-        {
-            canAttack = true;
-            attackCounter = 0;
-        }
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
     }
     else if (!canAttack)
     {
@@ -108,19 +86,6 @@ void Update()
         }
 
     }
-
-    Vector3 movementDirection = new Vector3(movement.x, 0, movement.z);
-    float magniture = Mathf.Clamp01(movementDirection.magnitude) * moveSpeed;
-    movementDirection.Normalize();
-    if (movementDirection.magnitude > 0)
-    {
-        playerAnim.SetBool("isMoving", true);
-    }
-    else
-    {
-        playerAnim.SetBool("isMoving", false);
-    }
-}
 
     Vector3 movementDirection = new Vector3(movement.x, 0, movement.z);
     float magniture = Mathf.Clamp01(movementDirection.magnitude) * moveSpeed;
@@ -174,14 +139,11 @@ void Update()
     IEnumerator ActivateAttackHb()
     {
 <<<<<<< HEAD
-<<<<<<< HEAD
         atc.Play();
         attackHitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         attackHitbox.SetActive(false);
 =======
-=======
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
         //Debug.Log("Attacking t");
         playerAnim.SetBool("Attack1", true);
         // activate attack hitbox for 0.1 seconds
