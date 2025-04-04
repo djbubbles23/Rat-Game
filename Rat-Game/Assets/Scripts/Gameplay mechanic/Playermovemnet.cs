@@ -57,18 +57,12 @@ void Update()
     {
         Jump();
     }
-
-<<<<<<< HEAD
-        if (jumpInput && isGrounded)
-        {
-            Jump();
-        }
-        if (attackInput && canAttack && movement == Vector3.zero) {
-            Attack();
-        }
-        else if (!canAttack) {
-            attackCounter += Time.fixedDeltaTime;
-=======
+    if (attackInput && canAttack && movement == Vector3.zero) {
+        Attack();
+    }
+    else if (!canAttack) {
+        attackCounter += Time.fixedDeltaTime;
+    }
     // Prevent attacking while moving
     if (attackInput && canAttack && movement == Vector3.zero)
     {
@@ -77,7 +71,6 @@ void Update()
     else if (!canAttack)
     {
         attackCounter += Time.fixedDeltaTime;
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
 
         if (attackCounter >= attackDelay)
         {
@@ -138,21 +131,11 @@ void Update()
 
     IEnumerator ActivateAttackHb()
     {
-<<<<<<< HEAD
         atc.Play();
         attackHitbox.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         attackHitbox.SetActive(false);
-=======
-        //Debug.Log("Attacking t");
-        playerAnim.SetBool("Attack1", true);
-        // activate attack hitbox for 0.1 seconds
-        attackHitbox.SetActive(true);
-        yield return new WaitForSeconds(0.2f);
-        attackHitbox.SetActive(false);
-        //Debug.Log("Attacking f");
-        playerAnim.SetBool("Attack1", false);
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
+
     }
 
     void DirectionCheck() { //Direction State Machine
