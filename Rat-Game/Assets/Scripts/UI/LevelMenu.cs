@@ -10,7 +10,11 @@ public class LevelMenu : MonoBehaviour
     public CinemachineCamera vcam1; // Assign vcam1 in the inspector
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     private string[] levelNames = { "C-level-Work", "C-Workspace", "J-Workspace" };
+=======
+    private string[] levelNames = { "A-Workspace", "C-Workspace", "J-Workspace" };
+>>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
 =======
     private string[] levelNames = { "A-Workspace", "C-Workspace", "J-Workspace" };
 >>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
