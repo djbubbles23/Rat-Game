@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &455285486 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9170238739665784607, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
-  m_PrefabInstance: {fileID: 4450040300053032030}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &526442583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -349,8 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatingTextPrefab: {fileID: 6489115522640370829, guid: 4f7c9025bd6c9d84781c4e6650e42dd4, type: 3}
-  Victim: {fileID: 566949425}
-  attcHitbox: {fileID: 455285486}
+  attcHitbox: {fileID: 0}
   popupText: 5
 --- !u!1 &1049075033
 GameObject:
@@ -366,7 +360,7 @@ GameObject:
   - component: {fileID: 1049075034}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
