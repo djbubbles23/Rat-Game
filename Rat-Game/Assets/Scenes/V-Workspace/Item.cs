@@ -15,7 +15,8 @@ public class Item : MonoBehaviour
     private InventoryManager inventoryManager;
     void Start()
     {
-        inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+        inventoryManager = GameObject.FindGameObjectWithTag("InventoryManager").GetComponent<InventoryManager>();
+
     }
 
     private void OnCollisionEnter(Collision collision)
