@@ -39,7 +39,7 @@ public class CameraSwitcher : MonoBehaviour
 
     IEnumerator AutoSwitchToSecondCamera()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
         SwitchToCamera(1); // VCam2
     }
 
