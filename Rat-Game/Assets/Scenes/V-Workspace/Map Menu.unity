@@ -281,23 +281,7 @@ Transform:
   m_GameObject: {fileID: 33459539}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_LocalPosition: {x: -986.9, y: -527.2, z: 327.7891}
-=======
-  m_LocalPosition: {x: -897.9435, y: -608.39594, z: 327.7891}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
-  m_LocalPosition: {x: -897.9435, y: -608.39594, z: 327.7891}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_LocalPosition: {x: -897.9435, y: -608.39594, z: 327.7891}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_LocalPosition: {x: -897.9435, y: -608.39594, z: 327.7891}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_LocalScale: {x: 0.9074074, y: 0.9074074, z: 0.9074074}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -706,23 +690,7 @@ Transform:
   m_GameObject: {fileID: 116871694}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_LocalPosition: {x: 960, y: 490, z: -998.5802}
-=======
-  m_LocalPosition: {x: 960, y: 490, z: -851.14813}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
-  m_LocalPosition: {x: 960, y: 490, z: -851.14813}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_LocalPosition: {x: 960, y: 490, z: -851.14813}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_LocalPosition: {x: 960, y: 490, z: -851.14813}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -830,23 +798,7 @@ Transform:
   m_GameObject: {fileID: 354039937}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_LocalPosition: {x: -1010, y: 108.4, z: 327.7891}
-=======
-  m_LocalPosition: {x: -897.9435, y: 6, z: 327.7891}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
-  m_LocalPosition: {x: -897.9435, y: 6, z: 327.7891}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_LocalPosition: {x: -897.9435, y: 6, z: 327.7891}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_LocalPosition: {x: -897.9435, y: 6, z: 327.7891}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_LocalScale: {x: 0.9074074, y: 0.9074074, z: 0.9074074}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -895,6 +847,111 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!1001 &354920029
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753471805486997571, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363192907930961389, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_Name
+      value: Crossfade transition
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363192907930961389, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086832405079331709, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
 --- !u!1 &381931737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1188,7 @@ RectTransform:
   - {fileID: 999565237}
   - {fileID: 2078898612}
   - {fileID: 2057513187}
-  - {fileID: 2058833939}
+  - {fileID: 2097388637}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1156,7 +1213,7 @@ MonoBehaviour:
   - {fileID: 2078898613}
   - {fileID: 2057513188}
   levelUnlockMapping: 000000000100000002000000
-  vcam1: {fileID: 0}
+  vcam1: {fileID: 2006134446}
 --- !u!1 &577976549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,6 +1227,7 @@ GameObject:
   - component: {fileID: 577976551}
   - component: {fileID: 577976550}
   - component: {fileID: 577976554}
+  - component: {fileID: 577976555}
   m_Layer: 5
   m_Name: Camera Controls
   m_TagString: Untagged
@@ -1255,6 +1313,7 @@ RectTransform:
   - {fileID: 1133584834}
   - {fileID: 759985909}
   - {fileID: 2018213692}
+  - {fileID: 1296447876}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1274,13 +1333,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a604b6145724294197e97eff66e0eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameras:
+--- !u!114 &577976555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577976549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43d058b32c7a254481b2745f146f571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualCameras:
   - {fileID: 2006134446}
   - {fileID: 33459541}
   - {fileID: 1350495625}
   - {fileID: 354039939}
   nextButton: {fileID: 2018213693}
-  prevButton: {fileID: 759985910}
+  previousButton: {fileID: 759985910}
+  mainMenuButton: {fileID: 1133584836}
+--- !u!1001 &601299791
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 577976553}
+    m_Modifications:
+    - target: {fileID: 514733118836996873, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_Name
+      value: Click sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -121.83493
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 74.28302
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -614.6745
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
 --- !u!1 &759985908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,7 +1492,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 759985911}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1296447874}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &759985911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1574,23 +1715,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_AnchoredPosition: {x: -156.81, y: -274.9}
-=======
-  m_AnchoredPosition: {x: -18.54, y: -332}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
-  m_AnchoredPosition: {x: -18.54, y: -332}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_AnchoredPosition: {x: -18.54, y: -332}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_AnchoredPosition: {x: -18.54, y: -332}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_SizeDelta: {x: 91.4, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &999565238
@@ -1649,7 +1774,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2058833940}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -1843,7 +1968,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2058833940}
+      - m_Target: {fileID: 1296447874}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -1893,6 +2018,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133584833}
   m_CullTransparentMesh: 1
+--- !u!82 &1296447874 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6488789532041889736, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+  m_PrefabInstance: {fileID: 601299791}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1296447876 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+  m_PrefabInstance: {fileID: 601299791}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1350495623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,23 +2054,7 @@ Transform:
   m_GameObject: {fileID: 1350495623}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_LocalPosition: {x: -988.3, y: -320, z: 327.7891}
-=======
-  m_LocalPosition: {x: -897.9435, y: -320, z: 327.7891}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
-  m_LocalPosition: {x: -897.9435, y: -320, z: 327.7891}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_LocalPosition: {x: -897.9435, y: -320, z: 327.7891}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_LocalPosition: {x: -897.9435, y: -320, z: 327.7891}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_LocalScale: {x: 0.9074074, y: 0.9074074, z: 0.9074074}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2147,23 +2266,7 @@ RectTransform:
   m_GameObject: {fileID: 1603226045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_LocalScale: {x: 1.26, y: 1.26, z: 1.26}
-=======
-  m_LocalScale: {x: 10.82, y: 10.82, z: 10.82}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
-  m_LocalScale: {x: 10.82, y: 10.82, z: 10.82}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_LocalScale: {x: 10.82, y: 10.82, z: 10.82}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_LocalScale: {x: 10.82, y: 10.82, z: 10.82}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 516775182}
@@ -2171,23 +2274,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_SizeDelta: {x: 1920, y: 1080}
-=======
-  m_SizeDelta: {x: 100, y: 100}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
-  m_SizeDelta: {x: 100, y: 100}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_SizeDelta: {x: 100, y: 100}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_SizeDelta: {x: 100, y: 100}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1603226047
 MonoBehaviour:
@@ -2202,46 +2289,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_Color: {r: 0.8207547, g: 0.8207547, b: 0.7607843, a: 1}
-=======
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_Sprite: {fileID: 21300000, guid: e0266d47e662f4641ba0fa10de8acbd9, type: 3}
-=======
-  m_Sprite: {fileID: 21300000, guid: 8f8b11bdd9835b048ab9dfe55648e299, type: 3}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
-  m_Sprite: {fileID: 21300000, guid: 8f8b11bdd9835b048ab9dfe55648e299, type: 3}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_Sprite: {fileID: 21300000, guid: 8f8b11bdd9835b048ab9dfe55648e299, type: 3}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_Sprite: {fileID: 21300000, guid: 8f8b11bdd9835b048ab9dfe55648e299, type: 3}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2338,6 +2393,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1833954113
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 516775182}
+    m_Modifications:
+    - target: {fileID: 514733118836996873, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_Name
+      value: Click sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -121.83493
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 74.28302
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -614.6745
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
 --- !u!1 &1872467742
 GameObject:
   m_ObjectHideFlags: 0
@@ -2364,23 +2476,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872467742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: 914}
-=======
-  m_LocalPosition: {x: 0, y: 0, z: 0}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
-  m_LocalPosition: {x: 0, y: 0, z: 0}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_LocalPosition: {x: 0, y: 0, z: 0}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_LocalPosition: {x: 0, y: 0, z: 0}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_LocalScale: {x: 100, y: 64.545456, z: 5.050505}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2498,23 +2594,7 @@ Transform:
   m_GameObject: {fileID: 2006134445}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_LocalPosition: {x: -897.9435, y: -286.2663, z: -412.18}
-=======
-  m_LocalPosition: {x: -897.9435, y: -286.2663, z: -264.74792}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
-  m_LocalPosition: {x: -897.9435, y: -286.2663, z: -264.74792}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_LocalPosition: {x: -897.9435, y: -286.2663, z: -264.74792}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_LocalPosition: {x: -897.9435, y: -286.2663, z: -264.74792}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_LocalScale: {x: 0.9074074, y: 0.9074074, z: 0.9074074}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2602,7 +2682,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2018213694}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1296447874}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2018213694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2677,23 +2769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_AnchoredPosition: {x: -183.1, y: 417.8}
-=======
-  m_AnchoredPosition: {x: 28.3, y: 303}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
-  m_AnchoredPosition: {x: 28.3, y: 303}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_AnchoredPosition: {x: 28.3, y: 303}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_AnchoredPosition: {x: 28.3, y: 303}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_SizeDelta: {x: 91.4, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057513188
@@ -2752,7 +2828,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2058833940}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -2802,149 +2878,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057513186}
   m_CullTransparentMesh: 1
---- !u!1 &2058833938
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2058833939}
-  - component: {fileID: 2058833940}
-  - component: {fileID: 2058833941}
-  m_Layer: 0
-  m_Name: Click sound
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2058833939
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058833938}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -121.83493, y: 74.28302, z: -614.6745}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 516775182}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &2058833940
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058833938}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 61bace84eaeefcf4db300094c520bc3b, type: 3}
-  m_Resource: {fileID: 8300000, guid: 61bace84eaeefcf4db300094c520bc3b, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.5
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &2058833941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058833938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0639ac53f287a74a849146c2b74bc6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VolumeSlider: {fileID: 0}
 --- !u!1 &2078898611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2981,23 +2914,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   m_AnchoredPosition: {x: -6.9, y: -47}
-=======
-  m_AnchoredPosition: {x: -16.6, y: -28}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
-  m_AnchoredPosition: {x: -16.6, y: -28}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_AnchoredPosition: {x: -16.6, y: -28}
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
-  m_AnchoredPosition: {x: -16.6, y: -28}
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
   m_SizeDelta: {x: 91.4, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2078898613
@@ -3056,7 +2973,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2058833940}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -3106,132 +3023,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078898611}
   m_CullTransparentMesh: 1
---- !u!1001 &5651579752738060547
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    - target: {fileID: 1204101584249782758, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
-=======
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-=======
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
->>>>>>> parent of 1fdb671 (Revert "Merge branch 'main' into jacob-enemy")
-=======
->>>>>>> parent of 290f4b8 (Merge pull request #10 from djbubbles23/jacob-enemy)
-    - target: {fileID: 2639417008994400595, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_Name
-      value: Crossfade
-      objectReference: {fileID: 0}
-    - target: {fileID: 2639417008994400595, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3378001170257052436, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552299286611024674, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b69cedd5ccaaad34499535d44a6cf0f3, type: 3}
+--- !u!4 &2097388637 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3131438811176929105, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
+  m_PrefabInstance: {fileID: 1833954113}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 5651579752738060547}
+  - {fileID: 354920029}
   - {fileID: 116871697}
   - {fileID: 1684002367}
   - {fileID: 516775182}
