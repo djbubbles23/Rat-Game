@@ -2,12 +2,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using Unity.VisualScripting;
-
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
-    //ITEM DATA//
+    // ITEM DATA
     public string itemName;
     public int quantity;
     public Sprite itemSprite;
@@ -15,40 +13,51 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public string itemDescription;
     public Sprite emptySprite;
 
-    //ITEM SLOT//
+    // ITEM SLOT UI ELEMENTS
     [SerializeField]
     private TMP_Text quantityText;
 
     [SerializeField]
     private Image itemImage;
 
-    //ITEM DESCRIPTION SLOT//
+    // ITEM DESCRIPTION UI ELEMENTS
     public Image itemDescriptionImage;
     public TMP_Text itemDescriptionNameText;
     public TMP_Text itemDescriptionText;
-
-
-
 
     public GameObject selectedShalder;
     public bool thisItemSelected;
 
     private InventoryManager inventoryManager;
-    public EquippedSlot[] equippedSlots;
+    private EquippedSlot[] equippedSlots;
 
     private void Start()
     {
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
-        //equippedSlots = GameObject.Find("EquippedSlots").GetComponent<EquippedSlot[]>();
+        equippedSlots = GameObject.Find("EquippedSlots").GetComponentsInChildren<EquippedSlot>(); // Adjust this based on how you structure your scene
     }
 
-
-    public void AddItem(string itemName, int quanity, Sprite itemSprite, string itemDesciption)
+    // Method to add an item to the slot
+    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
         this.itemName = itemName;
-        this.quantity = quanity;    
+        this.quantity = quantity;
         this.itemSprite = itemSprite;
-        this.itemDescription = itemDesciption;
+        this.itemDescription = itemDescription;
+        isFull = true;
+
+        // Update the UI with the item's data
+        quantityText.text = quantity.ToString();
+        quantityText.enabled = true;
+        itemImage.sprite = itemSprite;
+    }
+
+    public void AddItemToInventory(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    {
+        this.itemName = itemName;
+        this.quantity = quantity;
+        this.itemSprite = itemSprite;
+        this.itemDescription = itemDescription;
         isFull = true;
 
         quantityText.text = quantity.ToString();
@@ -56,9 +65,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         itemImage.sprite = itemSprite;
     }
 
+    // Handles the click event on the item slot
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(eventData.button == PointerEventData.InputButton.Left)
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
             OnLeftClick();
         }
@@ -68,6 +78,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    // Handle left click (display item details)
     public void OnLeftClick()
     {
         inventoryManager.DeselectAllSlotsAndEquipped();
@@ -76,33 +87,34 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         itemDescriptionNameText.text = itemName;
         itemDescriptionText.text = itemDescription;
         itemDescriptionImage.sprite = itemSprite;
-        if(itemDescriptionImage.sprite == null)
+        if (itemDescriptionImage.sprite == null)
             itemDescriptionImage.sprite = emptySprite;
     }
 
+    // Handle right click (transfer to equipped slot)
     public void OnRightClick()
     {
-        foreach (EquippedSlot slot in equippedSlots)
+        // Check for an empty equipped slot to place the item
+        for (int i = 0; i < equippedSlots.Length; i++)
         {
-            if (!slot.isFull)
+            if (!equippedSlots[i].isFull)
             {
-                slot.AddItem(itemName, itemSprite, itemDescription); // transfer data
+                equippedSlots[i].AddItem(itemName, quantity, itemSprite, itemDescription);
 
-                // Clear this slot
-                itemName = "";
-                itemDescription = "";
-                itemSprite = emptySprite;
-                isFull = false;
-
-                itemImage.sprite = emptySprite;
+                // Clear the item slot (empty the slot)
+                itemName = string.Empty;
                 quantity = 0;
-                quantityText.text = "";
-                quantityText.enabled = false;
+                itemSprite = null;
+                itemDescription = string.Empty;
 
-                Debug.Log("Item moved to equipped slot, original slot cleared.");
+                // Update the UI to reflect the empty slot
+                quantityText.enabled = false;
+                itemImage.sprite = emptySprite;
+
+                // Optionally, you can update other UI or trigger a message to show the item was equipped
+                Debug.Log($"Item '{itemName}' equipped to slot {i + 1}");
                 break;
             }
         }
     }
-
 }

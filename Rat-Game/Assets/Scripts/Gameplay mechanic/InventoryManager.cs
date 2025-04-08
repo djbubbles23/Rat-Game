@@ -62,4 +62,34 @@ public class InventoryManager : MonoBehaviour
         DeselectAllEquippedSlots();
     }
 
+    public void MoveItemBackToItemSlot(EquippedSlot equippedSlot)
+    {
+        // Find an empty Item Slot in the Item Slot array
+        for (int i = 0; i < itemSlot.Length; i++)
+        {
+            if (!itemSlot[i].isFull) // Find the first empty slot
+            {
+                itemSlot[i].AddItem(equippedSlot.itemName, equippedSlot.quantity, equippedSlot.itemSprite, equippedSlot.itemDescription);
+                equippedSlot.isFull = false;  // Mark equipped slot as empty
+                return;
+            }
+        }
+
+        Debug.Log("No empty item slot available.");
+    }
+
+    public ItemSlot GetFirstEmptyItemSlot()
+    {
+        foreach (ItemSlot slot in itemSlot) // assuming itemSlot is an array or list of ItemSlot
+        {
+            if (!slot.isFull)  // Checks if the slot is empty
+            {
+                return slot;
+            }
+        }
+
+        return null;  // No empty slot found
+    }
+
+
 }

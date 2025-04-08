@@ -378,13 +378,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
+  quantity: 0
   itemSprite: {fileID: 0}
-  itemDescription: 
-  emptySprite: {fileID: 21300000, guid: 42891d37ac8204440a18692d5535c15f, type: 3}
   isFull: 0
+  itemDescription: 
+  quantityText: {fileID: 1120481391287240754}
   itemImage: {fileID: 9185922165765383006}
+  itemDescriptionImage: {fileID: 0}
   itemDescriptionNameText: {fileID: 0}
   itemDescriptionText: {fileID: 0}
-  itemDescriptionImage: {fileID: 0}
+  emptySprite: {fileID: 21300000, guid: 42891d37ac8204440a18692d5535c15f, type: 3}
   selectedShalder: {fileID: 5756300538428807671}
   thisItemSelected: 0
