@@ -91,6 +91,8 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         itemDescriptionNameText.text = itemName;
         itemDescriptionText.text = itemDescription;
         itemDescriptionImage.sprite = itemSprite;
+        if (itemDescriptionImage.sprite == null)
+            itemDescriptionImage.sprite = emptySprite;
     }
 
     // Right click: Unequip the item (clear the slot and return it to the inventory)
