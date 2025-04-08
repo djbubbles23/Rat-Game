@@ -4,20 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.VFX;
+using Random = UnityEngine.Random;
 
 public class EnemyBehavior : MonoBehaviour
 {
-    public ParticleSystem bloodParticles;       // Blood particles that play when enemy is damaged
+    public GameObject bloodPrefab;              // Blood particles that play when enemy is damaged
+    public Transform bloodSpawnPoint;           // Where the blood should spawn from
     private VisualEffect atc;                   // VisualEffect component that creates the enemy's attacks
     public AudioClip takeDamageSound;           // sound to play when hurt
     
     public float maxHealth = 100f;              // Starting health of the enemy
     public float damage = 10f;                  // How powerful enemy's attack is
-    //public float knockback = 10f;               // How far back an enemy flies when hit
-    //public float upwardKnockback = 10f;         // How far up an enemy moves when hit
 
     public float attackDelay = 5.0f;            // time between attack
     public float attackLength = 0.2f;           // how long the attack hb is active
+    public float flashDuration = 2f;            // how long damage flash should last
 
     private Rigidbody rb;                       // Enemy rigidbody
     private Collider attackCollider;            // the attack hb attached to the swipe
@@ -28,16 +29,20 @@ public class EnemyBehavior : MonoBehaviour
     private bool canAttack;
 
     private PlayerStats playerScore;            // player object
+    public GameObject ratGeo;                   // rat geometry gameobject
+    private MeshRenderer renderer;
+    private Color originalColor;
 
 
     private void Start()
     {
         // initialize variables
-        rb = GetComponent<Rigidbody>();
         atc = gameObject.GetComponentInChildren<VisualEffect>();
         attackCollider = GetComponentInChildren<BoxCollider>();
         audioSource = GetComponent<AudioSource>();
         health = maxHealth;
+        renderer = ratGeo.GetComponent<MeshRenderer>();
+        originalColor = renderer.material.color;    
 
         // find the player object and get the PlayerStats component
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -90,16 +95,20 @@ public class EnemyBehavior : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        // make blood splatter;
-        Vector3 bloodPosition = transform.position;
-        bloodPosition.y -= 0.2f;    //lower blood to rat
-        ParticleSystem blood = Instantiate(bloodParticles, bloodPosition, Quaternion.identity);
-        blood.transform.SetParent(this.transform);
+        // create blood VFX
+        GameObject blood = Instantiate(bloodPrefab, bloodSpawnPoint.position, bloodSpawnPoint.rotation);
+        VisualEffect vfx = blood.GetComponentInChildren<VisualEffect>();
+        vfx.Play();
+        StartCoroutine(DestroyVFXAfterTime(blood, 2.0f));
+            
+        // flash rat red
+        StartCoroutine(DamageFlash(flashDuration));
         
         // handle health stats
         health -= damage;
         
         // play sfx
+        audioSource.pitch = Random.Range(0.8f, 2.0f);
         audioSource.PlayOneShot(takeDamageSound);
 
         if (health <= 0)
@@ -126,6 +135,13 @@ public class EnemyBehavior : MonoBehaviour
         attackCollider.enabled = false;
     }
     
+    IEnumerator DamageFlash(float duration)
+    {
+        renderer.material.color = Color.red;
+        yield return new WaitForSeconds(duration);
+        renderer.material.color = originalColor;
+    }
+    
     // damage player if attack connects
     private void OnTriggerEnter(Collider other)
     {
@@ -140,5 +156,12 @@ public class EnemyBehavior : MonoBehaviour
             //Vector3 knockbackDirection = other.transform.position - transform.position;
             //player.TakeKnockback(knockbackDirection);
         }
+    }
+    
+    // destory VFX effect i.e. blood
+    private IEnumerator DestroyVFXAfterTime(GameObject vfx, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(vfx);
     }
 }
