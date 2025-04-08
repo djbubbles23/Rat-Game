@@ -26,7 +26,8 @@ public class EnemyBehavior : MonoBehaviour
     
     private float health;                       // Current health
     private float attackTimer;                  // current time until next attack
-    private bool canAttack;
+    private bool canAttack = false;
+    private bool attacking = false;
 
     private PlayerStats playerScore;            // player object
     public GameObject ratGeo;                   // rat geometry gameobject
@@ -58,41 +59,41 @@ public class EnemyBehavior : MonoBehaviour
 
     public void Attack()
     {
-        if (canAttack)
+        StartCoroutine(DoAttack());
+    }
+
+    IEnumerator DoAttack()
+    {
+        if (!attacking)
+        {
+            attacking = true;
+            yield return new WaitForSeconds(attackDelay);
+            canAttack = true;
+        }
+        else if (canAttack == true)
         {
             canAttack = false;
+            attacking = false;
             atc.Play();
             
             // activate attack hitbox
             StartCoroutine(ActivateAttackCollider());
         }
-        
     }
-
-    private void Update()
+    
+    public void ResetAttack()
     {
-        // keep track of attack cooldown
-        if (!canAttack)
-        {
-            attackTimer -= Time.deltaTime;
-        }
-
-        // reset attack
-        if (attackTimer <= 0)
-        {
-            canAttack = true;
-            attackTimer = attackDelay;
-        }
-
-        /*
-        // re-enable the agent if it was off the ground but is near again
-        if (agent.enabled == false)
-        {
-            agent.enabled = Physics.CheckSphere(transform.position, 0.1f, Ground);
-        }
-        */
+        canAttack = false;
+        attacking = false;
     }
 
+    IEnumerator ActivateAttackCollider()
+    {
+        attackCollider.enabled = true;
+        yield return new WaitForSeconds(attackLength);
+        attackCollider.enabled = false;
+    }
+    
     public void TakeDamage(float damage)
     {
         // create blood VFX
@@ -117,22 +118,6 @@ public class EnemyBehavior : MonoBehaviour
             Debug.Log("Enemy killed! Score: " + playerScore.score);
             Destroy(gameObject);
         }
-    }
-
-    /*
-    public void TakeKnockback(Vector3 direction)
-    {
-        //agent.enabled = false; // disable agent so kb works
-        rb.AddForce(Vector3.up * upwardKnockback, ForceMode.Impulse);
-        rb.AddForce(direction * knockback, ForceMode.Impulse);
-    }
-    */
-
-    IEnumerator ActivateAttackCollider()
-    {
-        attackCollider.enabled = true;
-        yield return new WaitForSeconds(attackLength);
-        attackCollider.enabled = false;
     }
     
     IEnumerator DamageFlash(float duration)
