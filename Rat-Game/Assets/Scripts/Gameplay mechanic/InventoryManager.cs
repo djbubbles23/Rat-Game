@@ -6,6 +6,8 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryMenu;
     private bool menuActivated;
     public ItemSlot[] itemSlot;
+    public EquippedSlot[] equippedSlots;
+
 
 
     void Update()
@@ -46,5 +48,14 @@ public class InventoryManager : MonoBehaviour
             itemSlot[i].thisItemSelected = false;
         }
     }
+    public void DeselectAllEquippedSlots()
+    {
+        for (int i = 0; i < equippedSlots.Length; i++)
+        {
+            equippedSlots[i].selectedShalder.SetActive(false);
+            equippedSlots[i].thisItemSelected = false;
+        }
+    }
+
 
 }

@@ -34,10 +34,12 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public bool thisItemSelected;
 
     private InventoryManager inventoryManager;
+    public EquippedSlot[] equippedSlots;
 
     private void Start()
     {
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+        //equippedSlots = GameObject.Find("EquippedSlots").GetComponent<EquippedSlot[]>();
     }
 
 
@@ -80,7 +82,27 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public void OnRightClick()
     {
+        foreach (EquippedSlot slot in equippedSlots)
+        {
+            if (!slot.isFull)
+            {
+                slot.AddItem(itemName, itemSprite, itemDescription); // transfer data
 
+                // Clear this slot
+                itemName = "";
+                itemDescription = "";
+                itemSprite = emptySprite;
+                isFull = false;
+
+                itemImage.sprite = emptySprite;
+                quantity = 0;
+                quantityText.text = "";
+                quantityText.enabled = false;
+
+                Debug.Log("Item moved to equipped slot, original slot cleared.");
+                break;
+            }
+        }
     }
 
 }

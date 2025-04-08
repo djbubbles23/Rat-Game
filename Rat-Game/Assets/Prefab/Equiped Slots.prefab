@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 3994267056982354936}
   - component: {fileID: 7233940758366397831}
   - component: {fileID: 2911866462561016896}
+  - component: {fileID: 1523625262163643334}
   m_Layer: 5
   m_Name: Equiped Slots
   m_TagString: Untagged
@@ -364,3 +365,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1523625262163643334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091317586765516076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478b07cf5d6af9049a5479387fefc646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: 
+  itemSprite: {fileID: 0}
+  itemDescription: 
+  emptySprite: {fileID: 21300000, guid: 42891d37ac8204440a18692d5535c15f, type: 3}
+  isFull: 0
+  itemImage: {fileID: 9185922165765383006}
+  itemDescriptionNameText: {fileID: 0}
+  itemDescriptionText: {fileID: 0}
+  itemDescriptionImage: {fileID: 0}
+  selectedShalder: {fileID: 5756300538428807671}
+  thisItemSelected: 0
