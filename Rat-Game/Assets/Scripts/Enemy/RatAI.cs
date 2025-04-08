@@ -17,6 +17,7 @@ public class RatAI : MonoBehaviour
     public float walkPointRange;
     
     [Header("States")]
+    public float rotateSpeed = 5.0f;
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
     
@@ -54,8 +55,8 @@ public class RatAI : MonoBehaviour
         
         // Reset walk point
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
-        // print(distanceToWalkPoint.magnitude);
-        if (distanceToWalkPoint.magnitude < 1.5f)
+        print(distanceToWalkPoint.magnitude);
+        if (distanceToWalkPoint.magnitude < 2.0f)
         {
             walkPointSet = false;
         }
@@ -84,6 +85,7 @@ public class RatAI : MonoBehaviour
     {
         walkPointSet = false; // stop patrolling
         agent.SetDestination(player.position);
+        EnemyBehavior.ResetAttack();
     }
 
     private void AttackPlayer()
@@ -96,7 +98,7 @@ public class RatAI : MonoBehaviour
         toPlayer.y = 0; // constrain vertically
         toPlayer = -toPlayer; // flip 180
         Quaternion lookRotation = Quaternion.LookRotation(toPlayer);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotateSpeed);
 
         EnemyBehavior.Attack();
     }
