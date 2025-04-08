@@ -772,6 +772,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!95 &331092134 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7898883326359268363, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+  m_PrefabInstance: {fileID: 354920029}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &354039937
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +952,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6655447539631997340, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 331092134}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1958,7 +1967,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1133584835}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: ReturnToScene0
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
