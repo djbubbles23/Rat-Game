@@ -50,15 +50,16 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    private void OnLeftClick()
+    public void OnLeftClick()
     {
-        inventoryManager.DeselectAllSlots();
+        inventoryManager.DeselectAllSlotsAndEquipped();
         selectedShalder.SetActive(true);
         thisItemSelected = true;
+        itemDescriptionNameText.text = itemName;
+        itemDescriptionText.text = itemDescription;
+        itemDescriptionImage.sprite = itemSprite;
 
-        if (itemDescriptionNameText != null) itemDescriptionNameText.text = itemName;
-        if (itemDescriptionText != null) itemDescriptionText.text = itemDescription;
-        if (itemDescriptionImage != null)
-            itemDescriptionImage.sprite = itemSprite != null ? itemSprite : emptySprite;
+        if (itemDescriptionImage.sprite == null)
+            itemDescriptionImage.sprite = emptySprite;
     }
 }

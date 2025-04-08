@@ -56,6 +56,10 @@ public class InventoryManager : MonoBehaviour
             equippedSlots[i].thisItemSelected = false;
         }
     }
-
+    public void DeselectAllSlotsAndEquipped()
+    {
+        DeselectAllSlots();
+        DeselectAllEquippedSlots();
+    }
 
 }
