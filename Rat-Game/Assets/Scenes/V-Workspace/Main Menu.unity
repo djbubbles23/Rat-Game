@@ -1095,7 +1095,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 9e167712b336dcc4096a07c63f833bc4, type: 2}
+      objectReference: {fileID: 9100000, guid: 65783f51636f404408fda93f11d8b32c, type: 2}
     - target: {fileID: 8973395753036335677, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1867,7 +1867,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2058833941}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 1
@@ -4691,17 +4691,6 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 6488789532041889736, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
   m_PrefabInstance: {fileID: 6949814290733376899}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2058833941 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4904403699776610033, guid: 1ec37443b848ccc48bdcbee6fad220fe, type: 3}
-  m_PrefabInstance: {fileID: 6949814290733376899}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0639ac53f287a74a849146c2b74bc6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2094679978
 GameObject:
   m_ObjectHideFlags: 0
