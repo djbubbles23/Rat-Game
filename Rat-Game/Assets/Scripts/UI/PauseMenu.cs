@@ -1,5 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement; // Required for SceneManager
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -27,21 +28,20 @@ public class PauseMenu : MonoBehaviour
     void Resume()
     {
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1;
+        Time.timeScale = 1; // Ensure time resumes
         GameIsPaused = false;
     }
 
     void Pause()
     {
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0;
+        Time.timeScale = 0; // Freeze time
         GameIsPaused = true;
     }
 
-    // Function to return to scene 0
-    public void ReturnToScene0()
+    public void MainMenu()
     {
-        Time.timeScale = 1; // Make sure time is resumed before loading a new scene
-        SceneManager.LoadScene(0); // Load scene 0
+        Time.timeScale = 1; // Ensure time resumes when going to the main menu
+        SceneManager.LoadScene(0);
     }
 }
