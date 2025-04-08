@@ -99,8 +99,8 @@ public class EnemyBehavior : MonoBehaviour
         GameObject blood = Instantiate(bloodPrefab, bloodSpawnPoint.position, bloodSpawnPoint.rotation);
         VisualEffect vfx = blood.GetComponentInChildren<VisualEffect>();
         vfx.Play();
-        StartCoroutine(DestroyVFXAfterTime(vfx, 2.0f));
-        
+        StartCoroutine(DestroyVFXAfterTime(blood, 2.0f));
+            
         // flash rat red
         StartCoroutine(DamageFlash(flashDuration));
         
@@ -159,9 +159,9 @@ public class EnemyBehavior : MonoBehaviour
     }
     
     // destory VFX effect i.e. blood
-    private IEnumerator DestroyVFXAfterTime(VisualEffect vfx, float delay)
+    private IEnumerator DestroyVFXAfterTime(GameObject vfx, float delay)
     {
         yield return new WaitForSeconds(delay);
-        Destroy(vfx.gameObject);
+        Destroy(vfx);
     }
 }
