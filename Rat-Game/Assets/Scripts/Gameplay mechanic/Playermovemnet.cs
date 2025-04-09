@@ -49,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
-        // Prevent attacking while moving
         if (attackInput && canAttack && movement == Vector3.zero)
         {
             Attack();
@@ -63,6 +62,12 @@ public class PlayerMovement : MonoBehaviour
                 canAttack = true;
                 attackCounter = 0;
             }
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Q)) 
+        {
+            playerAnim.SetTrigger("isDancing"); 
         }
 
         HandleMovementAnimations();
