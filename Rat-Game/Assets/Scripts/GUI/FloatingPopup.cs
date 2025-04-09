@@ -5,21 +5,26 @@ public class FloatingPopup : MonoBehaviour
 {
     public GameObject floatingTextPrefab;
     public GameObject attcHitbox;
-    public string popupText = "Hit";
-    
+    public weaponController weaponController; 
+    private string popupText = "";
 
-    
+    void Start()
+    {
+        weaponController = GetComponentInParent<weaponController>();
+    }
+
     public void OnTriggerEnter(Collider other)
     {
-        if(floatingTextPrefab && other.gameObject == attcHitbox){
-            showFloatingText();
+        if(other.CompareTag("Enemy")){
+            EnemyBehavior enemy = other.GetComponent<EnemyBehavior>();
+            showFloatingText(enemy.transform.position);
         }
     }
-    void showFloatingText()
+    void showFloatingText(Vector3 enemy)
     {
-        Vector3 popupPosition = transform.position + new Vector3(0, 0, -1); 
+        Vector3 popupPosition = enemy + new Vector3(0, 0, -1); 
         GameObject floatingText = Instantiate(floatingTextPrefab, popupPosition, Quaternion.identity, transform);
-        floatingText.GetComponent<TextMeshPro>().text = popupText;
+        floatingText.GetComponent<TextMeshPro>().text = weaponController.calculateDmg().ToString(); 
         Debug.Log("Floating text instantiated: " + popupText);
     }
 }
