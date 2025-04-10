@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     // Animation State Machine
     private Animator playerAnim;
 
+    public AudioClip swingSFX;
+    private AudioSource audioSource;
+
     private enum Direction
     {
         North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest
@@ -38,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         atc = gameObject.GetComponentInChildren<VisualEffect>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -51,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (attackInput && canAttack && movement == Vector3.zero)
         {
+            AudioClip clip = swingSFX;
+            audioSource.PlayOneShot(clip);
             Attack();
         }
         else if (!canAttack)
