@@ -45,7 +45,7 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             INVSlot slot = clickedObject.GetComponent<INVSlot>();
             if(slot != null && slot.heldItem != null)
             {
-                draggedItem = slot.heldItem;
+                slot.SetHeldItem(draggedItem);
                 slot.heldItem = null; 
 
             }
