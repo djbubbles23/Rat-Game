@@ -7,6 +7,8 @@ public class InventoryManager : MonoBehaviour
     private bool menuActivated;
     public ItemSlot[] itemSlot;
     public EquippedSlot[] equippedSlots;
+    public diceScriptableObject[] dices;
+    
 
 
 

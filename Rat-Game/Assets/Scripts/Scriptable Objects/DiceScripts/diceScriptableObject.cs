@@ -12,6 +12,7 @@ public class diceScriptableObject : ScriptableObject
     public int diceType;
     public int[] diceValue;
     public float diceCost;
+    public Sprite icon; 
 
     private void OnEnable()
     {
