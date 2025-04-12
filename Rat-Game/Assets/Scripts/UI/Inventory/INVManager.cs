@@ -95,9 +95,16 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             Debug.Log("New Item: " + newItem.name);
             newItem.GetComponent<INVItem>().dice = item.GetComponent<INVItemPickup>().dice;
 
-            newItem.transform.SetParent(emptySlot.transform.parent.parent.GetChild(2)); 
+            newItem.transform.SetParent(emptySlot.transform); 
 
-            emptySlot.GetComponent<INVSlot>().SetHeldItem(newItem); 
+            INVSlot slotComponent = emptySlot.GetComponent<INVSlot>();
+            if (slotComponent == null)
+            {
+                Debug.LogError("The empty slot does not have an INVSlot component!");
+                Destroy(newItem); // Clean up the invalid object
+                return;
+            }
+            slotComponent.SetHeldItem(newItem);
 
             Destroy(item); // Destroy the original item
         }
