@@ -59,29 +59,40 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
     public void OnPointerUp(PointerEventData eventData)
     {
-        if(draggedItem != null && eventData.pointerCurrentRaycast.gameObject != null && eventData.button == PointerEventData.InputButton.Left){
+        if (draggedItem != null && eventData.pointerCurrentRaycast.gameObject != null && eventData.button == PointerEventData.InputButton.Left)
+        {
             GameObject clickedObject = eventData.pointerCurrentRaycast.gameObject;
             INVSlot slot = clickedObject.GetComponent<INVSlot>();
-            if(slot != null && slot.heldItem == null)
-            {
-                slot.SetHeldItem(draggedItem);
-                draggedItem = null;
-                
-            }
-            else if(slot != null && slot.heldItem != null)
-            {
-                lastItemSlot.GetComponent<INVSlot>().SetHeldItem(slot.heldItem);
-                slot.SetHeldItem(draggedItem);
-                draggedItem = null;
 
+            if (slot != null)
+            {
+                if (slot.heldItem == null)
+                {
+                    
+                    slot.SetHeldItem(draggedItem);
+                    draggedItem.transform.SetParent(slot.transform, false); 
+                    draggedItem.transform.localPosition = Vector3.zero; 
+                    draggedItem = null;
+                }
+                else
+                {
+                    
+                    GameObject tempItem = slot.heldItem;
+                    slot.SetHeldItem(draggedItem);
+                    lastItemSlot.GetComponent<INVSlot>().SetHeldItem(tempItem);
+                    
+                    draggedItem.transform.SetParent(slot.transform, false);
+                    draggedItem.transform.localPosition = Vector3.zero;
+                    draggedItem = null;
+                }
             }
-            
         }
     }
 
     public void ItemPicked(GameObject item)
     {
         GameObject emptySlot = null;
+        // Loop through the slots to find an empty one
         for (int i = 0; i < slots.Length; i++)
         {
             INVSlot slot = slots[i].GetComponent<INVSlot>();
@@ -96,13 +107,14 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             Debug.Log("Empty Slot: " + emptySlot.name);
             GameObject newItem = Instantiate(itemPrefab);
-            //Debug.Log("New Item: " + newItem.name);
+            // Set item properties based on the original item
             newItem.GetComponent<INVItem>().dice = item.GetComponent<INVItemPickup>().dice;
 
-            newItem.transform.SetParent(emptySlot.transform, false);  
-            newItem.transform.localPosition = Vector3.zero; 
+            // Set the new item as a child of the empty slot
+            newItem.transform.SetParent(emptySlot.transform, false);  // Keep local position intact
+            newItem.transform.localPosition = Vector3.zero; // Position it correctly inside the slot
 
-
+            // Assign the new item to the slot
             emptySlot.GetComponent<INVSlot>().SetHeldItem(newItem);
 
             Destroy(item); // Destroy the original item
