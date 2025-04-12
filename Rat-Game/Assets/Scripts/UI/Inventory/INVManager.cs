@@ -66,13 +66,16 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             {
                 slot.SetHeldItem(draggedItem);
                 draggedItem = null;
+                
             }
-            else if(lastItemSlot != null && slot.heldItem != null)
+            else if(slot != null && slot.heldItem != null)
             {
                 lastItemSlot.GetComponent<INVSlot>().SetHeldItem(slot.heldItem);
                 slot.SetHeldItem(draggedItem);
                 draggedItem = null;
+
             }
+            
         }
     }
 
@@ -91,20 +94,16 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         if (emptySlot != null)
         {
+            Debug.Log("Empty Slot: " + emptySlot.name);
             GameObject newItem = Instantiate(itemPrefab);
-            Debug.Log("New Item: " + newItem.name);
+            //Debug.Log("New Item: " + newItem.name);
             newItem.GetComponent<INVItem>().dice = item.GetComponent<INVItemPickup>().dice;
 
-            newItem.transform.SetParent(emptySlot.transform); 
+            newItem.transform.SetParent(emptySlot.transform, false);  
+            newItem.transform.localPosition = Vector3.zero; 
 
-            INVSlot slotComponent = emptySlot.GetComponent<INVSlot>();
-            if (slotComponent == null)
-            {
-                Debug.LogError("The empty slot does not have an INVSlot component!");
-                Destroy(newItem); // Clean up the invalid object
-                return;
-            }
-            slotComponent.SetHeldItem(newItem);
+
+            emptySlot.GetComponent<INVSlot>().SetHeldItem(newItem);
 
             Destroy(item); // Destroy the original item
         }
