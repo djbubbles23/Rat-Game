@@ -13,50 +13,63 @@ public class weaponController : MonoBehaviour
     public diceScriptableObject diceSlot2;
     public diceScriptableObject diceSlot3;
 
-    // On inventory equip
-    public diceScriptableObject invSlot1;
-    public diceScriptableObject invSlot2;
-    public diceScriptableObject invSlot3;
+    public diceScriptableObject[] diceSlots = new diceScriptableObject[3];
+
+    public INVManager invManager;
+
+    public bool debug = false;
     void Start()
     {
-        //debugging dice slots
-        if(diceSlot1==null){
-            Debug.Log("Dice 1 is null");
-        }
-        else{
-            Debug.Log("Dice 1 is equiped");
-            diceSlot1.displayAll();
-        }
-        if(diceSlot2==null){
-            Debug.Log("Dice 2 is null");
-        }
-        else{
-            Debug.Log("Dice 2 is equiped");
-            diceSlot2.displayAll();
-        }        
-        if(diceSlot3==null){
-            Debug.Log("Dice 3 is null");
-        }
-        else{
-            Debug.Log("Dice 3 is equiped");
-            diceSlot3.displayAll();
-        }
+        if(debug){
+            //debugging dice slots
+            if(diceSlot1==null){
+                Debug.Log("Dice 1 is null");
+            }
+            else{
+                Debug.Log("Dice 1 is equiped");
+                diceSlot1.displayAll();
+            }
+            if(diceSlot2==null){
+                Debug.Log("Dice 2 is null");
+            }
+            else{
+                Debug.Log("Dice 2 is equiped");
+                diceSlot2.displayAll();
+            }        
+            if(diceSlot3==null){
+                Debug.Log("Dice 3 is null");
+            }
+            else{
+                Debug.Log("Dice 3 is equiped");
+                diceSlot3.displayAll();
+            }
 
-        // Check if the weapon object is valid
-        if (weapon.weaponObj is GameObject)
-        {
-            // Instantiate the weapon in the scene
-            weaponInstance = Instantiate(weapon.weaponObj);
-            weaponInstance.transform.SetParent(transform);
-            weaponInstance.transform.localPosition = Vector3.zero;
-            weaponInstance.transform.localScale = weaponScale;
+            // Check if the weapon object is valid
+            if (weapon.weaponObj is GameObject)
+            {
+                // Instantiate the weapon in the scene
+                weaponInstance = Instantiate(weapon.weaponObj);
+                weaponInstance.transform.SetParent(transform);
+                weaponInstance.transform.localPosition = Vector3.zero;
+                weaponInstance.transform.localScale = weaponScale;
+            }
+            else
+            {
+                Debug.LogError("weaponObj is not a valid");
+            }
         }
-        else
-        {
-            Debug.LogError("weaponObj is not a valid");
-        }
+        invManager = GameObject.Find("InventoryManager").GetComponent<INVManager>();
 
     }
+
+    void Update()
+    {
+        /*
+        for(int i = 0; i < diceSlots.Length; i++){
+            invManager.Eslots[i].GetComponent<diceScriptableObject>() = diceSlots[i];
+        }*/
+    } 
+
     public int calculateDmg(){
         int totalDamage = 0;
         if (diceSlot1 != null) {

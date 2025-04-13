@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Unity.VisualScripting;
+using TMPro;
 
 public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -11,14 +12,12 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private GameObject draggedItem;
     private GameObject lastItemSlot;
     [SerializeField] GameObject weaponSlot;
-    [SerializeField] GameObject[] Eslots = new GameObject[3];
+    public GameObject[] Eslots = new GameObject[3];
     [SerializeField] GameObject[] slots = new GameObject[8];
     public GameObject itemPrefab;
     public GameObject itemImage;
     public GameObject itemName;
-    public GameObject itemEffect;
     public GameObject itemDescription;
-    public GameObject itemCost;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,6 +29,9 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if(draggedItem != null)
         {
             draggedItem.transform.position = Input.mousePosition;
+            itemImage.GetComponent<Image>().sprite = draggedItem.GetComponent<INVItem>().dice.icon;
+            itemName.GetComponent<TextMeshProUGUI>().text = draggedItem.GetComponent<INVItem>().dice.diceName;
+            itemDescription.GetComponent<TextMeshProUGUI>().text = draggedItem.GetComponent<INVItem>().dice.diceDescription;
 
         }
 
@@ -116,6 +118,11 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             GameObject newItem = Instantiate(itemPrefab);
             
             newItem.GetComponent<INVItem>().dice = item.GetComponent<INVItemPickup>().dice;
+
+            // Get Description
+            //itemImage.GetComponent<Image>().sprite = newItem.GetComponent<INVItem>().dice.icon;
+            //itemName.GetComponent<Text>().text = newItem.GetComponent<INVItem>().dice.diceName;
+            //itemDescription.GetComponent<Text>().text = newItem.GetComponent<INVItem>().dice.diceDescription;
 
             newItem.transform.SetParent(emptySlot.transform, false);  
             newItem.transform.localPosition = Vector3.zero;
