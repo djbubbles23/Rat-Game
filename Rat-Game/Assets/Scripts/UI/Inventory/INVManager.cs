@@ -10,6 +10,8 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private bool menuActivated;
     private GameObject draggedItem;
     private GameObject lastItemSlot;
+    [SerializeField] GameObject weaponSlot;
+    [SerializeField] GameObject[] Eslots = new GameObject[3];
     [SerializeField] GameObject[] slots = new GameObject[8];
     public GameObject itemPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -62,8 +64,8 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (draggedItem != null && eventData.pointerCurrentRaycast.gameObject != null && eventData.button == PointerEventData.InputButton.Left)
         {
             GameObject clickedObject = eventData.pointerCurrentRaycast.gameObject;
-            INVSlot slot = clickedObject.GetComponent<INVSlot>();
 
+            INVSlot slot = clickedObject.GetComponent<INVSlot>();
             if (slot != null)
             {
                 if (slot.heldItem == null)
@@ -92,7 +94,6 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void ItemPicked(GameObject item)
     {
         GameObject emptySlot = null;
-        // Loop through the slots to find an empty one
         for (int i = 0; i < slots.Length; i++)
         {
             INVSlot slot = slots[i].GetComponent<INVSlot>();
@@ -107,12 +108,11 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             Debug.Log("Empty Slot: " + emptySlot.name);
             GameObject newItem = Instantiate(itemPrefab);
-            // Set item properties based on the original item
+            
             newItem.GetComponent<INVItem>().dice = item.GetComponent<INVItemPickup>().dice;
 
-            // Set the new item as a child of the empty slot
-            newItem.transform.SetParent(emptySlot.transform, false);  // Keep local position intact
-            newItem.transform.localPosition = Vector3.zero; // Position it correctly inside the slot
+            newItem.transform.SetParent(emptySlot.transform, false);  
+            newItem.transform.localPosition = Vector3.zero;
 
             // Assign the new item to the slot
             emptySlot.GetComponent<INVSlot>().SetHeldItem(newItem);

@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEditor;
 
 
 [CreateAssetMenu(fileName = "ScriptableObjects", menuName = "Dice")]
@@ -25,6 +26,9 @@ public class diceScriptableObject : ScriptableObject
         diceName = "D" + diceType;
 
         effectValue = createEffectValue();
+
+        icon = getIcon(diceType);
+        Debug.Log("Dice Created: " + diceName);
     }
 
     
@@ -129,4 +133,42 @@ public class diceScriptableObject : ScriptableObject
         }
     }
 
+    public Sprite getIcon(int diceType)
+    {
+        string path = "";
+        switch (diceType)
+        {
+            case 4:
+                path = "Images/d4_icon";
+                break;
+            case 6:
+                path = "Images/d6_icon";
+                break;
+            case 8:
+                path = "Images/d8_icon";
+                break;
+            default:
+                Debug.LogError("Invalid dice type: " + diceType);
+                return null;
+        }
+
+        Sprite sprite = Resources.Load<Sprite>(path);
+        if (sprite == null)
+        {
+            Debug.LogError("Sprite not found at path: " + path);
+        }
+        return sprite;
+    }
+    #if UNITY_EDITOR
+    [ContextMenu("Regenerate Dice")]
+    public void Regenerate()
+    {
+        OnEnable();
+        EditorUtility.SetDirty(this);
+    }
+    #endif
+
+
 }
+
+
