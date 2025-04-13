@@ -14,6 +14,11 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     [SerializeField] GameObject[] Eslots = new GameObject[3];
     [SerializeField] GameObject[] slots = new GameObject[8];
     public GameObject itemPrefab;
+    public GameObject itemImage;
+    public GameObject itemName;
+    public GameObject itemEffect;
+    public GameObject itemDescription;
+    public GameObject itemCost;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,6 +30,7 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if(draggedItem != null)
         {
             draggedItem.transform.position = Input.mousePosition;
+
         }
 
         if (Input.GetKeyDown(KeyCode.Tab) && menuActivated)
