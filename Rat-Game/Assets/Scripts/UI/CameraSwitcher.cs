@@ -20,7 +20,7 @@ public class CameraSwitcher : MonoBehaviour
             // Start with VCam1 for intro
             SwitchToCamera(0);
 
-            // Auto-switch to VCam2 after 2 seconds
+            // Auto-switch to VCam2 
             if (virtualCameras.Length > 1)
             {
                 StartCoroutine(AutoSwitchToSecondCamera());
@@ -39,7 +39,7 @@ public class CameraSwitcher : MonoBehaviour
 
     IEnumerator AutoSwitchToSecondCamera()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f); // <--- seconds until cam 1 switches to cam 2
         SwitchToCamera(1); // VCam2
     }
 

@@ -690,7 +690,7 @@ Transform:
   m_GameObject: {fileID: 116871694}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 490, z: -998.5802}
+  m_LocalPosition: {x: 847.9435, y: 884.6663, z: -258.6111}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1235,7 +1235,6 @@ GameObject:
   - component: {fileID: 577976552}
   - component: {fileID: 577976551}
   - component: {fileID: 577976550}
-  - component: {fileID: 577976554}
   - component: {fileID: 577976555}
   m_Layer: 5
   m_Name: Camera Controls
@@ -1330,18 +1329,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &577976554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 577976549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a604b6145724294197e97eff66e0eb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &577976555
 MonoBehaviour:
   m_ObjectHideFlags: 0
