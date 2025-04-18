@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ed0c23223e0b845860bfcc6ef2d6c6, type: 3}
   m_Name: default 2
   m_EditorClassIdentifier: 
-  diceName: 
-  diceDescription: 
-  diceType: 8
-  diceValue: 0100000004000000070000000300000002000000020000000300000007000000
-  diceCost: 36.25
+  diceName: D6
+  diceDescription: 'This is a d6. There is a 1/6 to get one of these values: 2, 5,
+    4, 3, 0, 1.'
+  effectValue: None
+  diceType: 6
+  diceValue: 020000000500000004000000030000000000000001000000
+  diceCost: 25
+  icon: {fileID: 0}

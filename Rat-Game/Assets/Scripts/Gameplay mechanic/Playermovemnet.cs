@@ -24,6 +24,11 @@ public class PlayerMovement : MonoBehaviour
     // Animation State Machine
     private Animator playerAnim;
 
+    public AudioClip swingSFX;
+    private AudioSource audioSource;
+
+    public INVManager invManager; // Reference to the inventory manager
+
     private enum Direction
     {
         North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest
@@ -38,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         atc = gameObject.GetComponentInChildren<VisualEffect>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -49,9 +55,10 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
-        // Prevent attacking while moving
         if (attackInput && canAttack && movement == Vector3.zero)
         {
+            AudioClip clip = swingSFX;
+            audioSource.PlayOneShot(clip);
             Attack();
         }
         else if (!canAttack)
@@ -65,7 +72,14 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+
+        if (Input.GetKeyDown(KeyCode.Q)) 
+        {
+            playerAnim.SetTrigger("isDancing"); 
+        }
+
         HandleMovementAnimations();
+
     }
 
     void FixedUpdate()
@@ -220,6 +234,11 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+        }
+
+        if (collision.gameObject.CompareTag("Dice"))
+        {
+            invManager.ItemPicked(collision.gameObject);
         }
     }
 }
