@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpInput;                // State flag for jump input
     private bool attackInput;              // State flag for attack input
     private bool canAttack = true;         // State flag for whether the player can attack
-    public float attackDelay = 1f;         // Delay between attacks in seconds
+    public float attackDelay = 3f;         // Delay between attacks in seconds
     private float attackCounter;           // Counter for attack delay
     private int facing;                    // Direction the player is facing
 
@@ -55,11 +55,11 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
-        if (attackInput && canAttack && movement == Vector3.zero)
+        if (attackInput && canAttack && movement == Vector3.zero && invManager.menuActivated == false)
         {
+            Attack();
             AudioClip clip = swingSFX;
             audioSource.PlayOneShot(clip);
-            Attack();
         }
         else if (!canAttack)
         {
@@ -112,9 +112,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Attack()
     {
-        canAttack = false;
         playerAnim.SetTrigger("isAttacking");
         StartCoroutine(ActivateAttackHb());
+        canAttack = false;
     }
 
     IEnumerator ActivateAttackHb()

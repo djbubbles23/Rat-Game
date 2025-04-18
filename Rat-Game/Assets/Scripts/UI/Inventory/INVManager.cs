@@ -9,7 +9,7 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
 
     public GameObject InventoryMenu;
-    private bool menuActivated;
+    public bool menuActivated;
     private GameObject draggedItem;
     private GameObject lastItemSlot;
     [SerializeField] GameObject weaponSlot;
