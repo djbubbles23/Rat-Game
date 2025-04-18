@@ -6,23 +6,23 @@ using UnityEngine.AI;
 using UnityEngine.VFX;
 using Random = UnityEngine.Random;
 
-public class EnemyBehavior : MonoBehaviour
+public class BossBehavior : MonoBehaviour
 {
-    public GameObject bloodPrefab;              // Blood particles that play when enemy is damaged
-    public Transform bloodSpawnPoint;           // Where the blood should spawn from
     private VisualEffect atc;                   // VisualEffect component that creates the enemy's attacks
     public AudioClip takeDamageSound;           // sound to play when hurt
+    public CapsuleCollider hitbox;
     public Animator animator;
     
     public float maxHealth = 100f;              // Starting health of the enemy
     public float damage = 10f;                  // How powerful enemy's attack is
 
-    public float attackDelay = 5.0f;            // time between attack
+    public float attackDelay = 5.0f;            // time between attack/ start-up time
+    public float slamStartUp = 5.0f;
     public float attackLength = 0.2f;           // how long the attack hb is active
     public float flashDuration = 2f;            // how long damage flash should last
 
-    private Rigidbody rb;                       // Enemy rigidbody
-    private Collider attackCollider;            // the attack hb attached to the swipe
+    public Collider attackCollider;            // the attack hb attached to the swipe
+    public Collider slamCollider;              // the attack hb attached to the slam
     private AudioSource audioSource;            // enemy audio source
     
     private float health;                       // Current health
@@ -35,12 +35,10 @@ public class EnemyBehavior : MonoBehaviour
     private MeshRenderer renderer;
     private Color originalColor;
 
-
     private void Start()
     {
         // initialize variables
         atc = gameObject.GetComponentInChildren<VisualEffect>();
-        attackCollider = GetComponentInChildren<BoxCollider>();
         audioSource = GetComponent<AudioSource>();
         health = maxHealth;
         renderer = ratGeo.GetComponent<MeshRenderer>();
@@ -60,26 +58,61 @@ public class EnemyBehavior : MonoBehaviour
 
     public void Attack()
     {
-        StartCoroutine(DoAttack());
+        if(!attacking) StartCoroutine(DoAttack());
     }
 
     IEnumerator DoAttack()
     {
-        if (!attacking)
-        {
-            attacking = true;
-            yield return new WaitForSeconds(attackDelay);
-            canAttack = true;
-        }
-        else if (canAttack == true)
-        {
-            canAttack = false;
-            attacking = false;
-            atc.Play();
+        if (attacking) yield break;
+        attacking = true;
+        
+        yield return new WaitForSeconds(attackDelay);
+        
+        atc.Play();
             
-            // activate attack hitbox
-            StartCoroutine(ActivateAttackCollider());
+        // activate attack hitbox
+        StartCoroutine(ActivateAttackCollider(attackCollider));
+        attacking = false;
+    }
+
+    public void Slam()
+    {
+        if(!attacking) 
+            StartCoroutine(DoSlam());
+    }
+
+    IEnumerator DoSlam()
+    {
+        if (attacking) yield break;
+        print("start SLAM");
+        attacking = true;
+
+        StartCoroutine(SlamAnimation());
+        yield return new WaitForSeconds(attackLength + 1f);
+        attacking = false;
+    }
+
+    IEnumerator SlamAnimation()
+    {
+        hitbox.enabled = false; // disable enemy hb
+        
+        // jump arc
+        float height = 60.0f;
+        float duration = 3.5f;
+        float time  = 0.0f;
+        
+        Vector3 originalPos = ratGeo.transform.localPosition;
+
+        while (time < duration)
+        {
+            float yOffset = Mathf.Sin((time / duration) * Mathf.PI) * height;
+            ratGeo.transform.localPosition = new Vector3(originalPos.x, originalPos.y + yOffset, originalPos.z);
+            time += Time.deltaTime;
+            yield return null;
         }
+        
+        hitbox.enabled = true; // re-enable enemy hb
+        StartCoroutine(ActivateAttackCollider(slamCollider));
     }
     
     public void ResetAttack()
@@ -88,21 +121,15 @@ public class EnemyBehavior : MonoBehaviour
         attacking = false;
     }
 
-    IEnumerator ActivateAttackCollider()
+    IEnumerator ActivateAttackCollider(Collider attack)
     {
-        attackCollider.enabled = true;
+        attack.enabled = true;
         yield return new WaitForSeconds(attackLength);
-        attackCollider.enabled = false;
+        attack.enabled = false;
     }
     
     public void TakeDamage(float damage)
     {
-        // create blood VFX
-        GameObject blood = Instantiate(bloodPrefab, bloodSpawnPoint.position, bloodSpawnPoint.rotation);
-        VisualEffect vfx = blood.GetComponentInChildren<VisualEffect>();
-        vfx.Play();
-        StartCoroutine(DestroyVFXAfterTime(blood, 2.0f));
-            
         // flash rat red
         StartCoroutine(DamageFlash(flashDuration));
         
@@ -155,11 +182,5 @@ public class EnemyBehavior : MonoBehaviour
             //player.TakeKnockback(knockbackDirection);
         }
     }
-    
-    // destory VFX effect i.e. blood
-    private IEnumerator DestroyVFXAfterTime(GameObject vfx, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Destroy(vfx);
-    }
+
 }

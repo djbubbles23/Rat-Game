@@ -23,12 +23,13 @@ public class CheckCollision : MonoBehaviour
         {
             EnemyBehavior enemy = other.GetComponent<EnemyBehavior>();
             enemy.TakeDamage(weaponController.calculateDmg());
-            Debug.Log("Hit enemy: " + other.name + " with damage: " + weaponController.calculateDmg());
-            
-            // calculate knockback direction
-            //Vector3 knockbackDirection = other.transform.position - transform.position;
-            //enemy.TakeKnockback(knockbackDirection);
         }
+        if (other.tag == "Boss")
+        {
+            BossBehavior boss = other.GetComponent<BossBehavior>();
+            boss.TakeDamage(weaponController.calculateDmg());
+        }
+        Debug.Log("Hit enemy: " + other.name + " with damage: " + weaponController.calculateDmg());
     }
     
 }
