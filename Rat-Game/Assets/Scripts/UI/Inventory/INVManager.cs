@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Unity.VisualScripting;
 using TMPro;
+using UnityEngine.Animations;
 
 public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -62,6 +63,8 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             if(slot != null && slot.heldItem != null)
             {
                 draggedItem = slot.heldItem;
+                draggedItem.transform.SetParent(InventoryMenu.transform, true);
+                draggedItem.transform.SetAsLastSibling();
                 slot.heldItem = null; 
                 lastItemSlot = clickedObject;
             }
