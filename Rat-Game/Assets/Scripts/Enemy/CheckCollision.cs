@@ -28,10 +28,14 @@ public class CheckCollision : MonoBehaviour
             enemy.TakeDamage(damage);
             showFloatingText(other.transform.position, damage);
             Debug.Log("Hit enemy: " + other.name + " with damage: " + damage);
-            
-            // calculate knockback direction
-            //Vector3 knockbackDirection = other.transform.position - transform.position;
-            //enemy.TakeKnockback(knockbackDirection);
+        }
+        if (other.tag == "Boss")
+        {
+            BossBehavior enemy = other.GetComponent<BossBehavior>();
+            damage = weaponController.calculateDmg();
+            enemy.TakeDamage(damage);
+            showFloatingText(other.transform.position, damage);
+            Debug.Log("Hit enemy: " + other.name + " with damage: " + damage);
         }
     }
 

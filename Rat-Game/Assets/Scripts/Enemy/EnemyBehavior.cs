@@ -60,39 +60,36 @@ public class EnemyBehavior : MonoBehaviour
 
     public void Attack()
     {
-        StartCoroutine(DoAttack());
+        if(!attacking)
+            StartCoroutine(DoAttack());
     }
 
     IEnumerator DoAttack()
     {
-        if (!attacking)
-        {
-            attacking = true;
-            yield return new WaitForSeconds(attackDelay);
-            canAttack = true;
-        }
-        else if (canAttack == true)
-        {
-            canAttack = false;
-            attacking = false;
-            atc.Play();
-            
-            // activate attack hitbox
-            StartCoroutine(ActivateAttackCollider());
-        }
+        attacking = true;
+
+        // Start wind-up / delay
+        yield return new WaitForSeconds(attackDelay);
+
+        // Play animation
+        animator.SetTrigger("Attack");
+        atc.Play();
+
+        // Activate collider halfway through
+        yield return new WaitForSeconds(1.18f);
+        attackCollider.enabled = true;
+
+        yield return new WaitForSeconds(attackLength);
+        attackCollider.enabled = false;
+
+        // Cooldown or reset (if needed, add a delay here)
+        attacking = false;
     }
     
     public void ResetAttack()
     {
         canAttack = false;
         attacking = false;
-    }
-
-    IEnumerator ActivateAttackCollider()
-    {
-        attackCollider.enabled = true;
-        yield return new WaitForSeconds(attackLength);
-        attackCollider.enabled = false;
     }
     
     public void TakeDamage(float damage)
@@ -154,6 +151,11 @@ public class EnemyBehavior : MonoBehaviour
             //Vector3 knockbackDirection = other.transform.position - transform.position;
             //player.TakeKnockback(knockbackDirection);
         }
+    }
+    
+    public bool IsAttacking()
+    {
+        return attacking;
     }
     
     // destory VFX effect i.e. blood

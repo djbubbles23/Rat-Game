@@ -10,6 +10,7 @@ public class RatAI : MonoBehaviour
     public NavMeshAgent agent;
     public Transform player;
     public LayerMask Ground, Player;
+    public Animator animator;
     
     [Header("Patrolling")]
     public Vector3 walkPoint;
@@ -86,6 +87,7 @@ public class RatAI : MonoBehaviour
         walkPointSet = false; // stop patrolling
         agent.SetDestination(player.position);
         EnemyBehavior.ResetAttack();
+        animator.SetTrigger("Run");
     }
 
     private void AttackPlayer()
@@ -100,7 +102,10 @@ public class RatAI : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(toPlayer);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotateSpeed);
 
-        EnemyBehavior.Attack();
+        if (!EnemyBehavior.IsAttacking())
+        {
+            EnemyBehavior.Attack();
+        }
     }
 
     private void OnDrawGizmosSelected()
