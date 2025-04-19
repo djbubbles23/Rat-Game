@@ -20,7 +20,7 @@ public class ZoneControllerScript : MonoBehaviour
 
             case "Combat":
                 startPos = doors[Random.Range(1,doors.Length - 2)].position;
-                startPos.z -= 5;
+                startPos.z -= 2;
             break;
 
             case "Cafe":
