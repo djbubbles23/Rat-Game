@@ -33,6 +33,8 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if(draggedItem != null)
         {
             draggedItem.transform.position = Input.mousePosition;
+            // if dragged item is a weapon
+            // else if dragged item is a dice
             itemImage.GetComponent<Image>().sprite = draggedItem.GetComponent<INVItem>().dice.icon;
             itemName.GetComponent<TextMeshProUGUI>().text = draggedItem.GetComponent<INVItem>().dice.diceName;
             itemDescription.GetComponent<TextMeshProUGUI>().text = draggedItem.GetComponent<INVItem>().dice.diceDescription;
@@ -55,6 +57,7 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         updateBoxSprite();
 
+        // dice Eslots
         for (int i = 0; i < Eslots.Length; i++)
         {
             INVSlot Eslot = Eslots[i].GetComponent<INVSlot>();
@@ -143,6 +146,8 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             Debug.Log("Empty Slot: " + emptySlot.name);
             GameObject newItem = Instantiate(itemPrefab);
             
+            // if item is a weapon
+            // if item is a dice
             newItem.GetComponent<INVItem>().dice = item.GetComponent<INVItemPickup>().dice;
 
             // Get Description
