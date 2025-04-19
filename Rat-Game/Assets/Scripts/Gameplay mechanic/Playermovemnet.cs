@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 7f;           // Jump strength
     public GameObject attackHitbox;        // Object that represents player attack hitbox
     private Rigidbody rb;                  // Rigidbody of the player gameobject
-    private VisualEffect atc;              // VisualEffect component for player's attacks
+    public VisualEffect atc;              // VisualEffect component for player's attacks
     private Vector3 movement;              // Movement vector based on player inputs
     private bool isGrounded;               // State flag for whether the player is on the ground
     private bool jumpInput;                // State flag for jump input
@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        atc = gameObject.GetComponentInChildren<VisualEffect>();
+        //atc = gameObject.GetComponentInChildren<VisualEffect>();
         audioSource = GetComponent<AudioSource>();
     }
 
