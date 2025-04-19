@@ -21,7 +21,7 @@ public class INVItem : MonoBehaviour
         {
             iconImage.sprite = dice.icon;
         }
-        else if(weapon != null)
+        if(weapon != null)
         {
             iconImage.sprite = weapon.icon;
         }

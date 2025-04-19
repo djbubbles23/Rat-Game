@@ -240,5 +240,9 @@ public class PlayerMovement : MonoBehaviour
         {
             invManager.ItemPicked(collision.gameObject);
         }
+        if(collision.gameObject.CompareTag("Weapon"))
+        {
+            invManager.ItemPicked(collision.gameObject);
+        }
     }
 }
