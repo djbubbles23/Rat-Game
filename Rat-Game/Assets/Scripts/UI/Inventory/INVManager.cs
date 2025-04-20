@@ -11,10 +11,10 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private GameObject draggedItem;
     private GameObject lastItemSlot;
 
-    [SerializeField] GameObject weaponSlot;
+    public GameObject weaponSlot;
     public GameObject[] Eslots = new GameObject[3];
     public diceScriptableObject[] EDice = new diceScriptableObject[3];
-    [SerializeField] GameObject[] slots = new GameObject[8];
+    public GameObject[] slots = new GameObject[8];
 
     public GameObject itemPrefab;
     public GameObject itemImage;
@@ -124,9 +124,10 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 draggedItem = null;
             }
         }
+        
         else
         {
-
+            setLastItemSlot();
         }
     }
 
