@@ -464,6 +464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InventoryMenu: {fileID: 6636994874028489883}
+  menuActivated: 0
   weaponSlot: {fileID: 3312688319264058776}
   Eslots:
   - {fileID: 7590467270126336360}
@@ -1333,6 +1334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item Slots (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
+      propertyPath: m_TagString
+      value: invSlot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1452,6 +1457,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item Slots (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
+      propertyPath: m_TagString
+      value: invSlot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1569,7 +1578,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
       propertyPath: m_Name
-      value: Item Slots
+      value: diceSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
+      propertyPath: m_TagString
+      value: diceSlot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1690,6 +1703,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item Slots (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
+      propertyPath: m_TagString
+      value: invSlot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1796,6 +1813,10 @@ PrefabInstance:
     - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
       propertyPath: m_Name
       value: Item Slots
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
+      propertyPath: m_TagString
+      value: invSlot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1916,6 +1937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item Slots (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
+      propertyPath: m_TagString
+      value: invSlot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2033,7 +2058,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
       propertyPath: m_Name
-      value: Item Slots (2)
+      value: diceSlot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
+      propertyPath: m_TagString
+      value: diceSlot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2154,6 +2183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item Slots (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
+      propertyPath: m_TagString
+      value: invSlot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2273,6 +2306,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item Slots (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
+      propertyPath: m_TagString
+      value: invSlot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2390,7 +2427,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
       propertyPath: m_Name
-      value: Item Slots (1)
+      value: diceSlot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
+      propertyPath: m_TagString
+      value: diceSlot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2511,6 +2552,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item Slots (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
+      propertyPath: m_TagString
+      value: invSlot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2620,7 +2665,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
       propertyPath: m_Name
-      value: Item Slots
+      value: weaponSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091317586765516076, guid: a48043e389d6840459a4635a1b392f0c, type: 3}
+      propertyPath: m_TagString
+      value: weaponSlot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

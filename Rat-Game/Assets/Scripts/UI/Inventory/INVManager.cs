@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using System;
 
 public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -98,36 +99,63 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (draggedItem == null || eventData.button != PointerEventData.InputButton.Left)
-            return;
-
-        GameObject clickedObject = eventData.pointerCurrentRaycast.gameObject;
-        INVSlot slot = clickedObject.GetComponent<INVSlot>();
-
-        if (slot != null)
+        // Check if the left mouse button was released
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
-            if (slot.heldItem == null)
+            // Get the GameObject under the pointer when the button was released
+            GameObject clickedObject = eventData.pointerCurrentRaycast.gameObject;
+
+            // Try to get the INVSlot component from the clicked object
+            INVSlot slot = clickedObject.GetComponent<INVSlot>();
+
+            // If the clicked object is a valid inventory slot
+            if (slot != null)
             {
-                slot.SetHeldItem(draggedItem);
-                draggedItem.transform.SetParent(slot.transform, false);
-                draggedItem.transform.localPosition = Vector3.zero;
-                draggedItem = null;
+                // Determine the type of the dragged item (e.g., weapon or dice)
+                String itemType = getDraggedItem(draggedItem);
+
+                // Check if the slot is empty
+                if (slot.heldItem == null)
+                {
+                    if (itemType == "weapon" && clickedObject.CompareTag("weaponSlot"))
+                    {
+                        // If the slot is a weapon slot and the dragged item is a weapon, place it in the slot
+                        slot.SetHeldItem(draggedItem);
+                        draggedItem.transform.SetParent(slot.transform, false);
+                        draggedItem.transform.localPosition = Vector3.zero;
+                        draggedItem = null; // Clear the dragged item reference
+                    }
+                    else if (itemType == "dice" && clickedObject.CompareTag("diceSlot"))
+                    {
+                        // If the slot is a dice slot and the dragged item is a dice, place it in the slot
+                        slot.SetHeldItem(draggedItem);
+                        draggedItem.transform.SetParent(slot.transform, false);
+                        draggedItem.transform.localPosition = Vector3.zero;
+                        draggedItem = null; // Clear the dragged item reference
+                    }
+                    else if (itemType == null && clickedObject.CompareTag("invSlot"))
+                    {
+                        // If the slot is an inventory slot and the dragged item is an inventory item, place it in the slot
+                        slot.SetHeldItem(draggedItem);
+                        draggedItem.transform.SetParent(slot.transform, false);
+                        draggedItem.transform.localPosition = Vector3.zero;
+                        draggedItem = null; // Clear the dragged item reference
+                    }
+                    else{
+                        // If the dragged item type does not match the slot type, return to original slot
+                        setLastItemSlot();
+                    }
+                }
+                else
+                {
+                    setLastItemSlot();
+                }
             }
             else
             {
-                GameObject tempItem = slot.heldItem;
-                slot.SetHeldItem(draggedItem);
-                lastItemSlot.GetComponent<INVSlot>().SetHeldItem(tempItem);
-
-                draggedItem.transform.SetParent(slot.transform, false);
-                draggedItem.transform.localPosition = Vector3.zero;
-                draggedItem = null;
+                // If the clicked object is not a valid inventory slot, return the dragged item to its original slot
+                setLastItemSlot();
             }
-        }
-        
-        else
-        {
-            setLastItemSlot();
         }
     }
 
@@ -198,5 +226,20 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             draggedItem.transform.localPosition = Vector3.zero;
         }
         draggedItem = null;
+    }
+
+    public String getDraggedItem(GameObject item)
+    {
+        if (draggedItem.GetComponent<INVItem>().weapon != null)
+        {
+            return "weapon";
+        }
+        else if (draggedItem.GetComponent<INVItem>().dice != null)
+        {
+            return "dice";
+        }
+        else{
+            return null;
+        }
     }
 }
