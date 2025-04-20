@@ -102,7 +102,7 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             return;
 
         GameObject clickedObject = eventData.pointerCurrentRaycast.gameObject;
-        INVSlot slot = clickedObject?.GetComponent<INVSlot>();
+        INVSlot slot = clickedObject.GetComponent<INVSlot>();
 
         if (slot != null)
         {
@@ -126,14 +126,7 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
         else
         {
-            // Return to original slot if dropped outside
-            if (lastItemSlot != null)
-            {
-                lastItemSlot.GetComponent<INVSlot>().SetHeldItem(draggedItem);
-                draggedItem.transform.SetParent(lastItemSlot.transform, false);
-                draggedItem.transform.localPosition = Vector3.zero;
-            }
-            draggedItem = null;
+
         }
     }
 
@@ -193,5 +186,16 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         INVSlot weaponSlotComp = weaponSlot.GetComponent<INVSlot>();
         Image weaponBg = weaponSlot.transform.Find("Background").GetComponent<Image>();
         weaponBg.sprite = Resources.Load<Sprite>(weaponSlotComp.heldItem == null ? "Images/Inv_empty_box" : "Images/Inv_hold_box_hover");
+    }
+
+    public void setLastItemSlot(){
+        // Return to original slot if dropped outside
+        if (lastItemSlot != null)
+        {
+            lastItemSlot.GetComponent<INVSlot>().SetHeldItem(draggedItem);
+            draggedItem.transform.SetParent(lastItemSlot.transform, false);
+            draggedItem.transform.localPosition = Vector3.zero;
+        }
+        draggedItem = null;
     }
 }
