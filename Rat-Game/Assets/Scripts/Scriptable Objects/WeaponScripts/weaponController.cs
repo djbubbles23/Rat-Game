@@ -34,12 +34,32 @@ public class weaponController : MonoBehaviour
         //dice base damage
         //need to change dice slots based on tier
         int totalDamage = 0;
-        for(int i=0; i<diceSlots.Length; i++){
-            if(diceSlots[i] != null){
-                totalDamage += diceSlots[i].diceValue[Random.Range(0, diceSlots[i].diceValue.Length)];
-            }
+        int weaponTeir = 0;
+        if(weapon.weaponObj.gameObject.name == "DaggerOBJ"){
+            weaponTeir = 1;
         }
+        else if(weapon.weaponObj.gameObject.name == "SwordOBJ"){
+            weaponTeir = 2;
+        }
+        else if(weapon.weaponObj.gameObject.name == "LongSwordOBJ"){
+            weaponTeir = 3;
+        }
+        //based on weapon tier, only use those dice slots
+        //for example, if weapon tier is 2, only use dice slot 1 and 2
 
+        //get slot 1
+        if(diceSlots[0] != null && weaponTeir >= 1){
+            totalDamage += diceSlots[0].diceValue[Random.Range(0, diceSlots[0].diceValue.Length)];
+        }
+        //get slot 2
+        if(diceSlots[1] != null && weaponTeir >= 2){
+            totalDamage += diceSlots[1].diceValue[Random.Range(0, diceSlots[1].diceValue.Length)];
+        }
+        //get slot 3
+        if(diceSlots[2] != null && weaponTeir >= 3){
+            totalDamage += diceSlots[2].diceValue[Random.Range(0, diceSlots[2].diceValue.Length)];
+        }
+        
         //weapon damage amplifier
         int weaponDamgeAmp = 0;
         if(weapon.weaponObj.gameObject.name == "DaggerOBJ"){

@@ -34,7 +34,7 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         INVSlot weaponSlotComp = weaponSlot.GetComponent<INVSlot>();
         weaponSlotComp.SetHeldItem(defaultWeapon);
-        
+
         defaultWeapon.transform.SetParent(weaponSlot.transform, false);
         defaultWeapon.transform.localPosition = Vector3.zero;
     }
@@ -152,7 +152,44 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         draggedItem = null; // Clear the dragged item reference
                     }
                     else if (itemType == "dice" && clickedObject.CompareTag("diceSlot"))
-                    {
+                    { 
+                        int weaponTier = weaponSlot.GetComponent<INVSlot>().heldItem.GetComponent<INVItem>().weapon.tier;
+                        
+                        if(weaponSlot.GetComponent<INVSlot>().heldItem != null){
+                            //if weapon tier is 1, only allow 1 dice slot to be used
+                            if(weaponTier >= 1 && slot.transform.name == "diceSlot"){
+                                slot.SetHeldItem(draggedItem);
+                                draggedItem.transform.SetParent(slot.transform, false);
+                                draggedItem.transform.localPosition = Vector3.zero;
+                                draggedItem = null; // Clear the dragged item reference
+                                return;
+                            }
+                            //if wepaon tier is 2, only allow 2 dice slots to be used
+                            else if(weaponTier >= 2 && (slot.transform.name == "diceSlot" || slot.transform.name == "diceSlot (1)")){
+                                slot.SetHeldItem(draggedItem);
+                                draggedItem.transform.SetParent(slot.transform, false);
+                                draggedItem.transform.localPosition = Vector3.zero;
+                                draggedItem = null; // Clear the dragged item reference
+                                return;
+                            }
+                            //if weapon tier is 3, only allow 3 dice slots to be used
+                            else if(weaponTier >= 3 && (slot.transform.name == "diceSlot" || slot.transform.name == "diceSlot (1)" || slot.transform.name == "diceSlot (2)")){
+                                slot.SetHeldItem(draggedItem);
+                                draggedItem.transform.SetParent(slot.transform, false);
+                                draggedItem.transform.localPosition = Vector3.zero;
+                                draggedItem = null; // Clear the dragged item reference
+                                return;
+                            }
+                            else{
+                                Debug.Log("Place Weapon first!");
+                                setLastItemSlot();
+                            }
+                        }
+                        else{
+                            setLastItemSlot();
+                            return;
+                        }
+                        //else return to original slot
                         // If the slot is a dice slot and the dragged item is a dice, place it in the slot
                         slot.SetHeldItem(draggedItem);
                         draggedItem.transform.SetParent(slot.transform, false);

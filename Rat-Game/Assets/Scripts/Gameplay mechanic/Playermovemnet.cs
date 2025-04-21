@@ -279,17 +279,17 @@ public class PlayerMovement : MonoBehaviour
             //animation controller
             playerAnim.runtimeAnimatorController = daggerAnim;
             //speed
-            attackDelay = 1f;
+            attackDelay = .75f;
         }
         if(weaponType == "sword"){
             attackHitbox.transform.localScale = new Vector3(0.22f, 1f, 0.15f);
             playerAnim.runtimeAnimatorController = swordAnim;
-            attackDelay = 2f;
+            attackDelay = 1.5f;
         }
         if(weaponType == "longSword"){
             attackHitbox.transform.localScale = new Vector3(1.64f, 1f, 1.64f);
             playerAnim.runtimeAnimatorController = longSwordAnim;
-            attackDelay = 3f;
+            attackDelay = 2.25f;
         }
     }
 }

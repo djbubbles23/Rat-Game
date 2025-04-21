@@ -7,7 +7,7 @@ public class INVSlot : MonoBehaviour
     {
         if (item == null)
         {
-            Debug.LogError("SetHeldItem: The item passed is null!");
+            //Debug.Log("SetHeldItem: The item passed is null!");
             return;
         }
         heldItem = item;
