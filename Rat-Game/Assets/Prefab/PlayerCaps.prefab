@@ -488,9 +488,12 @@ MonoBehaviour:
   attackHitbox: {fileID: 6786733609769656331}
   atc: {fileID: 675141929262993325}
   attackDelay: 1
-  Weapon: {fileID: 6656160772315180802}
+  WeaponController: {fileID: 398386718291404509}
+  daggerAnim: {fileID: 9100000, guid: 91cb34cb92d53c740a1b03a98dadef54, type: 2}
+  swordAnim: {fileID: 9100000, guid: ec1a02c1c43efa0408fddea6a09f0b2f, type: 2}
+  longSwordAnim: {fileID: 9100000, guid: 97417c8dc0ba5994f9f5eabce473165c, type: 2}
   swingSFX: {fileID: 8300000, guid: 4906fbbc8d02dff47a2600ee3feddf98, type: 3}
-  invManager: {fileID: 6802443587966596823, guid: 6afb0949634c1a84e9acd895ec79fefe, type: 3}
+  invManager: {fileID: 0}
 --- !u!95 &3147966590235942965
 Animator:
   serializedVersion: 7
@@ -563,23 +566,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3662496979572467538, guid: 19ad1952919114446ab32647516f23c6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.22
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 3662496979572467538, guid: 19ad1952919114446ab32647516f23c6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 3662496979572467538, guid: 19ad1952919114446ab32647516f23c6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.15
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 3662496979572467538, guid: 19ad1952919114446ab32647516f23c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.368
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3662496979572467538, guid: 19ad1952919114446ab32647516f23c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.171
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3662496979572467538, guid: 19ad1952919114446ab32647516f23c6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -670,8 +673,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 14.316629, y: 0.5694293, z: 10.503119}
-  m_Center: {x: -3.866321, y: -0.0049458146, z: -0.20964286}
+  m_Size: {x: 13.64746, y: 0.5694293, z: 13.904527}
+  m_Center: {x: -3.58495, y: 0, z: -0.19593516}
 --- !u!114 &5494384143618114572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1363,7 +1366,7 @@ PrefabInstance:
     - target: {fileID: 5902776537691132780, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 11400000, guid: 5349b3e582b729e4286afb98d4a6f9c0, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 5902776537691132780, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
       propertyPath: diceSlot2
       value: 
@@ -1382,17 +1385,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5902776537691132780, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
   m_PrefabInstance: {fileID: 6083665321551017393}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6656160772315180802}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df0d7e3fdff18d64e8fef6c5f9fb4935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &6656160772315180802 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 590793524020337331, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
-  m_PrefabInstance: {fileID: 6083665321551017393}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8183784494307494460 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}

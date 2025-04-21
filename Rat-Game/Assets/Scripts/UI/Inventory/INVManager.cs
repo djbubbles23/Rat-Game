@@ -24,6 +24,21 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public weaponController weaponController;
 
+    void Start()
+    {
+        
+        GameObject defaultWeapon = Instantiate(itemPrefab);
+
+        INVItem defaultWeaponItem = defaultWeapon.GetComponent<INVItem>();
+        defaultWeaponItem.weapon = Resources.Load<weaponScriptableObject>("ScriptableObjects/SwordWeapon");
+
+        INVSlot weaponSlotComp = weaponSlot.GetComponent<INVSlot>();
+        weaponSlotComp.SetHeldItem(defaultWeapon);
+        
+        defaultWeapon.transform.SetParent(weaponSlot.transform, false);
+        defaultWeapon.transform.localPosition = Vector3.zero;
+    }
+
     void Update()
     {
         // Dragging logic
@@ -58,7 +73,12 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
 
         // Sync weapon in the weaponSlot with weaponController
-        weaponController.weapon = weaponSlot.GetComponent<INVSlot>().heldItem?.GetComponent<INVItem>().weapon;
+        if(weaponSlot.GetComponent<INVSlot>().heldItem != null){
+            weaponController.weapon = weaponSlot.GetComponent<INVSlot>().heldItem?.GetComponent<INVItem>().weapon;
+        }
+        else{
+            weaponController.weapon = null;
+        }
         // Sync weapon in the weaponSlot with playerMovement
             // Inside playerMovement script it will change the ani controller, weapon model, etc.
     }
@@ -102,6 +122,7 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
     }
 
+    // This section used ai to make comments nothing more
     public void OnPointerUp(PointerEventData eventData)
     {
         // Check if the left mouse button was released
