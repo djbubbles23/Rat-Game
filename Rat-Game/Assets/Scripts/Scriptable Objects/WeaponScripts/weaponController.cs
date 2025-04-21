@@ -18,27 +18,14 @@ public class weaponController : MonoBehaviour
 
     public INVManager invManager;
 
-    public bool debug = false;
     void Start()
     {
-
-        // Check if the weapon object is valid
-        if (weapon.weaponObj is GameObject)
-        {
-            // Instantiate the weapon in the scene
-            weaponInstance = Instantiate(weapon.weaponObj);
-            weaponInstance.transform.SetParent(transform);
-            weaponInstance.transform.localPosition = Vector3.zero;
-            weaponInstance.transform.localScale = weaponScale;
-        }
-        else
-        {
-            Debug.LogError("weaponObj is not a valid");
-        }
+        weaponEquip(weapon);
     }
 
     void Update()
     {
+        // Sync weapon in the weaponSlot with weaponController
     } 
 
     public int calculateDmg(){
@@ -50,5 +37,16 @@ public class weaponController : MonoBehaviour
         }
         Debug.Log("Total Damage: " + totalDamage);
         return totalDamage;
+    }
+
+    public void weaponEquip(weaponScriptableObject newWeapon){
+
+        if (newWeapon.weaponObj is GameObject)
+        {
+            weaponInstance = Instantiate(newWeapon.weaponObj);
+            weaponInstance.transform.SetParent(transform);
+            weaponInstance.transform.localPosition = Vector3.zero;
+            weaponInstance.transform.localScale = weaponScale;
+        }
     }
 }

@@ -56,6 +56,11 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 weaponController.diceSlots[i] = null;
             }
         }
+
+        // Sync weapon in the weaponSlot with weaponController
+        weaponController.weapon = weaponSlot.GetComponent<INVSlot>().heldItem?.GetComponent<INVItem>().weapon;
+        // Sync weapon in the weaponSlot with playerMovement
+            // Inside playerMovement script it will change the ani controller, weapon model, etc.
     }
 
     private void UpdateDraggedItemUI(INVItem inv)

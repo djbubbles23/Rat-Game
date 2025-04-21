@@ -80,6 +80,8 @@ public class PlayerMovement : MonoBehaviour
 
         HandleMovementAnimations();
 
+        // Function to handle weapon equip. Weapon model, animation controller, etc.
+
     }
 
     void FixedUpdate()
