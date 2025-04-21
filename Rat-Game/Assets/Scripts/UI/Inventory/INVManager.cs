@@ -133,7 +133,7 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         draggedItem.transform.localPosition = Vector3.zero;
                         draggedItem = null; // Clear the dragged item reference
                     }
-                    else if (itemType == null && clickedObject.CompareTag("invSlot"))
+                    else if (clickedObject.CompareTag("invSlot"))
                     {
                         // If the slot is an inventory slot and the dragged item is an inventory item, place it in the slot
                         slot.SetHeldItem(draggedItem);
