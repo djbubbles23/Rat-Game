@@ -37,6 +37,17 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         defaultWeapon.transform.SetParent(weaponSlot.transform, false);
         defaultWeapon.transform.localPosition = Vector3.zero;
+
+        GameObject defaultDice = Instantiate(itemPrefab);
+
+        INVItem defaultDiceItem = defaultDice.GetComponent<INVItem>();
+        defaultDiceItem.dice = Resources.Load<diceScriptableObject>("ScriptableObjects/Dice");
+
+        INVSlot firstEslot = Eslots[0].GetComponent<INVSlot>();
+        firstEslot.SetHeldItem(defaultDice);
+
+        defaultDice.transform.SetParent(Eslots[0].transform, false);
+        defaultDice.transform.localPosition = Vector3.zero;
     }
 
     void Update()
