@@ -25,8 +25,10 @@ public class weaponController : MonoBehaviour
 
     void Update()
     {
-        // Sync weapon in the weaponSlot with weaponController
-        weaponEquip(weapon);
+        if(weapon != null){
+            // Sync weapon in the weaponSlot with weaponController
+            weaponEquip(weapon);
+        }
 
     } 
 
@@ -83,15 +85,11 @@ public class weaponController : MonoBehaviour
         {
             Destroy(weaponInstance);
         }
-
-        if(weaponInstance == null){
-            weaponInstance = Instantiate(newWeapon.weaponObj);
-            weaponInstance.transform.SetParent(transform);
-            weaponInstance.transform.localPosition = Vector3.zero;
-            weaponInstance.transform.localScale = weaponScale;
-            weaponInstance.transform.localRotation = Quaternion.identity;
-
-        }
+        weaponInstance = Instantiate(newWeapon.weaponObj);
+        weaponInstance.transform.SetParent(transform);
+        weaponInstance.transform.localPosition = Vector3.zero;
+        weaponInstance.transform.localScale = weaponScale;
+        weaponInstance.transform.localRotation = Quaternion.identity;
 
 
         /*
