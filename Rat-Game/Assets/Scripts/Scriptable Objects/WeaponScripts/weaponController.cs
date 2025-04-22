@@ -84,11 +84,15 @@ public class weaponController : MonoBehaviour
             Destroy(weaponInstance);
         }
 
-        weaponInstance = Instantiate(newWeapon.weaponObj);
-        weaponInstance.transform.SetParent(transform);
-        weaponInstance.transform.localPosition = Vector3.zero;
-        weaponInstance.transform.localScale = weaponScale;
-        weaponInstance.transform.localRotation = Quaternion.identity;
+        if(weaponInstance == null){
+            weaponInstance = Instantiate(newWeapon.weaponObj);
+            weaponInstance.transform.SetParent(transform);
+            weaponInstance.transform.localPosition = Vector3.zero;
+            weaponInstance.transform.localScale = weaponScale;
+            weaponInstance.transform.localRotation = Quaternion.identity;
+
+        }
+
 
         /*
         if(newWeapon.weaponObj.gameObject.name == "DaggerOBJ"){
