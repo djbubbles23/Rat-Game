@@ -44,7 +44,7 @@ public class CheckCollision : MonoBehaviour
         string popupText = damage.ToString();
         GameObject floatingText = Instantiate(floatingTextPrefab, enemy, Quaternion.identity);
         floatingText.GetComponent<TextMeshPro>().text = popupText;
-        floatingText.transform.position = enemy + new Vector3(0, .5f, 0); 
+        floatingText.transform.position = enemy + new Vector3(1f, 1f, 0); 
         Debug.Log("Floating text instantiated: " + popupText);
     }
 }
