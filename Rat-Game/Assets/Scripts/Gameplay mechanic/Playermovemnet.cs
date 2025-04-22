@@ -287,7 +287,7 @@ public class PlayerMovement : MonoBehaviour
             attackDelay = 1f;
         }
         if(weaponType == "longSword"){
-            attackHitbox.transform.localScale = new Vector3(1.64f, 1f, 1.64f);
+            attackHitbox.transform.localScale = new Vector3(0.33f, 1f, .26f);
             playerAnim.runtimeAnimatorController = longSwordAnim;
             attackDelay = 2f;
         }
