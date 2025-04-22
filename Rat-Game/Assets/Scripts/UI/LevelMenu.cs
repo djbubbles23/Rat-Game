@@ -77,6 +77,24 @@ public class LevelMenu : MonoBehaviour
         }
     }
 
+    public void OpenLevelType(string levelType)
+    {
+        if (!isVcam1Active && checkType(levelType))
+        {
+            Debug.Log("Proper Button Indeed");
+            StateControllerScript.currLevel = levelType;
+            SceneManager.LoadScene(StateControllerScript.currZone);
+        }
+        else if (isVcam1Active)
+        {
+            Debug.LogWarning("Cannot open level while vcam1 is active.");
+        }
+        else
+        {
+            Debug.LogError("Invalid level Type: " + levelType);
+        }
+    }
+
     // Reset unlocked level back to 1
     private void ResetUnlockedLevel()
     {
@@ -91,5 +109,15 @@ public class LevelMenu : MonoBehaviour
                 buttons[i].interactable = false;  // Lock all buttons except level 1
             }
         }
+    }
+
+    //Checks that the input is an allowed level type string
+    private bool checkType(string levelType) {
+        if (levelType.Equals("Entrance") || levelType.Equals("Combat") || levelType.Equals("Shop") || levelType.Equals("Cafe")
+         || levelType.Equals("Mini") || levelType.Equals("Boss")) 
+        {
+            return true;
+        }
+        return false;
     }
 }

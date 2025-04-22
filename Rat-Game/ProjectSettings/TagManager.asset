@@ -8,6 +8,13 @@ TagManager:
   - Attack
   - Enemy
   - InventoryManager
+  - Dice
+  - EndLevel
+  - LevelUnlocked
+  - Weapon
+  - weaponSlot
+  - diceSlot
+  - invSlot
   layers:
   - Default
   - TransparentFX
@@ -44,6 +51,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2891881859
     locked: 0
   m_RenderingLayers:
   - Default
