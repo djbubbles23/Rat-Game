@@ -79,11 +79,12 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 eWeaponEquipped = false;
+                Debug.Log("No weapon equipped in the weapon slot.");
             }
         }
         else
         {
-            eWeaponEquipped = false;
+            eWeaponEquipped = true;
         }
 
         CheckInputs();

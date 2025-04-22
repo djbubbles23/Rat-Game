@@ -288,7 +288,16 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         if (emptySlot != null)
         {
+            // Instantiate a new instance of the itemPrefab
             GameObject newItem = Instantiate(itemPrefab);
+
+            // Ensure the newItem is not null
+            if (newItem == null)
+            {
+                Debug.LogError("Failed to instantiate itemPrefab.");
+                return;
+            }
+
             INVItem newItemComp = newItem.GetComponent<INVItem>();
 
             // Assign weapon or dice
@@ -298,10 +307,14 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             if (item.GetComponent<INVItemPickup>()?.dice != null)
                 newItemComp.dice = item.GetComponent<INVItemPickup>().dice;
 
+            // Set the parent of the new item to the empty slot
             newItem.transform.SetParent(emptySlot.transform, false);
             newItem.transform.localPosition = Vector3.zero;
+
+            // Assign the new item to the slot
             emptySlot.GetComponent<INVSlot>().SetHeldItem(newItem);
 
+            // Destroy the original item
             Destroy(item);
         }
         else
