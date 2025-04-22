@@ -11,6 +11,7 @@ public class BossAI : MonoBehaviour
     public NavMeshAgent agent;
     public Transform player;
     public LayerMask Ground, Player;
+    public Animator animator;
     
     [Header("Patrolling")]
     public Vector3 walkPoint;
@@ -94,10 +95,13 @@ public class BossAI : MonoBehaviour
         walkPointSet = false; // stop patrolling
         agent.SetDestination(player.position);
         EnemyBehavior.ResetAttack();
+        animator.SetBool("Running", true);
     }
 
     private void AttackPlayer()
     {
+        animator.SetBool("Running", false);
+        
         walkPointSet = false; // stop patrolling
         agent.SetDestination(transform.position);
         
@@ -122,6 +126,7 @@ public class BossAI : MonoBehaviour
 
     IEnumerator SlamRoutine()
     {
+        animator.SetBool("Running", false);
         StartCoroutine(PauseAgent(3.0f));
         
         // face the player
