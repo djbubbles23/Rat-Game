@@ -122,7 +122,8 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
     }
 
-    // This section used ai to make comments nothing more
+    // This section used ai to make comments nothing more, fyi if I were to do this again I would use helper functions more often
+    // However, I am not going to change it because it works and I am lazy
     public void OnPointerUp(PointerEventData eventData)
     {
         // Check if the left mouse button was released
@@ -208,6 +209,56 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         // If the dragged item type does not match the slot type, return to original slot
                         setLastItemSlot();
                     }
+                }
+                
+                // If the slot is != null, and is vaild, swap the items
+                else if(slot.heldItem != null && slot.heldItem != draggedItem)
+                {
+                    if(itemType == "weapon" && clickedObject.CompareTag("weaponSlot")){
+                        GameObject tempItem = slot.heldItem;
+                        slot.SetHeldItem(draggedItem);
+                        draggedItem.transform.SetParent(slot.transform, false);
+                        draggedItem.transform.localPosition = Vector3.zero;
+
+                        tempItem.transform.SetParent(lastItemSlot.transform, false);
+                        lastItemSlot.GetComponent<INVSlot>().SetHeldItem(tempItem);
+                        tempItem.transform.localPosition = Vector3.zero;
+
+                        draggedItem = null; // Clear the dragged item reference
+                    }
+
+                    else if (itemType == "dice" && clickedObject.CompareTag("diceSlot")){
+                        GameObject tempItem = slot.heldItem;
+                        slot.SetHeldItem(draggedItem);
+                        draggedItem.transform.SetParent(slot.transform, false);
+                        draggedItem.transform.localPosition = Vector3.zero;
+
+                        tempItem.transform.SetParent(lastItemSlot.transform, false);
+                        lastItemSlot.GetComponent<INVSlot>().SetHeldItem(tempItem);
+                        tempItem.transform.localPosition = Vector3.zero;
+
+                        draggedItem = null; // Clear the dragged item reference
+                    }
+
+                    else if (clickedObject.CompareTag("invSlot")){
+                        GameObject tempItem = slot.heldItem;
+                        slot.SetHeldItem(draggedItem);
+                        draggedItem.transform.SetParent(slot.transform, false);
+                        draggedItem.transform.localPosition = Vector3.zero;
+
+                        tempItem.transform.SetParent(lastItemSlot.transform, false);
+                        lastItemSlot.GetComponent<INVSlot>().SetHeldItem(tempItem);
+                        tempItem.transform.localPosition = Vector3.zero;
+
+                        draggedItem = null; // Clear the dragged item reference
+                    }
+
+                    // Swap the held item with the dragged item
+                    else{
+                        // If the dragged item type does not match the slot type, return to original slot
+                        setLastItemSlot();
+                    }
+
                 }
                 else
                 {
