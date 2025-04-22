@@ -44,11 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0d7e3fdff18d64e8fef6c5f9fb4935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: ba14e0b4a7768754eb558e431b072942, type: 2}
+  weapon: {fileID: 11400000, guid: 5349b3e582b729e4286afb98d4a6f9c0, type: 2}
   weaponScale: {x: 1, y: 1, z: 1}
-  diceSlot1: {fileID: 11400000, guid: 4545706638c51cb4190bcf20b0457d82, type: 2}
-  diceSlot2: {fileID: 0}
-  diceSlot3: {fileID: 0}
-  invSlot1: {fileID: 0}
-  invSlot2: {fileID: 0}
-  invSlot3: {fileID: 0}
+  diceSlots:
+  - {fileID: 11400000, guid: e1614037d57fcd94384f2df73a6cdc71, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  invManager: {fileID: 6802443587966596823, guid: 6afb0949634c1a84e9acd895ec79fefe, type: 3}
