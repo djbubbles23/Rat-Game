@@ -87,10 +87,10 @@ public class EnemyBehavior : MonoBehaviour
 
         // Play animation
         animator.SetTrigger("Attack");
-        atc.Play();
 
         // Activate collider halfway through
         yield return new WaitForSeconds(1.18f);
+        atc.Play();
         attackCollider.enabled = true;
 
         yield return new WaitForSeconds(attackLength);
