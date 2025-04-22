@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class INVItem : MonoBehaviour
 {
     public diceScriptableObject dice;
+    public weaponScriptableObject weapon;
     [SerializeField] Image iconImage;
     //public Sprite[] diceImages = new Sprite[3];
     //public Sprite[] weaponImages = new Sprite[3];
@@ -16,6 +17,13 @@ public class INVItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        iconImage.sprite = dice.icon;
+        if(dice != null)
+        {
+            iconImage.sprite = dice.icon;
+        }
+        if(weapon != null)
+        {
+            iconImage.sprite = weapon.icon;
+        }
     }
 }

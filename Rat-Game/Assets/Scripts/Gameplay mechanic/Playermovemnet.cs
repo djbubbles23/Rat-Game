@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -9,20 +10,26 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 7f;           // Jump strength
     public GameObject attackHitbox;        // Object that represents player attack hitbox
     private Rigidbody rb;                  // Rigidbody of the player gameobject
-    private VisualEffect atc;              // VisualEffect component for player's attacks
+    public VisualEffect atc;              // VisualEffect component for player's attacks
     private Vector3 movement;              // Movement vector based on player inputs
     private bool isGrounded;               // State flag for whether the player is on the ground
     private bool jumpInput;                // State flag for jump input
     private bool attackInput;              // State flag for attack input
     private bool canAttack = true;         // State flag for whether the player can attack
-    public float attackDelay = 1f;         // Delay between attacks in seconds
+    public float attackDelay = 3f;         // Delay between attacks in seconds
     private float attackCounter;           // Counter for attack delay
     private int facing;                    // Direction the player is facing
 
-    public GameObject Weapon;
+    public weaponController WeaponController;
+    private bool eWeaponEquipped = false; // State flag for whether a weapon is equipped
 
     // Animation State Machine
     private Animator playerAnim;
+
+    public RuntimeAnimatorController daggerAnim;
+    public RuntimeAnimatorController swordAnim;
+    public RuntimeAnimatorController longSwordAnim;
+
 
     public AudioClip swingSFX;
     private AudioSource audioSource;
@@ -42,12 +49,44 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        atc = gameObject.GetComponentInChildren<VisualEffect>();
+        //atc = gameObject.GetComponentInChildren<VisualEffect>();
         audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
+        // Function to handle weapon equip. Weapon model, animation controller, etc.
+        INVSlot weaponSlotComp = invManager.weaponSlot.GetComponent<INVSlot>();
+        if (weaponSlotComp != null && weaponSlotComp.heldItem != null)
+        {
+            weaponScriptableObject weaponTemp = weaponSlotComp.heldItem.GetComponent<INVItem>()?.weapon;
+            if (weaponTemp != null)
+            {
+                eWeaponEquipped = true;
+                if (weaponTemp.weaponObj.gameObject.name == "DaggerOBJ")
+                {
+                    changeWeapon("dagger");
+                }
+                else if (weaponTemp.weaponObj.gameObject.name == "SwordOBJ")
+                {
+                    changeWeapon("sword");
+                }
+                else if (weaponTemp.weaponObj.gameObject.name == "LongSwordOBJ")
+                {
+                    changeWeapon("longSword");
+                }
+            }
+            else
+            {
+                eWeaponEquipped = false;
+                Debug.Log("No weapon equipped in the weapon slot.");
+            }
+        }
+        else
+        {
+            eWeaponEquipped = true;
+        }
+
         CheckInputs();
 
         if (jumpInput && isGrounded)
@@ -55,11 +94,11 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
-        if (attackInput && canAttack && movement == Vector3.zero)
+        if (attackInput && canAttack && movement == Vector3.zero && invManager.menuActivated == false && eWeaponEquipped)
         {
+            Attack();
             AudioClip clip = swingSFX;
             audioSource.PlayOneShot(clip);
-            Attack();
         }
         else if (!canAttack)
         {
@@ -80,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
 
         HandleMovementAnimations();
 
-    }
+    }   
 
     void FixedUpdate()
     {
@@ -112,9 +151,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Attack()
     {
-        canAttack = false;
         playerAnim.SetTrigger("isAttacking");
         StartCoroutine(ActivateAttackHb());
+        canAttack = false;
     }
 
     IEnumerator ActivateAttackHb()
@@ -239,6 +278,31 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Dice"))
         {
             invManager.ItemPicked(collision.gameObject);
+        }
+        if(collision.gameObject.CompareTag("Weapon"))
+        {
+            invManager.ItemPicked(collision.gameObject);
+        }
+    }
+
+    public void changeWeapon(string weaponType){
+        if(weaponType == "dagger"){
+            //hitbox
+            attackHitbox.transform.localScale = new Vector3(0.13f, 1f, 0.09f);
+            //animation controller
+            playerAnim.runtimeAnimatorController = daggerAnim;
+            //speed
+            attackDelay = .5f;
+        }
+        if(weaponType == "sword"){
+            attackHitbox.transform.localScale = new Vector3(0.22f, 1f, 0.15f);
+            playerAnim.runtimeAnimatorController = swordAnim;
+            attackDelay = 1f;
+        }
+        if(weaponType == "longSword"){
+            attackHitbox.transform.localScale = new Vector3(0.33f, 1f, .26f);
+            playerAnim.runtimeAnimatorController = longSwordAnim;
+            attackDelay = 2f;
         }
     }
 }

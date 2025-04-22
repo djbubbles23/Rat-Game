@@ -604,7 +604,7 @@ PrefabInstance:
     - target: {fileID: 398386718291404509, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 11400000, guid: 5c6ed8618b8078746b0ea1f67a35d3eb, type: 2}
+      objectReference: {fileID: 11400000, guid: 5349b3e582b729e4286afb98d4a6f9c0, type: 2}
     - target: {fileID: 726236236749743304, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -621,6 +621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCaps
       objectReference: {fileID: 0}
+    - target: {fileID: 3147966590235942965, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ec1a02c1c43efa0408fddea6a09f0b2f, type: 2}
     - target: {fileID: 4335091427055777845, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
