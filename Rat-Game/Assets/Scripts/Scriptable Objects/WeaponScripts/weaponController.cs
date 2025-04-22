@@ -26,7 +26,14 @@ public class weaponController : MonoBehaviour
     void Update()
     {
         // Sync weapon in the weaponSlot with weaponController
-        weaponEquip(weapon);
+        if (weapon != null)
+        {
+            weaponEquip(weapon);
+        }
+        else
+        {
+            Debug.LogWarning("Weapon is not assigned in weaponController.");
+        }
     } 
 
     public int calculateDmg(){

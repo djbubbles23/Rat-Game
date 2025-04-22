@@ -56,21 +56,33 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Function to handle weapon equip. Weapon model, animation controller, etc.
-        weaponScriptableObject weaponTemp = invManager.weaponSlot.GetComponent<INVSlot>().heldItem?.GetComponent<INVItem>().weapon;
-        if (weaponTemp != null){
-            eWeaponEquipped = true;
-            if(weaponTemp.weaponObj.gameObject.name == "DaggerOBJ"){
-                changeWeapon("dagger");
+        INVSlot weaponSlotComp = invManager.weaponSlot.GetComponent<INVSlot>();
+        if (weaponSlotComp != null && weaponSlotComp.heldItem != null)
+        {
+            weaponScriptableObject weaponTemp = weaponSlotComp.heldItem.GetComponent<INVItem>()?.weapon;
+            if (weaponTemp != null)
+            {
+                eWeaponEquipped = true;
+                if (weaponTemp.weaponObj.gameObject.name == "DaggerOBJ")
+                {
+                    changeWeapon("dagger");
+                }
+                else if (weaponTemp.weaponObj.gameObject.name == "SwordOBJ")
+                {
+                    changeWeapon("sword");
+                }
+                else if (weaponTemp.weaponObj.gameObject.name == "LongSwordOBJ")
+                {
+                    changeWeapon("longSword");
+                }
             }
-            else if(weaponTemp.weaponObj.gameObject.name == "SwordOBJ"){
-                changeWeapon("sword");
-            }
-            else if(weaponTemp.weaponObj.gameObject.name == "LongSwordOBJ"){
-                changeWeapon("longSword");
+            else
+            {
+                eWeaponEquipped = false;
             }
         }
-        else{
-            
+        else
+        {
             eWeaponEquipped = false;
         }
 
