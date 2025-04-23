@@ -6,11 +6,13 @@ using UnityEditor;
 
 [CreateAssetMenu(fileName = "ScriptableObjects", menuName = "Dice")]
 public class diceScriptableObject : ScriptableObject
-{
+{   
+    [Header("Dice Data")]
+    [Header("Create dice type first (4, 6, or 8)")]
+    public int diceType;
     public string diceName;
     public string diceDescription;
     public string effectValue;
-    public int diceType;
     public int[] diceValue;
     public float diceCost;
     public Sprite icon; 
@@ -18,7 +20,7 @@ public class diceScriptableObject : ScriptableObject
     private void OnEnable()
     {
         //keep them in the same order because cost is dependant on values and values are dependant on type
-        diceType = createDiceType();
+        //diceType = createDiceType();
         diceValue = createDiceValues();
         diceCost = createDiceCost();
 
