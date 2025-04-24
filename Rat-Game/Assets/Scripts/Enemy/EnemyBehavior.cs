@@ -101,6 +101,7 @@ public class EnemyBehavior : MonoBehaviour
 
         // Cooldown or reset (if needed, add a delay here)
         attacking = false;
+        animator.SetTrigger("Idle");
     }
     
     public void ResetAttack()
