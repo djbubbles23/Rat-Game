@@ -43,14 +43,16 @@ public class RatAI : MonoBehaviour
             playerInSightRange = Physics.CheckSphere(transform.position, sightRange, Player);
             playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, Player);
 
-            if (!playerInSightRange && !playerInAttackRange) Patrolling();
-            if (playerInSightRange && !playerInAttackRange)  ChasePlayer();
+            if (!playerInSightRange && !playerInAttackRange && !EnemyBehavior.IsAttacking()) Patrolling();
+            if (playerInSightRange && !playerInAttackRange  && !EnemyBehavior.IsAttacking())  ChasePlayer();
             if (playerInSightRange && playerInAttackRange)   AttackPlayer();
         }
     }
 
     private void Patrolling()
     {
+        animator.SetBool("Running", true);
+        
         if (!walkPointSet) SearchWalkPoint();
         agent.SetDestination(walkPoint);
         
@@ -88,11 +90,12 @@ public class RatAI : MonoBehaviour
         walkPointSet = false; // stop patrolling
         agent.SetDestination(player.position);
         EnemyBehavior.ResetAttack();
-        animator.SetTrigger("Run");
+        animator.SetBool("Running", true);
     }
 
     private void AttackPlayer()
     {
+        animator.SetBool("Running", false);
         walkPointSet = false; // stop patrolling
         agent.SetDestination(transform.position);
         
