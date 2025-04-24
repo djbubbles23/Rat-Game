@@ -56,7 +56,7 @@ public class RatAI : MonoBehaviour
         
         // Reset walk point
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
-        print(distanceToWalkPoint.magnitude);
+        // print(distanceToWalkPoint.magnitude);
         if (distanceToWalkPoint.magnitude < 2.0f)
         {
             walkPointSet = false;
