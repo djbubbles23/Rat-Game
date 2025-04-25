@@ -23,7 +23,6 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject itemDescription;
 
     public weaponController weaponController;
-    public GameObject gO; 
 
     void Start()
     {
@@ -320,11 +319,7 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 newItemComp.dice = item.GetComponent<INVItemPickup>().dice;
 
             // Set the parent of the new item to the empty slot
-            //newItem.transform.SetParent(emptySlot.transform, false);
-            Debug.Log("newItem: "+newItem.name);
-            Debug.Log("emptySlot: "+emptySlot.name);
-            Debug.Log("gO: "+gO.name);
-            newItem.transform.parent = gO.transform;
+            newItem.transform.SetParent(emptySlot.transform, false);
             newItem.transform.localPosition = Vector3.zero;
 
             // Assign the new item to the slot
