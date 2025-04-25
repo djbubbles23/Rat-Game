@@ -48,9 +48,9 @@ public class BossAI : MonoBehaviour
 
             if (agent.enabled)
             {
-                if (!playerInSightRange && !isSlamming) Patrolling();
+                if (!playerInSightRange && !isSlamming && !EnemyBehavior.IsAttacking()) Patrolling();
                 if (playerInSightRange && !playerInSlamRange && !isSlamming)  ChasePlayer();
-                if (playerInSlamRange && !playerInAttackRange)   SlamPlayer();
+                if (playerInSlamRange && !playerInAttackRange && !EnemyBehavior.IsAttacking())   SlamPlayer();
                 if (playerInAttackRange && !isSlamming)   AttackPlayer();
             }
         }
