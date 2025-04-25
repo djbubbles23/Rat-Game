@@ -299,11 +299,8 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             }
         }
 
-        addItemInPrefab(emptySlot, item);
         if (emptySlot != null)
         {
-        /*
-            // Undercontrsuction
             // Instantiate a new instance of the itemPrefab
             GameObject newItem = Instantiate(itemPrefab);
 
@@ -332,7 +329,6 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
             // Destroy the original item
             Destroy(item);
-        */
         }
         else
         {
@@ -384,72 +380,6 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
         else{
             return null;
-        }
-    }
-
-    
-    [MenuItem("Tools/Inventory/Add Item In Prefab")]
-    static void addItemInPrefab(GameObject emptySlot, GameObject item)
-    {
-        // Path to the prefab
-        string path = "Assets/Prefab/InventoryCanvas.prefab";
-        string itemPath = "Assets/Prefab/Item.prefab";
-        
-        // Load the prefab
-        GameObject inventoryCanvasPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
-        GameObject itemPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(itemPath);
-        if (inventoryCanvasPrefab == null)
-        {
-            Debug.LogError("Prefab not found at path: " + path);
-            return;
-        }
-
-        // Instantiate the prefab in the scene
-        // Check if the prefab is already in the scene
-        GameObject existingPrefab = GameObject.Find(inventoryCanvasPrefab.name);
-        if(existingPrefab != null)
-        {
-            // If it exists, use that instance instead of creating a new one
-            inventoryCanvasPrefab = existingPrefab;
-        }
-        else
-        {
-            // If it doesn't exist, instantiate a new one
-            inventoryCanvasPrefab = PrefabUtility.InstantiatePrefab(inventoryCanvasPrefab) as GameObject;
-        }
-
-        // Determine which slot to add the item to (assuming you want to add it to the first available slot)
-        if (emptySlot != null)
-        {
-            // Instantiate the item (assuming it's a dice or weapon)
-            GameObject newItem = Instantiate(itemPrefab);
-            INVItem invItem = newItem.GetComponent<INVItem>();
-
-            // Assign weapon or dice to the new item
-            if (invItem.weapon != null)
-            {
-                invItem.weapon = Resources.Load<weaponScriptableObject>("ScriptableObjects/SwordWeapon");
-            }
-            else if (invItem.dice != null)
-            {
-                invItem.dice = Resources.Load<diceScriptableObject>("ScriptableObjects/Dice");
-            }
-
-            // Set the parent of the new item
-            newItem.transform.SetParent(emptySlot.transform, false);
-            newItem.transform.localPosition = Vector3.zero;
-
-            // Add the item to the slot
-            emptySlot.GetComponent<INVSlot>().SetHeldItem(newItem);
-
-            // Save the changes to the prefab
-            PrefabUtility.SaveAsPrefabAsset(inventoryCanvasPrefab, path);
-
-            Debug.Log("Item added to prefab.");
-        }
-        else
-        {
-            Debug.LogError("No empty slot available to add the item.");
         }
     }
 
