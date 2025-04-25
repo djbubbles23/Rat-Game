@@ -48,9 +48,9 @@ public class BossAI : MonoBehaviour
 
             if (agent.enabled)
             {
-                if (!playerInSightRange && !isSlamming) Patrolling();
+                if (!playerInSightRange && !isSlamming && !EnemyBehavior.IsAttacking()) Patrolling();
                 if (playerInSightRange && !playerInSlamRange && !isSlamming)  ChasePlayer();
-                if (playerInSlamRange && !playerInAttackRange)   SlamPlayer();
+                if (playerInSlamRange && !playerInAttackRange && !EnemyBehavior.IsAttacking())   SlamPlayer();
                 if (playerInAttackRange && !isSlamming)   AttackPlayer();
             }
         }
@@ -63,7 +63,7 @@ public class BossAI : MonoBehaviour
         
         // Reset walk point
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
-        print(distanceToWalkPoint.magnitude);
+        // print(distanceToWalkPoint.magnitude);
         if (distanceToWalkPoint.magnitude < 2.0f)
         {
             walkPointSet = false;
