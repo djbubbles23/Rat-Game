@@ -82,9 +82,6 @@ public class EnemyBehavior : MonoBehaviour
         // Stop movement
         agent.isStopped = true;
 
-        // Start wind-up / delay
-        yield return new WaitForSeconds(attackDelay);
-
         // Play animation
         animator.SetTrigger("Attack");
 
@@ -93,7 +90,7 @@ public class EnemyBehavior : MonoBehaviour
         atc.Play();
         attackCollider.enabled = true;
 
-        yield return new WaitForSeconds(attackLength);
+        yield return new WaitForSeconds(1.2f);
         attackCollider.enabled = false;
         
         // Resume movement

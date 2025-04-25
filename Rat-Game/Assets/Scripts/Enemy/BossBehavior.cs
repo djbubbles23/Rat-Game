@@ -80,9 +80,6 @@ public class BossBehavior : MonoBehaviour
         // Stop movement
         agent.isStopped = true;
 
-        // Start wind-up / delay
-        yield return new WaitForSeconds(attackDelay);
-
         // Play animation
         animator.SetTrigger("Attack");
 
@@ -206,6 +203,11 @@ public class BossBehavior : MonoBehaviour
         {
             skinnedRenderers[i].material.color = originalColors[i];
         }
+    }
+    
+    public bool IsAttacking()
+    {
+        return attacking;
     }
     
     // damage player if attack connects
