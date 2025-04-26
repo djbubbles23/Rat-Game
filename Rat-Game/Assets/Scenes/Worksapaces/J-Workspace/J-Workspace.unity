@@ -709,6 +709,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rat Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2563368659214068315, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326989567791880810, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5
@@ -1066,6 +1074,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 633124268819634083, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 633124268819634083, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3082459267581247369, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_Name
       value: PlayerCaps
@@ -1164,6 +1180,7 @@ MonoBehaviour:
   bloodPrefab: {fileID: 2514279814223046270, guid: 9cd1186a211ae304f85c756a4c1727d1, type: 3}
   bloodSpawnPoint: {fileID: 6364813831203636838}
   takeDamageSound: {fileID: 8300000, guid: b67e31064121bca4285f65ffc246172d, type: 3}
+  swipeSound: {fileID: 0}
   animator: {fileID: 0}
   maxHealth: 100
   damage: 10

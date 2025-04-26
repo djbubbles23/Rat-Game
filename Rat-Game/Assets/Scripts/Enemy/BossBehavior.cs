@@ -10,6 +10,7 @@ public class BossBehavior : MonoBehaviour
 {
     private VisualEffect atc;                   // VisualEffect component that creates the enemy's attacks
     public AudioClip takeDamageSound;           // sound to play when hurt
+    public AudioClip swipeSound;                // sound to play when attacking
     public CapsuleCollider hitbox;
     public Animator animator;
     public ParticleSystem slamVFX;
@@ -86,6 +87,7 @@ public class BossBehavior : MonoBehaviour
 
         // Activate collider halfway through
         yield return new WaitForSeconds(1.18f);
+        audioSource.PlayOneShot(swipeSound);
         atc.Play();
         attackCollider.enabled = true;
 
