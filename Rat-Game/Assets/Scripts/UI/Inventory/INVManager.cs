@@ -23,6 +23,7 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject itemImage;
     public GameObject itemName;
     public GameObject itemDescription;
+    public GameObject trashCan;
 
     public weaponController weaponController;
 
@@ -94,6 +95,24 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
         // Sync weapon in the weaponSlot with playerMovement
             // Inside playerMovement script it will change the ani controller, weapon model, etc.
+
+        trashCanAni(Input.mousePosition);
+    }
+
+    private void trashCanAni(Vector3 mousePos)
+    {
+        if (draggedItem != null)
+        {
+            // if the mouse is over the trash can, change the sprite to the trash can hover sprite
+            if (RectTransformUtility.RectangleContainsScreenPoint(trashCan.GetComponent<RectTransform>(), mousePos, null))
+            {
+                trashCan.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Trash_open");
+            }
+            else
+            {
+                trashCan.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Trash_closed");
+            }
+        }
     }
 
     private void UpdateDraggedItemUI(INVItem inv)
@@ -277,6 +296,12 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 {
                     setLastItemSlot();
                 }
+            }
+            // If the clicked object is the trash can
+            else if (clickedObject.CompareTag("trashCan"))
+            {
+                Destroy(draggedItem);
+                draggedItem = null;
             }
             else
             {
