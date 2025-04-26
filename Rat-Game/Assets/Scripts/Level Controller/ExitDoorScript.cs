@@ -5,7 +5,7 @@ public class ExitDoorScript : MonoBehaviour
 {
     public void OnTriggerStay(Collider other)
     {
-        if (Input.GetAxis("Jump") == 1) {
+        if (Input.GetAxis("Jump") == 1 && other.gameObject.CompareTag("Player")) {
             SceneManager.LoadScene("Map Menu");
         }
     }
