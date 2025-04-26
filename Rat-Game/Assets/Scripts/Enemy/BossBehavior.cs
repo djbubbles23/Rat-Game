@@ -12,6 +12,7 @@ public class BossBehavior : MonoBehaviour
     public AudioClip takeDamageSound;           // sound to play when hurt
     public CapsuleCollider hitbox;
     public Animator animator;
+    public ParticleSystem slamVFX;
     
     public Collider attackCollider;             // the attack hb attached to the swipe
     public Collider slamCollider;               // the attack hb attached to the slam
@@ -111,14 +112,12 @@ public class BossBehavior : MonoBehaviour
         attacking = true;
 
         StartCoroutine(SlamAnimation());
-        yield return new WaitForSeconds(attackLength);
-        attacking = false;
     }
 
     IEnumerator SlamAnimation()
     {
         hitbox.enabled = false; // disable enemy hb
-        animator.SetTrigger("Slam");
+        animator.SetBool("Slamming", true);
         
         // jump arc
         float duration = 3.5f;
@@ -126,6 +125,7 @@ public class BossBehavior : MonoBehaviour
         
         Vector3 originalPos = ratGeo.transform.localPosition;
         bool activated = false;
+        bool finished = false;
 
         while (time < duration)
         {
@@ -137,12 +137,20 @@ public class BossBehavior : MonoBehaviour
                 StartCoroutine(ActivateAttackCollider(slamCollider));
                 activated = true;
             }
+            if (!finished && time >= 2f)
+            {
+                animator.SetBool("Slamming", false); // stop animation
+                animator.SetBool("Running", true);
+                hitbox.enabled = true; // re-enable enemy hb
+                
+                attacking = false;
+                finished = true;
+            }
             
             time += Time.deltaTime;
             yield return null;
         }
         
-        hitbox.enabled = true; // re-enable enemy hb
     }
     
     public void ResetAttack()
@@ -154,6 +162,7 @@ public class BossBehavior : MonoBehaviour
     IEnumerator ActivateAttackCollider(Collider attack)
     {
         attack.enabled = true;
+        slamVFX.Play();
         yield return new WaitForSeconds(attackLength);
         attack.enabled = false;
     }
