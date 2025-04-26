@@ -162,8 +162,8 @@ public class BossBehavior : MonoBehaviour
     IEnumerator ActivateAttackCollider(Collider attack)
     {
         attack.enabled = true;
-        slamVFX.Play();
         yield return new WaitForSeconds(attackLength);
+        slamVFX.Play();
         attack.enabled = false;
     }
     
