@@ -247,80 +247,6 @@ MonoBehaviour:
   score: 0
   scoreText: {fileID: 0}
   healthBar: {fileID: 0}
---- !u!1001 &1047298332
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 6090611741075122283}
-    m_Modifications:
-    - target: {fileID: 496913248247719083, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-      propertyPath: m_Name
-      value: Sparks explode yellow
-      objectReference: {fileID: 0}
-    - target: {fileID: 1559216468072176890, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1559216468072176890, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1559216468072176890, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-      propertyPath: CollisionModule.collidesWith.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 2701206341664510761, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2701206341664510761, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 2701206341664510761, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2701206341664510761, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2701206341664510761, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2701206341664510761, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2701206341664510761, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2701206341664510761, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2701206341664510761, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2701206341664510761, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
---- !u!4 &1047298333 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2701206341664510761, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-  m_PrefabInstance: {fileID: 1047298332}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1077273498
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,11 +569,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!198 &1473996987 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1559216468072176890, guid: c483142edbf33dc4d9014c13724a0175, type: 3}
-  m_PrefabInstance: {fileID: 1047298332}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1651586460
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,14 +708,6 @@ PrefabInstance:
     - target: {fileID: 2563368659214068315, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
       propertyPath: m_Name
       value: Rat Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2563368659214068315, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3326989567791880810, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1266,21 +1179,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 362636365967767338, guid: 4ad7d2e40d31400419b081f709f0b663, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3397700490981242214, guid: 4ad7d2e40d31400419b081f709f0b663, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.94
-      objectReference: {fileID: 0}
     - target: {fileID: 4099962275998187353, guid: 4ad7d2e40d31400419b081f709f0b663, type: 3}
       propertyPath: m_Name
       value: Rat Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 4099962275998187353, guid: 4ad7d2e40d31400419b081f709f0b663, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5234413131157927428, guid: 4ad7d2e40d31400419b081f709f0b663, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1322,23 +1223,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6087634035070822693, guid: 4ad7d2e40d31400419b081f709f0b663, type: 3}
-      propertyPath: slamVFX
-      value: 
-      objectReference: {fileID: 1473996987}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5234413131157927428, guid: 4ad7d2e40d31400419b081f709f0b663, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1047298333}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ad7d2e40d31400419b081f709f0b663, type: 3}
---- !u!4 &6090611741075122283 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5234413131157927428, guid: 4ad7d2e40d31400419b081f709f0b663, type: 3}
-  m_PrefabInstance: {fileID: 6090611741075122282}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6092791004794282984
 GameObject:
   m_ObjectHideFlags: 0
