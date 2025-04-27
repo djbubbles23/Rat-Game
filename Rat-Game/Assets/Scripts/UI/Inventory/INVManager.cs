@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 using System;
+using UnityEditor;
+using Unity.VisualScripting;
 
 public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -21,6 +23,7 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject itemImage;
     public GameObject itemName;
     public GameObject itemDescription;
+    public GameObject trashCan;
 
     public weaponController weaponController;
 
@@ -37,6 +40,17 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         defaultWeapon.transform.SetParent(weaponSlot.transform, false);
         defaultWeapon.transform.localPosition = Vector3.zero;
+
+        GameObject defaultDice = Instantiate(itemPrefab);
+
+        INVItem defaultDiceItem = defaultDice.GetComponent<INVItem>();
+        defaultDiceItem.dice = Resources.Load<diceScriptableObject>("ScriptableObjects/Dice");
+
+        INVSlot firstEslot = Eslots[0].GetComponent<INVSlot>();
+        firstEslot.SetHeldItem(defaultDice);
+
+        defaultDice.transform.SetParent(Eslots[0].transform, false);
+        defaultDice.transform.localPosition = Vector3.zero;
     }
 
     void Update()
@@ -81,6 +95,24 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
         // Sync weapon in the weaponSlot with playerMovement
             // Inside playerMovement script it will change the ani controller, weapon model, etc.
+
+        trashCanAni(Input.mousePosition);
+    }
+
+    private void trashCanAni(Vector3 mousePos)
+    {
+        if (draggedItem != null)
+        {
+            // if the mouse is over the trash can, change the sprite to the trash can hover sprite
+            if (RectTransformUtility.RectangleContainsScreenPoint(trashCan.GetComponent<RectTransform>(), mousePos, null))
+            {
+                trashCan.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Trash_open");
+            }
+            else
+            {
+                trashCan.GetComponent<Image>().sprite = Resources.Load<Sprite>("Images/Trash_closed");
+            }
+        }
     }
 
     private void UpdateDraggedItemUI(INVItem inv)
@@ -265,6 +297,12 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                     setLastItemSlot();
                 }
             }
+            // If the clicked object is the trash can
+            else if (clickedObject.CompareTag("trashCan"))
+            {
+                Destroy(draggedItem);
+                draggedItem = null;
+            }
             else
             {
                 // If the clicked object is not a valid inventory slot, return the dragged item to its original slot
@@ -288,7 +326,16 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         if (emptySlot != null)
         {
+            // Instantiate a new instance of the itemPrefab
             GameObject newItem = Instantiate(itemPrefab);
+
+            // Ensure the newItem is not null
+            if (newItem == null)
+            {
+                Debug.LogError("Failed to instantiate itemPrefab.");
+                return;
+            }
+
             INVItem newItemComp = newItem.GetComponent<INVItem>();
 
             // Assign weapon or dice
@@ -298,10 +345,14 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             if (item.GetComponent<INVItemPickup>()?.dice != null)
                 newItemComp.dice = item.GetComponent<INVItemPickup>().dice;
 
+            // Set the parent of the new item to the empty slot
             newItem.transform.SetParent(emptySlot.transform, false);
             newItem.transform.localPosition = Vector3.zero;
+
+            // Assign the new item to the slot
             emptySlot.GetComponent<INVSlot>().SetHeldItem(newItem);
 
+            // Destroy the original item
             Destroy(item);
         }
         else
@@ -356,4 +407,5 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             return null;
         }
     }
+
 }
