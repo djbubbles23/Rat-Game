@@ -12,6 +12,7 @@ public class EnemyBehavior : MonoBehaviour
     public Transform bloodSpawnPoint;           // Where the blood should spawn from
     private VisualEffect atc;                   // VisualEffect component that creates the enemy's attacks
     public AudioClip takeDamageSound;           // sound to play when hurt
+    public AudioClip swipeSound;                // sound to play when enemy attack
     public Animator animator;
     
     public float maxHealth = 100f;              // Starting health of the enemy
@@ -24,16 +25,19 @@ public class EnemyBehavior : MonoBehaviour
     private Rigidbody rb;                       // Enemy rigidbody
     private Collider attackCollider;            // the attack hb attached to the swipe
     private AudioSource audioSource;            // enemy audio source
+    private NavMeshAgent agent;                 // enemy ai agent
     
     private float health;                       // Current health
-    private float attackTimer;                  // current time until next attack
+    private float nextAttackTime;               // time until next attack
     private bool canAttack = false;
     private bool attacking = false;
 
     private PlayerStats playerScore;            // player object
+    
     public GameObject ratGeo;                   // rat geometry gameobject
     private MeshRenderer renderer;
-    private Color originalColor;
+    private List<SkinnedMeshRenderer> skinnedRenderers = new List<SkinnedMeshRenderer>();
+    private List<Color> originalColors = new List<Color>();
 
 
     private void Start()
@@ -42,9 +46,16 @@ public class EnemyBehavior : MonoBehaviour
         atc = gameObject.GetComponentInChildren<VisualEffect>();
         attackCollider = GetComponentInChildren<BoxCollider>();
         audioSource = GetComponent<AudioSource>();
+        agent = GetComponent<NavMeshAgent>();
         health = maxHealth;
-        renderer = ratGeo.GetComponent<MeshRenderer>();
-        originalColor = renderer.material.color;    
+        
+        // Get all SkinnedMeshRenderers in children of ratGeo
+        skinnedRenderers.AddRange(ratGeo.GetComponentsInChildren<SkinnedMeshRenderer>());
+
+        foreach (var renderer in skinnedRenderers)
+        {
+            originalColors.Add(renderer.material.color);
+        }
 
         // find the player object and get the PlayerStats component
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -60,27 +71,32 @@ public class EnemyBehavior : MonoBehaviour
 
     public void Attack()
     {
-        if(!attacking)
+        if(!attacking && Time.time >= nextAttackTime)
             StartCoroutine(DoAttack());
     }
 
     IEnumerator DoAttack()
     {
         attacking = true;
-
-        // Start wind-up / delay
-        yield return new WaitForSeconds(attackDelay);
+        nextAttackTime = Time.time + attackDelay;
+        
+        // Stop movement
+        agent.isStopped = true;
 
         // Play animation
         animator.SetTrigger("Attack");
-        atc.Play();
 
         // Activate collider halfway through
         yield return new WaitForSeconds(1.18f);
+        atc.Play();
+        audioSource.PlayOneShot(swipeSound);
         attackCollider.enabled = true;
 
-        yield return new WaitForSeconds(attackLength);
+        yield return new WaitForSeconds(1.2f);
         attackCollider.enabled = false;
+        
+        // Resume movement
+        agent.isStopped = false;
 
         // Cooldown or reset (if needed, add a delay here)
         attacking = false;
@@ -132,10 +148,19 @@ public class EnemyBehavior : MonoBehaviour
     
     IEnumerator DamageFlash(float duration)
     {
-        renderer.material.color = Color.red;
+        for (int i = 0; i < skinnedRenderers.Count; i++)
+        {
+            skinnedRenderers[i].material.color = Color.red;
+        }
+
         yield return new WaitForSeconds(duration);
-        renderer.material.color = originalColor;
+
+        for (int i = 0; i < skinnedRenderers.Count; i++)
+        {
+            skinnedRenderers[i].material.color = originalColors[i];
+        }
     }
+
     
     // damage player if attack connects
     private void OnTriggerEnter(Collider other)
