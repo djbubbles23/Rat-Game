@@ -10,8 +10,10 @@ public class BossBehavior : MonoBehaviour
 {
     private VisualEffect atc;                   // VisualEffect component that creates the enemy's attacks
     public AudioClip takeDamageSound;           // sound to play when hurt
+    public AudioClip swipeSound;                // sound to play when attacking
     public CapsuleCollider hitbox;
     public Animator animator;
+    public ParticleSystem slamVFX;
     
     public Collider attackCollider;             // the attack hb attached to the swipe
     public Collider slamCollider;               // the attack hb attached to the slam
@@ -85,6 +87,7 @@ public class BossBehavior : MonoBehaviour
 
         // Activate collider halfway through
         yield return new WaitForSeconds(1.18f);
+        audioSource.PlayOneShot(swipeSound);
         atc.Play();
         attackCollider.enabled = true;
 
@@ -111,14 +114,12 @@ public class BossBehavior : MonoBehaviour
         attacking = true;
 
         StartCoroutine(SlamAnimation());
-        yield return new WaitForSeconds(attackLength);
-        attacking = false;
     }
 
     IEnumerator SlamAnimation()
     {
         hitbox.enabled = false; // disable enemy hb
-        animator.SetTrigger("Slam");
+        animator.SetBool("Slamming", true);
         
         // jump arc
         float duration = 3.5f;
@@ -126,6 +127,7 @@ public class BossBehavior : MonoBehaviour
         
         Vector3 originalPos = ratGeo.transform.localPosition;
         bool activated = false;
+        bool finished = false;
 
         while (time < duration)
         {
@@ -137,12 +139,20 @@ public class BossBehavior : MonoBehaviour
                 StartCoroutine(ActivateAttackCollider(slamCollider));
                 activated = true;
             }
+            if (!finished && time >= 2f)
+            {
+                animator.SetBool("Slamming", false); // stop animation
+                animator.SetBool("Running", true);
+                hitbox.enabled = true; // re-enable enemy hb
+                
+                attacking = false;
+                finished = true;
+            }
             
             time += Time.deltaTime;
             yield return null;
         }
         
-        hitbox.enabled = true; // re-enable enemy hb
     }
     
     public void ResetAttack()
@@ -155,6 +165,7 @@ public class BossBehavior : MonoBehaviour
     {
         attack.enabled = true;
         yield return new WaitForSeconds(attackLength);
+        slamVFX.Play();
         attack.enabled = false;
     }
     

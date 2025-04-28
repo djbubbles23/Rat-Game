@@ -247,79 +247,6 @@ MonoBehaviour:
   score: 0
   scoreText: {fileID: 0}
   healthBar: {fileID: 0}
---- !u!1001 &960255130
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: d020838335916d7419659a60e8a13a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.028539
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d020838335916d7419659a60e8a13a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.00000047683716
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d020838335916d7419659a60e8a13a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.1497116
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d020838335916d7419659a60e8a13a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d020838335916d7419659a60e8a13a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d020838335916d7419659a60e8a13a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d020838335916d7419659a60e8a13a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d020838335916d7419659a60e8a13a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d020838335916d7419659a60e8a13a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: d020838335916d7419659a60e8a13a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -5014799237027920480, guid: d020838335916d7419659a60e8a13a25, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: db017b84c6542a84aa9e278a7cdacc7e, type: 2}
-    - target: {fileID: -5014799237027920480, guid: d020838335916d7419659a60e8a13a25, type: 3}
-      propertyPath: 'm_Materials.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2100000, guid: db017b84c6542a84aa9e278a7cdacc7e, type: 2}
-    - target: {fileID: 919132149155446097, guid: d020838335916d7419659a60e8a13a25, type: 3}
-      propertyPath: m_Name
-      value: rkBody
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: d020838335916d7419659a60e8a13a25, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8973395753036335677, guid: d020838335916d7419659a60e8a13a25, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: d990a112db9b4ee4980f34f253e0ef61, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d020838335916d7419659a60e8a13a25, type: 3}
 --- !u!1 &1077273498
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,6 +709,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rat Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2563368659214068315, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326989567791880810, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4279266364811464692, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5
@@ -1139,6 +1074,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 633124268819634083, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 633124268819634083, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3082459267581247369, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_Name
       value: PlayerCaps
@@ -1237,6 +1180,7 @@ MonoBehaviour:
   bloodPrefab: {fileID: 2514279814223046270, guid: 9cd1186a211ae304f85c756a4c1727d1, type: 3}
   bloodSpawnPoint: {fileID: 6364813831203636838}
   takeDamageSound: {fileID: 8300000, guid: b67e31064121bca4285f65ffc246172d, type: 3}
+  swipeSound: {fileID: 0}
   animator: {fileID: 0}
   maxHealth: 100
   damage: 10
@@ -1252,17 +1196,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 362636365967767338, guid: 4ad7d2e40d31400419b081f709f0b663, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4099962275998187353, guid: 4ad7d2e40d31400419b081f709f0b663, type: 3}
       propertyPath: m_Name
       value: Rat Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 4099962275998187353, guid: 4ad7d2e40d31400419b081f709f0b663, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5234413131157927428, guid: 4ad7d2e40d31400419b081f709f0b663, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1559,4 +1495,3 @@ SceneRoots:
   - {fileID: 1077273500}
   - {fileID: 1651586461}
   - {fileID: 5511307546926433863}
-  - {fileID: 960255130}

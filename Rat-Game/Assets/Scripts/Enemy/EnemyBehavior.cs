@@ -12,6 +12,7 @@ public class EnemyBehavior : MonoBehaviour
     public Transform bloodSpawnPoint;           // Where the blood should spawn from
     private VisualEffect atc;                   // VisualEffect component that creates the enemy's attacks
     public AudioClip takeDamageSound;           // sound to play when hurt
+    public AudioClip swipeSound;                // sound to play when enemy attack
     public Animator animator;
     
     public float maxHealth = 100f;              // Starting health of the enemy
@@ -88,6 +89,7 @@ public class EnemyBehavior : MonoBehaviour
         // Activate collider halfway through
         yield return new WaitForSeconds(1.18f);
         atc.Play();
+        audioSource.PlayOneShot(swipeSound);
         attackCollider.enabled = true;
 
         yield return new WaitForSeconds(1.2f);
