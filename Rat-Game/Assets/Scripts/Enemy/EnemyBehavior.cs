@@ -24,19 +24,16 @@ public class EnemyBehavior : MonoBehaviour
     private Rigidbody rb;                       // Enemy rigidbody
     private Collider attackCollider;            // the attack hb attached to the swipe
     private AudioSource audioSource;            // enemy audio source
-    private NavMeshAgent agent;                 // enemy ai agent
     
     private float health;                       // Current health
-    private float nextAttackTime;               // time until next attack
+    private float attackTimer;                  // current time until next attack
     private bool canAttack = false;
     private bool attacking = false;
 
     private PlayerStats playerScore;            // player object
-    
     public GameObject ratGeo;                   // rat geometry gameobject
     private MeshRenderer renderer;
-    private List<SkinnedMeshRenderer> skinnedRenderers = new List<SkinnedMeshRenderer>();
-    private List<Color> originalColors = new List<Color>();
+    private Color originalColor;
 
 
     private void Start()
@@ -45,16 +42,9 @@ public class EnemyBehavior : MonoBehaviour
         atc = gameObject.GetComponentInChildren<VisualEffect>();
         attackCollider = GetComponentInChildren<BoxCollider>();
         audioSource = GetComponent<AudioSource>();
-        agent = GetComponent<NavMeshAgent>();
         health = maxHealth;
-        
-        // Get all SkinnedMeshRenderers in children of ratGeo
-        skinnedRenderers.AddRange(ratGeo.GetComponentsInChildren<SkinnedMeshRenderer>());
-
-        foreach (var renderer in skinnedRenderers)
-        {
-            originalColors.Add(renderer.material.color);
-        }
+        renderer = ratGeo.GetComponent<MeshRenderer>();
+        originalColor = renderer.material.color;    
 
         // find the player object and get the PlayerStats component
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -70,31 +60,27 @@ public class EnemyBehavior : MonoBehaviour
 
     public void Attack()
     {
-        if(!attacking && Time.time >= nextAttackTime)
+        if(!attacking)
             StartCoroutine(DoAttack());
     }
 
     IEnumerator DoAttack()
     {
         attacking = true;
-        nextAttackTime = Time.time + attackDelay;
-        
-        // Stop movement
-        agent.isStopped = true;
+
+        // Start wind-up / delay
+        yield return new WaitForSeconds(attackDelay);
 
         // Play animation
         animator.SetTrigger("Attack");
+        atc.Play();
 
         // Activate collider halfway through
         yield return new WaitForSeconds(1.18f);
-        atc.Play();
         attackCollider.enabled = true;
 
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(attackLength);
         attackCollider.enabled = false;
-        
-        // Resume movement
-        agent.isStopped = false;
 
         // Cooldown or reset (if needed, add a delay here)
         attacking = false;
@@ -146,19 +132,10 @@ public class EnemyBehavior : MonoBehaviour
     
     IEnumerator DamageFlash(float duration)
     {
-        for (int i = 0; i < skinnedRenderers.Count; i++)
-        {
-            skinnedRenderers[i].material.color = Color.red;
-        }
-
+        renderer.material.color = Color.red;
         yield return new WaitForSeconds(duration);
-
-        for (int i = 0; i < skinnedRenderers.Count; i++)
-        {
-            skinnedRenderers[i].material.color = originalColors[i];
-        }
+        renderer.material.color = originalColor;
     }
-
     
     // damage player if attack connects
     private void OnTriggerEnter(Collider other)

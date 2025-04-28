@@ -25,11 +25,15 @@ public class weaponController : MonoBehaviour
 
     void Update()
     {
-        if(weapon != null){
-            // Sync weapon in the weaponSlot with weaponController
+        // Sync weapon in the weaponSlot with weaponController
+        if (weapon != null)
+        {
             weaponEquip(weapon);
         }
-
+        else
+        {
+            Debug.LogWarning("Weapon is not assigned in weaponController.");
+        }
     } 
 
     public int calculateDmg(){
@@ -85,12 +89,12 @@ public class weaponController : MonoBehaviour
         {
             Destroy(weaponInstance);
         }
+
         weaponInstance = Instantiate(newWeapon.weaponObj);
         weaponInstance.transform.SetParent(transform);
         weaponInstance.transform.localPosition = Vector3.zero;
         weaponInstance.transform.localScale = weaponScale;
         weaponInstance.transform.localRotation = Quaternion.identity;
-
 
         /*
         if(newWeapon.weaponObj.gameObject.name == "DaggerOBJ"){

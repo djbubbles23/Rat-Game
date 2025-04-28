@@ -12,48 +12,37 @@ public class BossBehavior : MonoBehaviour
     public AudioClip takeDamageSound;           // sound to play when hurt
     public CapsuleCollider hitbox;
     public Animator animator;
-    public ParticleSystem slamVFX;
-    
-    public Collider attackCollider;             // the attack hb attached to the swipe
-    public Collider slamCollider;               // the attack hb attached to the slam
-    public GameObject ratGeo;                   // rat geometry gameobject
     
     public float maxHealth = 100f;              // Starting health of the enemy
     public float damage = 10f;                  // How powerful enemy's attack is
 
     public float attackDelay = 5.0f;            // time between attack/ start-up time
-    public float jumpHeight = 5.0f;             // height of slam attack animation
-    public float jumpDuration = 3.5f;           // length of jump duration
+    public float slamStartUp = 5.0f;
     public float attackLength = 0.2f;           // how long the attack hb is active
     public float flashDuration = 2f;            // how long damage flash should last
 
+    public Collider attackCollider;            // the attack hb attached to the swipe
+    public Collider slamCollider;              // the attack hb attached to the slam
     private AudioSource audioSource;            // enemy audio source
-    private NavMeshAgent agent;                 // enemy ai agent
     
     private float health;                       // Current health
-    private float nextAttackTime;               // time until next attack
+    private float attackTimer;                  // current time until next attack
     private bool canAttack = false;
     private bool attacking = false;
 
     private PlayerStats playerScore;            // player object
-    private List<SkinnedMeshRenderer> skinnedRenderers = new List<SkinnedMeshRenderer>();
-    private List<Color> originalColors = new List<Color>();
+    public GameObject ratGeo;                   // rat geometry gameobject
+    private MeshRenderer renderer;
+    private Color originalColor;
 
     private void Start()
     {
         // initialize variables
         atc = gameObject.GetComponentInChildren<VisualEffect>();
         audioSource = GetComponent<AudioSource>();
-        agent = GetComponent<NavMeshAgent>();
         health = maxHealth;
-        
-        // Get all SkinnedMeshRenderers in children of ratGeo
-        skinnedRenderers.AddRange(ratGeo.GetComponentsInChildren<SkinnedMeshRenderer>());
-
-        foreach (var renderer in skinnedRenderers)
-        {
-            originalColors.Add(renderer.material.color);
-        }
+        renderer = ratGeo.GetComponent<MeshRenderer>();
+        originalColor = renderer.material.color;    
 
         // find the player object and get the PlayerStats component
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -69,33 +58,20 @@ public class BossBehavior : MonoBehaviour
 
     public void Attack()
     {
-        if(!attacking && Time.time >= nextAttackTime)
-            StartCoroutine(DoAttack());
+        if(!attacking) StartCoroutine(DoAttack());
     }
 
     IEnumerator DoAttack()
     {
+        if (attacking) yield break;
         attacking = true;
-        nextAttackTime = Time.time + attackDelay;
         
-        // Stop movement
-        agent.isStopped = true;
-
-        // Play animation
-        animator.SetTrigger("Attack");
-
-        // Activate collider halfway through
-        yield return new WaitForSeconds(1.18f);
+        yield return new WaitForSeconds(attackDelay);
+        
         atc.Play();
-        attackCollider.enabled = true;
-
-        yield return new WaitForSeconds(attackLength);
-        attackCollider.enabled = false;
-        
-        // Resume movement
-        agent.isStopped = false;
-
-        // Cooldown or reset (if needed, add a delay here)
+            
+        // activate attack hitbox
+        StartCoroutine(ActivateAttackCollider(attackCollider));
         attacking = false;
     }
 
@@ -112,45 +88,31 @@ public class BossBehavior : MonoBehaviour
         attacking = true;
 
         StartCoroutine(SlamAnimation());
+        yield return new WaitForSeconds(attackLength + 1f);
+        attacking = false;
     }
 
     IEnumerator SlamAnimation()
     {
         hitbox.enabled = false; // disable enemy hb
-        animator.SetBool("Slamming", true);
         
         // jump arc
+        float height = 60.0f;
         float duration = 3.5f;
         float time  = 0.0f;
         
         Vector3 originalPos = ratGeo.transform.localPosition;
-        bool activated = false;
-        bool finished = false;
 
         while (time < duration)
         {
-            float yOffset = Mathf.Sin((time / jumpDuration) * Mathf.PI) * jumpHeight;
+            float yOffset = Mathf.Sin((time / duration) * Mathf.PI) * height;
             ratGeo.transform.localPosition = new Vector3(originalPos.x, originalPos.y + yOffset, originalPos.z);
-
-            if (!activated && time >= 1.7f)
-            {
-                StartCoroutine(ActivateAttackCollider(slamCollider));
-                activated = true;
-            }
-            if (!finished && time >= 2f)
-            {
-                animator.SetBool("Slamming", false); // stop animation
-                animator.SetBool("Running", true);
-                hitbox.enabled = true; // re-enable enemy hb
-                
-                attacking = false;
-                finished = true;
-            }
-            
             time += Time.deltaTime;
             yield return null;
         }
         
+        hitbox.enabled = true; // re-enable enemy hb
+        StartCoroutine(ActivateAttackCollider(slamCollider));
     }
     
     public void ResetAttack()
@@ -163,7 +125,6 @@ public class BossBehavior : MonoBehaviour
     {
         attack.enabled = true;
         yield return new WaitForSeconds(attackLength);
-        slamVFX.Play();
         attack.enabled = false;
     }
     
@@ -201,22 +162,9 @@ public class BossBehavior : MonoBehaviour
     
     IEnumerator DamageFlash(float duration)
     {
-        for (int i = 0; i < skinnedRenderers.Count; i++)
-        {
-            skinnedRenderers[i].material.color = Color.red;
-        }
-
+        renderer.material.color = Color.red;
         yield return new WaitForSeconds(duration);
-
-        for (int i = 0; i < skinnedRenderers.Count; i++)
-        {
-            skinnedRenderers[i].material.color = originalColors[i];
-        }
-    }
-    
-    public bool IsAttacking()
-    {
-        return attacking;
+        renderer.material.color = originalColor;
     }
     
     // damage player if attack connects

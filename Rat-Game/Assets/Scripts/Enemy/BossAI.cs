@@ -11,7 +11,6 @@ public class BossAI : MonoBehaviour
     public NavMeshAgent agent;
     public Transform player;
     public LayerMask Ground, Player;
-    public Animator animator;
     
     [Header("Patrolling")]
     public Vector3 walkPoint;
@@ -23,7 +22,6 @@ public class BossAI : MonoBehaviour
     public float sightRange, slamRange, attackRange;
     public bool playerInSightRange, playerInSlamRange, playerInAttackRange;
     private bool isSlamming = false;
-    private float chaseTime = 0.0f;
     
     private Collider agentCollider;
 
@@ -49,8 +47,9 @@ public class BossAI : MonoBehaviour
 
             if (agent.enabled)
             {
-                if (!playerInSightRange && !isSlamming && !EnemyBehavior.IsAttacking()) Patrolling();
-                if (playerInSightRange && !isSlamming)  ChasePlayer();
+                if (!playerInSightRange && !isSlamming) Patrolling();
+                if (playerInSightRange && !playerInSlamRange && !isSlamming)  ChasePlayer();
+                if (playerInSlamRange && !playerInAttackRange)   SlamPlayer();
                 if (playerInAttackRange && !isSlamming)   AttackPlayer();
             }
         }
@@ -58,13 +57,12 @@ public class BossAI : MonoBehaviour
 
     private void Patrolling()
     {
-        chaseTime = 0f;
         if (!walkPointSet) SearchWalkPoint();
         agent.SetDestination(walkPoint);
         
         // Reset walk point
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
-        // print(distanceToWalkPoint.magnitude);
+        print(distanceToWalkPoint.magnitude);
         if (distanceToWalkPoint.magnitude < 2.0f)
         {
             walkPointSet = false;
@@ -96,21 +94,10 @@ public class BossAI : MonoBehaviour
         walkPointSet = false; // stop patrolling
         agent.SetDestination(player.position);
         EnemyBehavior.ResetAttack();
-        animator.SetBool("Running", true);
-        
-        chaseTime += Time.deltaTime; // slam if chasing for over a second
-        if (playerInSlamRange && !playerInAttackRange && !EnemyBehavior.IsAttacking() && chaseTime >= 1f)
-        {
-            SlamPlayer();
-            chaseTime = 0f;
-        }
     }
 
     private void AttackPlayer()
     {
-        chaseTime = 0f;
-        animator.SetBool("Running", false);
-        
         walkPointSet = false; // stop patrolling
         agent.SetDestination(transform.position);
         
@@ -135,8 +122,7 @@ public class BossAI : MonoBehaviour
 
     IEnumerator SlamRoutine()
     {
-        animator.SetBool("Running", false);
-        // StartCoroutine(PauseAgent(3.0f));
+        StartCoroutine(PauseAgent(3.0f));
         
         // face the player
         Vector3 toPlayer = transform.position - player.position;
@@ -145,12 +131,13 @@ public class BossAI : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(toPlayer);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotateSpeed);
 
-        // yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3f);
         EnemyBehavior.Slam();
         yield return new WaitForSeconds(4f);
         
         isSlamming = false;
         agent.isStopped = false;
+        agent.SetDestination(player.position);
     }
 
     IEnumerator PauseAgent(float seconds)

@@ -43,22 +43,20 @@ public class RatAI : MonoBehaviour
             playerInSightRange = Physics.CheckSphere(transform.position, sightRange, Player);
             playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, Player);
 
-            if (!playerInSightRange && !playerInAttackRange && !EnemyBehavior.IsAttacking()) Patrolling();
-            if (playerInSightRange && !playerInAttackRange  && !EnemyBehavior.IsAttacking())  ChasePlayer();
+            if (!playerInSightRange && !playerInAttackRange) Patrolling();
+            if (playerInSightRange && !playerInAttackRange)  ChasePlayer();
             if (playerInSightRange && playerInAttackRange)   AttackPlayer();
         }
     }
 
     private void Patrolling()
     {
-        animator.SetBool("Running", true);
-        
         if (!walkPointSet) SearchWalkPoint();
         agent.SetDestination(walkPoint);
         
         // Reset walk point
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
-        // print(distanceToWalkPoint.magnitude);
+        print(distanceToWalkPoint.magnitude);
         if (distanceToWalkPoint.magnitude < 2.0f)
         {
             walkPointSet = false;
@@ -67,21 +65,20 @@ public class RatAI : MonoBehaviour
 
     private void SearchWalkPoint()
     {
-        int maxAttempts = 30;
-        for (int i = 0; i <= maxAttempts; i++)
-        {
-            // Calculate random point in range
-            float randomX = Random.Range(-walkPointRange, walkPointRange);
-            float randomZ = Random.Range(-walkPointRange, walkPointRange);
+        // Calculate random point in range
+        float randomX = Random.Range(-walkPointRange, walkPointRange);
+        float randomZ = Random.Range(-walkPointRange, walkPointRange);
 
-            walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-            
-            // check point is on level
-            if (Physics.Raycast(walkPoint, -transform.up, 2f, Ground))
-            {
-                walkPointSet = true;
-                return;
-            }
+        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        
+        // check point is on level
+        if (Physics.Raycast(walkPoint, -transform.up, 2f, Ground))
+        {
+            walkPointSet = true;
+        }
+        else
+        {
+            SearchWalkPoint();
         }
     }
 
@@ -90,12 +87,11 @@ public class RatAI : MonoBehaviour
         walkPointSet = false; // stop patrolling
         agent.SetDestination(player.position);
         EnemyBehavior.ResetAttack();
-        animator.SetBool("Running", true);
+        animator.SetTrigger("Run");
     }
 
     private void AttackPlayer()
     {
-        animator.SetBool("Running", false);
         walkPointSet = false; // stop patrolling
         agent.SetDestination(transform.position);
         
