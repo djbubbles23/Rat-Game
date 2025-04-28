@@ -1,31 +1,26 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Unity.Cinemachine;  // Make sure to include Cinemachine namespace
+using Unity.Cinemachine;
 
 public class LevelMenu : MonoBehaviour
 {
-    public Button[] buttons; // Assign all level buttons in the inspector
-    public int[] levelUnlockMapping; // Assign level indexes corresponding to buttons
-    public CinemachineCamera vcam1; // Assign vcam1 in the inspector
+    public Button[] buttons; 
+    public int[] levelUnlockMapping; 
+    public CinemachineCamera vcam1; 
 
-    private string[] levelNames = { "C-level-Work", "Inventory-test", "A-Workspace" };
-    private bool isVcam1Active = false;
+    private string[] levelNames = { "Audio workplace", "C-Level-Work", "inventory-Test" }; 
+    private bool isVcam1Active = false; 
 
     private void Awake()
     {
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
 
-        // Lock all buttons initially
         for (int i = 0; i < buttons.Length; i++)
         {
-            buttons[i].interactable = false;
+            buttons[i].interactable = (i == 0);
         }
 
-        // Unlock level 1 (always unlocked)
-        buttons[0].interactable = true;
-
-        // Unlock other levels based on the unlocked level
         for (int i = 0; i < levelUnlockMapping.Length; i++)
         {
             if (levelUnlockMapping[i] < unlockedLevel)
@@ -37,27 +32,16 @@ public class LevelMenu : MonoBehaviour
 
     private void Update()
     {
-        // Check if vcam1 is active by comparing its priority (higher priority means it's active)
         bool isCurrentlyVcam1Active = vcam1.Priority > 0;
 
         if (isCurrentlyVcam1Active != isVcam1Active)
         {
             isVcam1Active = isCurrentlyVcam1Active;
-            SetButtonsInteractable(!isVcam1Active);
         }
 
-        // Check for "P" key press to reset the unlocked level
         if (Input.GetKeyDown(KeyCode.P))
         {
-            ResetUnlockedLevel();  // Reset the unlocked level to 1 when "P" is pressed
-        }
-    }
-
-    private void SetButtonsInteractable(bool state)
-    {
-        foreach (Button button in buttons)
-        {
-            button.interactable = state;
+            ResetUnlockedLevel();
         }
     }
 
@@ -67,57 +51,15 @@ public class LevelMenu : MonoBehaviour
         {
             SceneManager.LoadScene(levelNames[levelId]);
         }
-        else if (isVcam1Active)
-        {
-            Debug.LogWarning("Cannot open level while vcam1 is active.");
-        }
-        else
-        {
-            Debug.LogError("Invalid level ID: " + levelId);
-        }
     }
 
-    public void OpenLevelType(string levelType)
-    {
-        if (!isVcam1Active && checkType(levelType))
-        {
-            Debug.Log("Proper Button Indeed");
-            StateControllerScript.currLevel = levelType;
-            SceneManager.LoadScene(StateControllerScript.currZone);
-        }
-        else if (isVcam1Active)
-        {
-            Debug.LogWarning("Cannot open level while vcam1 is active.");
-        }
-        else
-        {
-            Debug.LogError("Invalid level Type: " + levelType);
-        }
-    }
-
-    // Reset unlocked level back to 1
     private void ResetUnlockedLevel()
     {
-        PlayerPrefs.SetInt("UnlockedLevel", 1);  // Set unlocked level to 1
-        Debug.Log("Unlocked level reset to 1");
+        PlayerPrefs.SetInt("UnlockedLevel", 1);
 
-        // Re-lock all levels except for level 1
         for (int i = 0; i < buttons.Length; i++)
         {
-            if (i != 0) // Keep level 1 unlocked
-            {
-                buttons[i].interactable = false;  // Lock all buttons except level 1
-            }
+            buttons[i].interactable = (i == 0);
         }
-    }
-
-    //Checks that the input is an allowed level type string
-    private bool checkType(string levelType) {
-        if (levelType.Equals("Entrance") || levelType.Equals("Combat") || levelType.Equals("Shop") || levelType.Equals("Cafe")
-         || levelType.Equals("Mini") || levelType.Equals("Boss")) 
-        {
-            return true;
-        }
-        return false;
     }
 }
