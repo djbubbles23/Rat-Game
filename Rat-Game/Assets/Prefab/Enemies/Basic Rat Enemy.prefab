@@ -23,7 +23,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4279266364811464692
 Transform:
   m_ObjectHideFlags: 0
@@ -211,6 +211,7 @@ MonoBehaviour:
   bloodPrefab: {fileID: 2514279814223046270, guid: 9cd1186a211ae304f85c756a4c1727d1, type: 3}
   bloodSpawnPoint: {fileID: 3407896023325298645}
   takeDamageSound: {fileID: 8300000, guid: b67e31064121bca4285f65ffc246172d, type: 3}
+  swipeSound: {fileID: 8300000, guid: 17a77723de7a80e449f2416cf663643e, type: 3}
   animator: {fileID: 1834310886203576586}
   maxHealth: 75
   damage: 10
@@ -360,7 +361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1010469353794949300, guid: 9b6701af468904645b8ef67e0e326bb5, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1010469353794949302, guid: 9b6701af468904645b8ef67e0e326bb5, type: 3}
       propertyPath: m_LocalScale.x
