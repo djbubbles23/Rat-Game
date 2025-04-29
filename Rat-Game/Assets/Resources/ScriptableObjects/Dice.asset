@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ed0c23223e0b845860bfcc6ef2d6c6, type: 3}
   m_Name: Dice
   m_EditorClassIdentifier: 
-  diceName: D4
-  diceDescription: 'This is a d4. There is a 1/4 to get one of these values: 0, 2,
-    2, 1.'
+  diceName: D6
+  diceDescription: 'This is a d6. There is a 1/6 to get one of these values: 2, 0,
+    1, 0, 2, 1.'
   effectValue: None
   diceType: 4
-  diceValue: 00000000020000000200000001000000
-  diceCost: 12.5
-  icon: {fileID: 21300000, guid: 2ce7b621fb2ae944baddc5f7cede9316, type: 3}
+  diceValue: 020000000000000001000000000000000200000001000000
+  diceCost: 10
+  icon: {fileID: 21300000, guid: 35b151126c95c3740bc2a7338763c8f6, type: 3}
