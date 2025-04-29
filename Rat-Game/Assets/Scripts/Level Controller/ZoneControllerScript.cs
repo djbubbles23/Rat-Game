@@ -4,49 +4,48 @@ public class ZoneControllerScript : MonoBehaviour
 {
     [SerializeField] Transform player;
     [SerializeField] Transform[] doors;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    private void Start()
     {
-        player.position = getDoorPos(StateControllerScript.currLevel);
+        StartZone();
     }
 
-    private Vector3 getDoorPos(string levelType) {
+    public void StartZone()
+    {
+        player.position = GetDoorPos(StateControllerScript.currLevel);
+    }
+
+    private Vector3 GetDoorPos(string levelType)
+    {
         Vector3 startPos;
-        switch (levelType) {
+        switch (levelType)
+        {
             case "Entrance":
                 startPos = doors[0].position;
                 startPos.x += 5;
-            break;
+                break;
 
             case "Combat":
-                startPos = doors[Random.Range(1,doors.Length - 2)].position;
+                startPos = doors[Random.Range(1, doors.Length - 2)].position;
                 startPos.z -= 2;
-            break;
+                break;
 
             case "Cafe":
-                startPos = doors[doors.Length-2].position;
+            case "Mini":
+            case "Boss":
+                startPos = doors[doors.Length - 2].position;
                 startPos.z -= 5;
-            break;
+                break;
 
             case "Shop":
-                startPos = doors[doors.Length-1].position;
+                startPos = doors[doors.Length - 1].position;
                 startPos.z -= 5;
-            break;
-
-            case "Mini":
-                startPos = doors[doors.Length-2].position;
-                startPos.z -= 5;
-            break;
-
-            case "Boss":
-                startPos = doors[doors.Length-2].position;
-                startPos.z -= 5;
-            break;
+                break;
 
             default:
                 startPos = doors[0].position;
                 startPos.z -= 5;
-            break;
+                break;
         }
         return startPos;
     }

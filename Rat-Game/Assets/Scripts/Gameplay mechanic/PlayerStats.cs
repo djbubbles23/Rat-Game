@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;  // Ensure this is included for Scene management
 using UnityEngine.UI;
@@ -18,6 +17,7 @@ public class PlayerStats : MonoBehaviour
 
     private int unlockedLevel = 1;  // Starting unlocked level (Level 1 is always unlocked)
 
+    // Method to heal the player
     public void Heal(float amount)
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth); // Prevent overheal
@@ -39,6 +39,7 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    // Method to take damage and update health
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
@@ -50,36 +51,16 @@ public class PlayerStats : MonoBehaviour
         {
             Debug.Log("PLAYER DIED!");
             clip = deathSound;
-            SceneManager.LoadScene(2);  // Scene 5 for death
+            SceneManager.LoadScene("Death Menu"); 
         }
 
         audioSource.PlayOneShot(clip);
     }
 
-
     public void UnlockNextLevel()
     {
-        unlockedLevel = Mathf.Min(unlockedLevel + 1, 3); // Unlock next level (up to level 3)
-        PlayerPrefs.SetInt("UnlockedLevel", unlockedLevel);  // Save the unlocked level in PlayerPrefs
-    }
-
-
-    public void EndLevel()
-    {
-        SceneManager.LoadScene(1);  // Load Scene 1 (Main Menu or start)
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("EndLevel"))
-        {
-            EndLevel(); // Call EndLevel to switch to Scene 1
-        }
-
-        if (other.CompareTag("LevelUnlocked"))
-        {
-            UnlockNextLevel(); // Unlock the next level when LevelUnlockTrigger is entered
-        }
+        unlockedLevel = Mathf.Min(unlockedLevel + 1, 3); 
+        PlayerPrefs.SetInt("UnlockedLevel", unlockedLevel);  
+        Debug.Log("Next level unlocked: " + unlockedLevel); 
     }
 }
