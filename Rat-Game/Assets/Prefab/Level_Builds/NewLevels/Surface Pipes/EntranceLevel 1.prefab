@@ -613,73 +613,6 @@ Transform:
   - {fileID: 7906085788752801113}
   m_Father: {fileID: 2171161279250656178}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2849612859980030339
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1087247260199274295}
-  - component: {fileID: 7692602935482696299}
-  - component: {fileID: 7554093017391743225}
-  m_Layer: 0
-  m_Name: water dmg
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1087247260199274295
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2849612859980030339}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6592913742907395830}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7692602935482696299
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2849612859980030339}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7554093017391743225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2849612859980030339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59762ed7e59517b449137bb01a2c4d5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damagePerSecond: 10
 --- !u!1 &2850181520092422508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,6 +1352,7 @@ GameObject:
   - component: {fileID: 6832126257440117760}
   - component: {fileID: 2731018899696042892}
   - component: {fileID: 7349073324325116331}
+  - component: {fileID: 2708093543792103892}
   m_Layer: 0
   m_Name: SewerWater
   m_TagString: Untagged
@@ -1438,8 +1372,7 @@ Transform:
   m_LocalPosition: {x: 25.1, y: 6.1, z: 7}
   m_LocalScale: {x: 80, y: 2, z: 3}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1087247260199274295}
+  m_Children: []
   m_Father: {fileID: 1590041537566179112}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6832126257440117760
@@ -1510,12 +1443,25 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2708093543792103892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5925476555332520546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59762ed7e59517b449137bb01a2c4d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePerSecond: 10
 --- !u!1 &7141622224524810117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2817,9 +2763,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4969297892860368962, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
+      propertyPath: Tracks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969297892860368962, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
       propertyPath: 'Tracks.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 0508b9c83828e414782709d05e145c7d, type: 3}
+    - target: {fileID: 4969297892860368962, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
+      propertyPath: 'Tracks.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: d122153274374ab468e70f27a1c5a35c, type: 3}
+    - target: {fileID: 4969297892860368962, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
+      propertyPath: 'Tracks.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ee755f131b02b6c46b3b77703e6fd090, type: 3}
     - target: {fileID: 7209641883395761845, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
       propertyPath: musicController
       value: 
@@ -2987,6 +2945,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7664427154702542966, guid: bc1406371a1c2e44396a98e3bba5a9e5, type: 3}
+      propertyPath: zoneController
+      value: 
+      objectReference: {fileID: 1065267512838179, guid: 178ac376de2af294eb5c669d96f45614, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
