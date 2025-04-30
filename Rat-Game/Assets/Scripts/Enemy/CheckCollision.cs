@@ -37,6 +37,12 @@ public class CheckCollision : MonoBehaviour
             showFloatingText(other.transform.position, damage);
             Debug.Log("Hit enemy: " + other.name + " with damage: " + damage);
         }
+        if(other.tag == "Hitbox"){
+            // move away from player
+            Vector3 direction = transform.position - other.transform.position;
+            direction.Normalize();
+            other.gameObject.GetComponent<knockbackScript>().AddKnockback(-direction, 10f);
+        }
     }
 
     private void showFloatingText(Vector3 enemy, int damage)
