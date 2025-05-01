@@ -1,24 +1,21 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ExitDoorScript : MonoBehaviour
 {
+    [SerializeField] private ZoneControllerScript zoneController;
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") && Input.GetAxis("Jump") == 1)  
+        if (other.CompareTag("Player") && Input.GetAxis("Jump") == 1)
         {
-            SceneManager.LoadScene("Map Menu");  
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))  
-        {
-            PlayerStats playerStats = other.GetComponent<PlayerStats>(); 
-            if (playerStats != null)
+            string nextZone = StateControllerScript.GetNextZone();
+            if (!string.IsNullOrEmpty(nextZone))
             {
-                playerStats.UnlockNextLevel(); 
+                zoneController.StartZone();
+            }
+            else
+            {
+                Debug.Log("All zones completed.");
             }
         }
     }

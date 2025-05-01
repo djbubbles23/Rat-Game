@@ -3,10 +3,20 @@ using UnityEngine;
 public class ZoneControllerScript : MonoBehaviour
 {
     [SerializeField] Transform player;
-    [SerializeField] Transform[] doors;
+    [SerializeField] Transform entranceDoor;
+    [SerializeField] Transform[] combatDoors; 
+    [SerializeField] Transform cafeDoor;
+    [SerializeField] Transform shopDoor;
+    [SerializeField] Transform bossDoor;
 
-    private void Start()
+    private void Awake()
     {
+        if (StateControllerScript.currLevel != "Entrance")
+            StateControllerScript.currLevel = "Entrance";
+
+        if (StateControllerScript.zoneOrder.Count == 0)
+            StateControllerScript.GenerateZoneOrder();
+
         StartZone();
     }
 
@@ -17,36 +27,46 @@ public class ZoneControllerScript : MonoBehaviour
 
     private Vector3 GetDoorPos(string levelType)
     {
-        Vector3 startPos;
+        Vector3 pos;
         switch (levelType)
         {
             case "Entrance":
-                startPos = doors[0].position;
-                startPos.x += 5;
+                pos = entranceDoor.position;
+                pos.x += 5;
                 break;
 
-            case "Combat":
-                startPos = doors[Random.Range(1, doors.Length - 2)].position;
-                startPos.z -= 2;
+            case "Combat1":
+                pos = combatDoors[0].position;
+                pos.z -= 2;
+                break;
+            case "Combat2":
+                pos = combatDoors[1].position;
+                pos.z -= 2;
+                break;
+            case "Combat3":
+                pos = combatDoors[2].position;
+                pos.z -= 2;
                 break;
 
             case "Cafe":
-            case "Mini":
-            case "Boss":
-                startPos = doors[doors.Length - 2].position;
-                startPos.z -= 5;
+                pos = cafeDoor.position;
+                pos.z -= 5;
                 break;
 
             case "Shop":
-                startPos = doors[doors.Length - 1].position;
-                startPos.z -= 5;
+                pos = shopDoor.position;
+                pos.z -= 5;
+                break;
+
+            case "Boss":
+                pos = bossDoor.position;
+                pos.z -= 5;
                 break;
 
             default:
-                startPos = doors[0].position;
-                startPos.z -= 5;
+                pos = entranceDoor.position;
                 break;
         }
-        return startPos;
+        return pos;
     }
 }

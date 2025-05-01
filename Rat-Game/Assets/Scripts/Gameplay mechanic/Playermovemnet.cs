@@ -112,14 +112,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Q)) 
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            playerAnim.SetTrigger("isDancing"); 
+            playerAnim.SetTrigger("isDancing");
         }
 
         HandleMovementAnimations();
 
-    }   
+    }
 
     void FixedUpdate()
     {
@@ -183,51 +183,66 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
- void DirectionCheck() { //Direction State Machine
-        if (movement.x == 0 && movement.z == 0) {
+    void DirectionCheck()
+    { //Direction State Machine
+        if (movement.x == 0 && movement.z == 0)
+        {
         }
-        else {
-            if (movement.x > 0) { //North
-                if (movement.z > 0) {
-                    facing = (int) Direction.NorthEast;
+        else
+        {
+            if (movement.x > 0)
+            { //North
+                if (movement.z > 0)
+                {
+                    facing = (int)Direction.NorthEast;
                 }
-                else if (movement.z < 0) {
-                    facing = (int) Direction.NorthWest;
+                else if (movement.z < 0)
+                {
+                    facing = (int)Direction.NorthWest;
                 }
                 else
                 {
-                    facing = (int) Direction.North;
+                    facing = (int)Direction.North;
                 }
             }
-            else if (movement.x < 0) { //South
-                if (movement.z > 0) {
-                    facing = (int) Direction.SouthEast;
+            else if (movement.x < 0)
+            { //South
+                if (movement.z > 0)
+                {
+                    facing = (int)Direction.SouthEast;
                 }
-                else if (movement.z < 0) {
-                    facing = (int) Direction.SouthWest;
+                else if (movement.z < 0)
+                {
+                    facing = (int)Direction.SouthWest;
                 }
-                else {
-                    facing = (int) Direction.South;
+                else
+                {
+                    facing = (int)Direction.South;
                 }
             }
-            else { //East-West
-                if (movement.z > 0) {
-                    facing = (int) Direction.East;
+            else
+            { //East-West
+                if (movement.z > 0)
+                {
+                    facing = (int)Direction.East;
                 }
-                else if (movement.z < 0) {
-                    facing = (int) Direction.West;
+                else if (movement.z < 0)
+                {
+                    facing = (int)Direction.West;
                 }
 
             }
         }
-        
+
     }
 
-    void RotatePlayer() {
+    void RotatePlayer()
+    {
         //Quaternion playerRot = transform.rotation;
-        Vector3 playerRot = new Vector3(0,0,0);
+        Vector3 playerRot = new Vector3(0, 0, 0);
         //Debug.Log("Facing Read: " + facing);
-        switch (facing) {
+        switch (facing)
+        {
             case 0: //North
                 playerRot.z = 1f;
                 break;
@@ -252,7 +267,7 @@ public class PlayerMovement : MonoBehaviour
 
             case 5:
                 playerRot.x = 1f;
-                playerRot.z = -1f;                
+                playerRot.z = -1f;
                 break;
 
             case 6:
@@ -265,7 +280,7 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
         transform.LookAt(transform.position + playerRot);
-        
+
     }
 
     void OnCollisionEnter(Collision collision)
@@ -279,14 +294,16 @@ public class PlayerMovement : MonoBehaviour
         {
             invManager.ItemPicked(collision.gameObject);
         }
-        if(collision.gameObject.CompareTag("Weapon"))
+        if (collision.gameObject.CompareTag("Weapon"))
         {
             invManager.ItemPicked(collision.gameObject);
         }
     }
 
-    public void changeWeapon(string weaponType){
-        if(weaponType == "dagger"){
+    public void changeWeapon(string weaponType)
+    {
+        if (weaponType == "dagger")
+        {
             //hitbox
             attackHitbox.transform.localScale = new Vector3(0.13f, 1f, 0.09f);
             //animation controller
@@ -294,12 +311,14 @@ public class PlayerMovement : MonoBehaviour
             //speed
             attackDelay = .5f;
         }
-        if(weaponType == "sword"){
+        if (weaponType == "sword")
+        {
             attackHitbox.transform.localScale = new Vector3(0.22f, 1f, 0.15f);
             playerAnim.runtimeAnimatorController = swordAnim;
             attackDelay = 1f;
         }
-        if(weaponType == "longSword"){
+        if (weaponType == "longSword")
+        {
             attackHitbox.transform.localScale = new Vector3(0.33f, 1f, .26f);
             playerAnim.runtimeAnimatorController = longSwordAnim;
             attackDelay = 2f;
