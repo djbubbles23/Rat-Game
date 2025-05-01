@@ -14,7 +14,7 @@ public class EnemyBehavior : MonoBehaviour
     public AudioClip takeDamageSound;           // sound to play when hurt
     public AudioClip swipeSound;                // sound to play when enemy attack
     public Animator animator;
-    
+
     public float maxHealth = 100f;              // Starting health of the enemy
     public float damage = 10f;                  // How powerful enemy's attack is
 
@@ -26,14 +26,14 @@ public class EnemyBehavior : MonoBehaviour
     private Collider attackCollider;            // the attack hb attached to the swipe
     private AudioSource audioSource;            // enemy audio source
     private NavMeshAgent agent;                 // enemy ai agent
-    
+
     private float health;                       // Current health
     private float nextAttackTime;               // time until next attack
     private bool canAttack = false;
     private bool attacking = false;
 
     private PlayerStats playerScore;            // player object
-    
+
     public GameObject ratGeo;                   // rat geometry gameobject
     private MeshRenderer renderer;
     private List<SkinnedMeshRenderer> skinnedRenderers = new List<SkinnedMeshRenderer>();
@@ -48,7 +48,7 @@ public class EnemyBehavior : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         agent = GetComponent<NavMeshAgent>();
         health = maxHealth;
-        
+
         // Get all SkinnedMeshRenderers in children of ratGeo
         skinnedRenderers.AddRange(ratGeo.GetComponentsInChildren<SkinnedMeshRenderer>());
 
@@ -71,7 +71,7 @@ public class EnemyBehavior : MonoBehaviour
 
     public void Attack()
     {
-        if(!attacking && Time.time >= nextAttackTime)
+        if (!attacking && Time.time >= nextAttackTime)
             StartCoroutine(DoAttack());
     }
 
@@ -79,7 +79,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         attacking = true;
         nextAttackTime = Time.time + attackDelay;
-        
+
         // Stop movement
         agent.isStopped = true;
 
@@ -94,20 +94,20 @@ public class EnemyBehavior : MonoBehaviour
 
         yield return new WaitForSeconds(1.2f);
         attackCollider.enabled = false;
-        
+
         // Resume movement
         agent.isStopped = false;
 
         // Cooldown or reset (if needed, add a delay here)
         attacking = false;
     }
-    
+
     public void ResetAttack()
     {
         canAttack = false;
         attacking = false;
     }
-    
+
     public void TakeDamage(float damage)
     {
         // create blood VFX
@@ -115,17 +115,17 @@ public class EnemyBehavior : MonoBehaviour
         VisualEffect vfx = blood.GetComponentInChildren<VisualEffect>();
         vfx.Play();
         StartCoroutine(DestroyVFXAfterTime(blood, 2.0f));
-            
+
         // flash rat red
         StartCoroutine(DamageFlash(flashDuration));
-        
+
         // handle health stats
         health -= damage;
-        
+
         // play sfx
         audioSource.pitch = Random.Range(0.8f, 2.0f);
         audioSource.PlayOneShot(takeDamageSound);
-        
+
         // play animation
         if (animator != null)
         {
@@ -137,7 +137,7 @@ public class EnemyBehavior : MonoBehaviour
             playerScore.score += 100;
             Debug.Log("Enemy killed! Score: " + playerScore.score);
             Destroy(gameObject);
-            
+
             // play animation
             if (animator != null)
             {
@@ -145,7 +145,7 @@ public class EnemyBehavior : MonoBehaviour
             }
         }
     }
-    
+
     IEnumerator DamageFlash(float duration)
     {
         for (int i = 0; i < skinnedRenderers.Count; i++)
@@ -161,7 +161,7 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    
+
     // damage player if attack connects
     private void OnTriggerEnter(Collider other)
     {
@@ -169,20 +169,20 @@ public class EnemyBehavior : MonoBehaviour
         {
             PlayerStats player = other.GetComponent<PlayerStats>();
             player.TakeDamage(damage);
-            
+
             Debug.Log("Dealt " + damage + " damage to player");
-            
+
             // calculate knockback direction
             //Vector3 knockbackDirection = other.transform.position - transform.position;
             //player.TakeKnockback(knockbackDirection);
         }
     }
-    
+
     public bool IsAttacking()
     {
         return attacking;
     }
-    
+
     // destory VFX effect i.e. blood
     private IEnumerator DestroyVFXAfterTime(GameObject vfx, float delay)
     {

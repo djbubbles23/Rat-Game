@@ -5,12 +5,13 @@ using Unity.Cinemachine;
 
 public class LevelMenu : MonoBehaviour
 {
-    public Button[] buttons; 
-    public int[] levelUnlockMapping; 
-    public CinemachineCamera vcam1; 
+    public Button[] buttons;
+    public int[] levelUnlockMapping;
+    public CinemachineCamera vcam1;
 
-    private string[] levelNames = { "Audio workplace", "C-Level-Work", "inventory-Test" }; 
-    private bool isVcam1Active = false; 
+    private string[] zoneTypes = { "Entrance", "Combat", "Shop" }; // The zones you want to teleport to
+
+    private bool isVcam1Active = false;
 
     private void Awake()
     {
@@ -47,9 +48,13 @@ public class LevelMenu : MonoBehaviour
 
     public void OpenLevel(int levelId)
     {
-        if (!isVcam1Active && levelId >= 0 && levelId < levelNames.Length)
+        if (!isVcam1Active && levelId >= 0 && levelId < zoneTypes.Length)
         {
-            SceneManager.LoadScene(levelNames[levelId]);
+            // Save the zone name BEFORE loading the scene
+            StateControllerScript.currLevel = zoneTypes[levelId];
+
+            // Load the SurfacePipesComp scene
+            SceneManager.LoadScene("surfacepipescomp");
         }
     }
 

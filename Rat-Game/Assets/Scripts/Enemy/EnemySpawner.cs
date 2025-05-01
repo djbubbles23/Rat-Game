@@ -7,12 +7,12 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;          // enemy prefab (can make a list if more 1 enemy type)
-    public float minSpawnDistance = 5f;    // closest enemy can spawn from player on x-axis
+    public GameObject[] enemyPrefabs;       // enemy prefab (can make a list if more 1 enemy type)
+    public float minSpawnDistance = 5f;     // closest enemy can spawn from player on x-axis
     public float maxSpawnDistance = 10f;    // furthest enemy can spawn from player on x-axis
     public float maxZDistance = 4f;         // width of the plane
     public float spawnHeight = 2.5f;        // spawn height
-    public float startSpawnRate = 5f;       // time between enemy spawns (seconds)
+    public float spawnRate = 0f;            // time between enemy spawns (seconds)
     public float growthRate = 0.05f;        // rate at which spawn rate speeds up 
     
     private Transform player;                // reference to the player
@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         // set spawn timer equal to first spawn rate
-        spawnTimer = startSpawnRate;
+        spawnTimer = spawnRate;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     
@@ -33,18 +33,17 @@ public class EnemySpawner : MonoBehaviour
         playerPos = player.position;
         
         // handle spawning new enemies
-        spawnTimer -= Time.deltaTime;
-        if (spawnTimer <= 0)
-        {
-            SpawnEnemy();
-            
-            // set next spawn time to startSpawnRate * e^-kt, ensures spawn rate increases over time
-            spawnTimer = startSpawnRate * Mathf.Exp(-growthRate * spawnCount);
-            Debug.Log("Next spawn: " + spawnTimer);
-        }
+        // spawnTimer -= Time.deltaTime;
+        // if (spawnTimer <= 0)
+        // {
+        //     SpawnEnemy();
+        //     
+        //     spawnTimer = spawnRate;
+        //     // Debug.Log("Next spawn: " + spawnTimer);
+        // }
     }
 
-    private void SpawnEnemy()
+    private void SpawnEnemy(GameObject enemy)
     {
         // calculate random position away from the player
         float xPosition = player.position.x;
@@ -58,8 +57,16 @@ public class EnemySpawner : MonoBehaviour
         
         // create enemy at random position
         Vector3 spawnPosition = new Vector3(xPosition, spawnHeight, zPosition);
-        Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        Instantiate(enemy, spawnPosition, Quaternion.identity);
         spawnCount++;
+    }
+
+    public void SpawnEnemies(GameObject[] enemies)
+    {
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            SpawnEnemy(enemies[i]);
+        }
     }
     
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5708186470221938171}
   - component: {fileID: 8898460053315979752}
   - component: {fileID: 5677075712065966415}
+  - component: {fileID: 6372984652285465610}
   m_Layer: 0
   m_Name: Posin Box
   m_TagString: Untagged
@@ -110,6 +111,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &6372984652285465610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315740170589962340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59762ed7e59517b449137bb01a2c4d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePerSecond: 25
 --- !u!1 &7334609647193007680
 GameObject:
   m_ObjectHideFlags: 0

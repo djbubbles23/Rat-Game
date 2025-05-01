@@ -1,29 +1,45 @@
 using UnityEngine;
 
-public class HealthPack : MonoBehaviour
+public class HealthPickup : MonoBehaviour
 {
-    public float healAmount = 25f; // Amount of HP restored
-    public float rotationSpeed = 50f; // Rotation speed
-    public float bounceHeight = 0.5f; // Bounce height
-    public float bounceSpeed = 2f; // Bounce speed
+    public float rotationSpeed = 90f;
+    public float bounceHeight = 0.5f;
+    public float bounceSpeed = 2f;
+    public int healAmount = 25;
+    public AudioClip pickupSound;
+    [Range(0f, 1f)] public float pickupVolume = 1f; // Volume control
 
-    private Vector3 startPosition;
+    private Vector3 startPos;
 
-    private void Start()
+    void Start()
     {
-        startPosition = transform.position; // Store initial position
+        startPos = transform.position;
     }
 
-    private void Update()
+    void Update()
     {
-        // Rotate the health pack
-        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.World);
 
-        // Bounce up and down
-        float newY = startPosition.y + Mathf.Sin(Time.time * bounceSpeed) * bounceHeight;
+        float newY = startPos.y + Mathf.Sin(Time.time * bounceSpeed) * bounceHeight;
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }
 
-   
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PlayerStats player = other.GetComponent<PlayerStats>();
+            if (player != null)
+            {
+                player.Heal(healAmount);
+            }
+
+            if (pickupSound != null)
+            {
+                AudioSource.PlayClipAtPoint(pickupSound, transform.position, pickupVolume);
+            }
+
+            Destroy(gameObject);
+        }
+    }
 }
