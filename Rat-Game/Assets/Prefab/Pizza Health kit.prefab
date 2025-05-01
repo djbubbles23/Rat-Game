@@ -50,6 +50,8 @@ MonoBehaviour:
   bounceHeight: 0.5
   bounceSpeed: 2
   healAmount: 25
+  pickupSound: {fileID: 8300000, guid: 0911283d9682cd04398b6af134cbe6ed, type: 3}
+  pickupVolume: 1
 --- !u!65 &3943094490701366945
 BoxCollider:
   m_ObjectHideFlags: 0

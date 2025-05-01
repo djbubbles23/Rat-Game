@@ -45,4 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPrefab: {fileID: 22648899321674013, guid: 286bf227a281c37458c4465189fe8629, type: 3}
-  spawnInterval: 5
+  minSpawnInterval: 15
+  maxSpawnInterval: 30
+  spawnRadius: 5
+  pizzaSpawnSound: {fileID: 8300000, guid: 07852a3e81815814db70973b4ee89990, type: 3}
+  spawnVolume: 0.1
