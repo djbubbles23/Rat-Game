@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3349692178148542244}
   - component: {fileID: 8556071720296029673}
   - component: {fileID: 344865910658796013}
+  - component: {fileID: 1187036416505528991}
   m_Layer: 0
   m_Name: SwordItemPickup1
   m_TagString: Weapon
@@ -57,7 +58,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -96,6 +97,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.23454499, y: 1.1819668, z: 0.33776832}
   m_Center: {x: 0.008380771, y: 0.31168032, z: 0.014055848}
+--- !u!114 &1187036416505528991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200972973382278222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0915f0bbb47e7464c8a08a8ee48c201d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 90
+  bounceHeight: 0.5
+  bounceSpeed: 2
+  pickupSound: {fileID: 8300000, guid: 0911283d9682cd04398b6af134cbe6ed, type: 3}
+  pickupVolume: 1
 --- !u!1001 &6550195337756984175
 PrefabInstance:
   m_ObjectHideFlags: 0

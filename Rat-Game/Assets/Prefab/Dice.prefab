@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 891692868254074778}
   - component: {fileID: 7357644480651631777}
   - component: {fileID: 5123345575313194121}
+  - component: {fileID: 1731588433848939358}
   m_Layer: 0
   m_Name: Dice
   m_TagString: Dice
@@ -132,7 +133,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -150,3 +151,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dice: {fileID: 11400000, guid: e1614037d57fcd94384f2df73a6cdc71, type: 2}
+--- !u!114 &1731588433848939358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7713135336014355759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0915f0bbb47e7464c8a08a8ee48c201d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 90
+  bounceHeight: 0.5
+  bounceSpeed: 2
+  pickupSound: {fileID: 8300000, guid: 0911283d9682cd04398b6af134cbe6ed, type: 3}
+  pickupVolume: 1
