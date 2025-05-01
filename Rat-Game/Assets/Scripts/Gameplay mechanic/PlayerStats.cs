@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;  // Ensure this is included for Scene management
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Text = TMPro.TextMeshProUGUI;
 
@@ -15,20 +15,17 @@ public class PlayerStats : MonoBehaviour
     public Text scoreText;              // score text object
     public Image healthBar;
 
-    private int unlockedLevel = 1;  // Starting unlocked level (Level 1 is always unlocked)
-
-    // Method to heal the player
     public void Heal(float amount)
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth); // Prevent overheal
         healthBar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 1);
+        Debug.Log("Healed: " + amount);
     }
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         currentHealth = maxHealth;
-        unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1); // Get the unlocked level from PlayerPrefs
     }
 
     private void Update()
@@ -39,7 +36,6 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    // Method to take damage and update health
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
@@ -51,16 +47,9 @@ public class PlayerStats : MonoBehaviour
         {
             Debug.Log("PLAYER DIED!");
             clip = deathSound;
-            SceneManager.LoadScene("Death Menu"); 
+            SceneManager.LoadScene("Death Menu");
         }
 
         audioSource.PlayOneShot(clip);
-    }
-
-    public void UnlockNextLevel()
-    {
-        unlockedLevel = Mathf.Min(unlockedLevel + 1, 3); 
-        PlayerPrefs.SetInt("UnlockedLevel", unlockedLevel);  
-        Debug.Log("Next level unlocked: " + unlockedLevel); 
     }
 }
