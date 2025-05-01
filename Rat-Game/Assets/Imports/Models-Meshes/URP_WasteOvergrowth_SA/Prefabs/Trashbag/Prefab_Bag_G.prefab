@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 0.25
+  drag: 1
 --- !u!54 &6608494492075028792
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -94,10 +95,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3948512
+  m_Radius: 0.35373497
   m_Height: 0.80341697
   m_Direction: 1
-  m_Center: {x: 0.01508975, y: 0.26319396, z: -0.024943769}
+  m_Center: {x: 0.0026454926, y: 0.26319396, z: 0.02008301}
 --- !u!1001 &4520066057205933567
 PrefabInstance:
   m_ObjectHideFlags: 0

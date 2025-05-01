@@ -6,6 +6,7 @@ public class triggerLock : MonoBehaviour
     public bool isLocked = false;
     public GameObject[] enemies;
     public bool isEnmeiesDead = false;
+    public GameObject barriers;
 
     // On Trigger Enter, lock the camera and set isLocked to true
     // Spawn the list of enemies and set isEnemiesDead to false
@@ -16,6 +17,7 @@ public class triggerLock : MonoBehaviour
         Debug.Log("Trigger Entered: " + other.name);
         if(other.tag == "Player"){  
             cam.GetComponent<CameraController>().enabled = false;
+            barriers.SetActive(true);
             isLocked = true;
             // spawn enemies in enemies array
             isEnmeiesDead = false;
@@ -26,6 +28,7 @@ public class triggerLock : MonoBehaviour
         if(isLocked && isEnmeiesDead){
             cam.GetComponent<CameraController>().enabled = true;
             isLocked = false;
+            barriers.SetActive(false);
         }
     }
 
