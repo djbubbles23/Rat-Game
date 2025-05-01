@@ -1068,6 +1068,40 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &5899777852241696841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6705575821651166038}
+  m_Layer: 0
+  m_Name: health
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6705575821651166038
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899777852241696841}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.385155, y: -26.67621, z: 113.10474}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5233326277959893818}
+  - {fileID: 1507698623439879322}
+  - {fileID: 2037727244282624304}
+  m_Father: {fileID: 3937005273226597325}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5998517228098685507
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,6 +1356,7 @@ Transform:
   - {fileID: 1128711068208854222}
   - {fileID: 3378306370611581557}
   - {fileID: 2921661365004954487}
+  - {fileID: 6705575821651166038}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6821777525657044008
@@ -2068,6 +2103,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2361016116858414894, guid: acab743723ed9fb499a7d4ec7c4578bd, type: 3}
   m_PrefabInstance: {fileID: 2876763780210318278}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3610863563049012381
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6705575821651166038}
+    m_Modifications:
+    - target: {fileID: 22648899321674013, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_Name
+      value: Pizza Health kit (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.0450592
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 34.086212
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -104.45007
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+--- !u!4 &2037727244282624304 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+  m_PrefabInstance: {fileID: 3610863563049012381}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3813679371481719318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2301,6 +2398,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2212292075943929077, guid: 3da04da5b261a594eb3a0cd540585bb7, type: 3}
   m_PrefabInstance: {fileID: 4082372165259986396}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4230921355867146551
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6705575821651166038}
+    m_Modifications:
+    - target: {fileID: 22648899321674013, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_Name
+      value: Pizza Health kit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.845291
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 34.086212
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -103.17046
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+--- !u!4 &1507698623439879322 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+  m_PrefabInstance: {fileID: 4230921355867146551}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4231141989465516632
 PrefabInstance:
@@ -2765,6 +2924,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2065616525035623127, guid: dd2f8c297e4181d4da72b113f62389ab, type: 3}
   m_PrefabInstance: {fileID: 7105927221085287543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7420711607085151895
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6705575821651166038}
+    m_Modifications:
+    - target: {fileID: 22648899321674013, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_Name
+      value: Pizza Health kit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.0222473
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 34.086212
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -103.07118
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+--- !u!4 &5233326277959893818 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3340311267447010733, guid: 286bf227a281c37458c4465189fe8629, type: 3}
+  m_PrefabInstance: {fileID: 7420711607085151895}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8390202511621110382
 PrefabInstance:
