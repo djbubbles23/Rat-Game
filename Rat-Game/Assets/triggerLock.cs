@@ -3,8 +3,9 @@ using UnityEngine;
 public class triggerLock : MonoBehaviour
 {   
     public GameObject cam;
-    public bool isLocked = false;
+    public EnemySpawner EnemySpawner;
     public GameObject[] enemies;
+    public bool isLocked = false;
     public bool isEnmeiesDead = false;
     public GameObject barriers;
 
@@ -15,11 +16,13 @@ public class triggerLock : MonoBehaviour
 
     private void OnTriggerEnter(Collider other){
         Debug.Log("Trigger Entered: " + other.name);
-        if(other.tag == "Player"){  
+        if(other.tag == "Player" && !isLocked){  
             cam.GetComponent<CameraController>().enabled = false;
             //barriers.SetActive(true);
             isLocked = true;
+            
             // spawn enemies in enemies array
+            EnemySpawner.SpawnEnemies(enemies);
             isEnmeiesDead = false;
         }
     }

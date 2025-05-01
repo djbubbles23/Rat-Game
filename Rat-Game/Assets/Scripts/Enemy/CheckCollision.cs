@@ -29,6 +29,14 @@ public class CheckCollision : MonoBehaviour
             showFloatingText(other.transform.position, damage);
             Debug.Log("Hit enemy: " + other.name + " with damage: " + damage);
         }
+        if (other.tag == "Goobert")
+        {
+            GoobertBehavior enemy = other.GetComponent<GoobertBehavior>();
+            damage = weaponController.calculateDmg();
+            enemy.TakeDamage(damage);
+            showFloatingText(other.transform.position, damage);
+            Debug.Log("Hit enemy: " + other.name + " with damage: " + damage);
+        }
         if (other.tag == "Boss")
         {
             BossBehavior enemy = other.GetComponent<BossBehavior>();

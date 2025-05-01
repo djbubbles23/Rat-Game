@@ -9,7 +9,7 @@ public class knockbackScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.drag = drag; // Set the drag value on the Rigidbody
+        rb.linearDamping = drag; // Set the drag value on the Rigidbody
     }
 
     void OnCollisionEnter(Collision collision)

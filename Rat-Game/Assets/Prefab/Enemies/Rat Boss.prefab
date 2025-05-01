@@ -96,7 +96,6 @@ GameObject:
   - component: {fileID: 5234413131157927428}
   - component: {fileID: 7877841380568361339}
   - component: {fileID: 6309681076761747362}
-  - component: {fileID: 3060194158558099419}
   - component: {fileID: 8087535457705028940}
   - component: {fileID: 2698474252710553875}
   - component: {fileID: 3559399224981198289}
@@ -182,28 +181,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &3060194158558099419
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4099962275998187353}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 41353a65cace9fb4f80a5f106cdd6496, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!136 &8087535457705028940
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -321,6 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   takeDamageSound: {fileID: 8300000, guid: b67e31064121bca4285f65ffc246172d, type: 3}
   swipeSound: {fileID: 8300000, guid: 17a77723de7a80e449f2416cf663643e, type: 3}
+  slamSFX: {fileID: 8300000, guid: 44ebce87493d977448d3f1a6f0df3bba, type: 3}
   hitbox: {fileID: 8087535457705028940}
   animator: {fileID: 8775020112112955164}
   slamVFX: {fileID: 532308783124239627}
