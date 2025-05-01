@@ -372,7 +372,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+  EnemySpawner: {fileID: 0}
+  enemies:
+  - {fileID: 2563368659214068315, guid: bef62c78bca29c74db842b6c901d3b6a, type: 3}
+  - {fileID: 3501904041150905539, guid: 4978e6efc19085e47842c8b786ee9a1e, type: 3}
+  - {fileID: 8505112887106314998, guid: 480325605a04b894980ad715f9b625a8, type: 3}
   isLocked: 0
-  enemies: []
   isEnmeiesDead: 0
   barriers: {fileID: 3849218723540266648}
