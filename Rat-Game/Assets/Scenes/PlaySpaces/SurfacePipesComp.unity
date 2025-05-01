@@ -620,6 +620,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8258532461329850711, guid: 58b3ca6f5b49a504fb3ef4448332f866, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8258532461329850711, guid: 58b3ca6f5b49a504fb3ef4448332f866, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b95ec9db5a7fa2e49b3a9bc3bae9cd73, type: 2}
+    - target: {fileID: 8258532461329850711, guid: 58b3ca6f5b49a504fb3ef4448332f866, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b95ec9db5a7fa2e49b3a9bc3bae9cd73, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -633,10 +645,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4465985404753387874, guid: 6e8869d8b9d0cb14b9abdcd9640bb5ea, type: 3}
+      propertyPath: bounceSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3346387157386070137, guid: 6e8869d8b9d0cb14b9abdcd9640bb5ea, type: 3}
       propertyPath: m_Name
       value: DaggerItemPickup1
       objectReference: {fileID: 0}
+    - target: {fileID: 4107996890438043242, guid: 6e8869d8b9d0cb14b9abdcd9640bb5ea, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107996890438043242, guid: 6e8869d8b9d0cb14b9abdcd9640bb5ea, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b95ec9db5a7fa2e49b3a9bc3bae9cd73, type: 2}
     - target: {fileID: 4702376254955734221, guid: 6e8869d8b9d0cb14b9abdcd9640bb5ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.69
@@ -677,6 +701,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5814684242158717260, guid: 6e8869d8b9d0cb14b9abdcd9640bb5ea, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814684242158717260, guid: 6e8869d8b9d0cb14b9abdcd9640bb5ea, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b95ec9db5a7fa2e49b3a9bc3bae9cd73, type: 2}
+    - target: {fileID: 6618655329189171097, guid: 6e8869d8b9d0cb14b9abdcd9640bb5ea, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618655329189171097, guid: 6e8869d8b9d0cb14b9abdcd9640bb5ea, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b95ec9db5a7fa2e49b3a9bc3bae9cd73, type: 2}
+    - target: {fileID: 9154353105502336499, guid: 6e8869d8b9d0cb14b9abdcd9640bb5ea, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154353105502336499, guid: 6e8869d8b9d0cb14b9abdcd9640bb5ea, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b95ec9db5a7fa2e49b3a9bc3bae9cd73, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1770,11 +1818,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8254202490671687643, guid: fd9efd1339d6937448e34e62640f6621, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.85
+      value: -27.2
       objectReference: {fileID: 0}
     - target: {fileID: 8254202490671687643, guid: fd9efd1339d6937448e34e62640f6621, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.98
+      value: 0.97
       objectReference: {fileID: 0}
     - target: {fileID: 8254202490671687643, guid: fd9efd1339d6937448e34e62640f6621, type: 3}
       propertyPath: m_LocalPosition.z

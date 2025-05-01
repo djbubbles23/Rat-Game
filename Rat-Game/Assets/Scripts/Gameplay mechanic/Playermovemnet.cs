@@ -315,13 +315,13 @@ public class PlayerMovement : MonoBehaviour
         {
             attackHitbox.transform.localScale = new Vector3(0.22f, 1f, 0.15f);
             playerAnim.runtimeAnimatorController = swordAnim;
-            attackDelay = 1f;
+            attackDelay = .75f;
         }
         if (weaponType == "longSword")
         {
             attackHitbox.transform.localScale = new Vector3(0.33f, 1f, .26f);
             playerAnim.runtimeAnimatorController = longSwordAnim;
-            attackDelay = 2f;
+            attackDelay = 1.25f;
         }
     }
 }
