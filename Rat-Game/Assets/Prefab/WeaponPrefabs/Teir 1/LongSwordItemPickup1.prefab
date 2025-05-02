@@ -176,12 +176,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 24d0fc2ef37bdb74fa1b55a9c5cd0217, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 24d0fc2ef37bdb74fa1b55a9c5cd0217, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 87e9f073fb50ee0439a31ce63f0c4c26, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 24d0fc2ef37bdb74fa1b55a9c5cd0217, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6cd10b3cfb4ddcc4f8402c221ea39724, type: 2}
     - target: {fileID: -1504981713932161579, guid: 24d0fc2ef37bdb74fa1b55a9c5cd0217, type: 3}
       propertyPath: 'm_Materials.Array.data[2]'
       value: 
-      objectReference: {fileID: 2100000, guid: b95ec9db5a7fa2e49b3a9bc3bae9cd73, type: 2}
+      objectReference: {fileID: 2100000, guid: 6cd10b3cfb4ddcc4f8402c221ea39724, type: 2}
     - target: {fileID: -927199367670048503, guid: 24d0fc2ef37bdb74fa1b55a9c5cd0217, type: 3}
       propertyPath: m_Name
       value: LongSword
