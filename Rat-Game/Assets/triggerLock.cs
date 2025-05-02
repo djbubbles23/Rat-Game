@@ -7,7 +7,12 @@ public class triggerLock : MonoBehaviour
     public GameObject[] enemies;
     private GameObject[] activeEnemies = new GameObject[0];
     public bool isLocked = false;
+    public bool isEnemiesDead = false;
+    public int enemyCount;
     public GameObject barriers;
+    public GameObject[] rats;
+    public GameObject[] bosses;
+    public GameObject[] gooberts;
 
     // On Trigger Enter, lock the camera and set isLocked to true
     // Spawn the list of enemies and set isEnemiesDead to false
@@ -16,19 +21,35 @@ public class triggerLock : MonoBehaviour
 
     private void OnTriggerEnter(Collider other){
         Debug.Log("Trigger Entered: " + other.name);
-        if(other.tag == "Player" && !isLocked){  
-            // spawn enemies in enemies array
-            EnemySpawner.SpawnEnemies(enemies);
-            
+        if(other.tag == "Player" && !isLocked){
+            isLocked = true;
             // lock camera and spawn barriers
             cam.GetComponent<CameraController>().enabled = false;
+            // spawn enemies in enemies array
+            EnemySpawner.SpawnEnemies(enemies);
+
+            rats = GameObject.FindGameObjectsWithTag("Enemy");
+            bosses = GameObject.FindGameObjectsWithTag("Boss");
+            gooberts = GameObject.FindGameObjectsWithTag("Goobert");
+            enemyCount = rats.Length + bosses.Length + gooberts.Length;
+            
             // barriers.SetActive(true);
-            isLocked = true;
         }
     }
 
     private void Update(){
-        if(isLocked && !EnemySpawner.EnemiesAlive()){
+        rats = GameObject.FindGameObjectsWithTag("Enemy");
+        bosses = GameObject.FindGameObjectsWithTag("Boss");
+        gooberts = GameObject.FindGameObjectsWithTag("Goobert");
+        enemyCount = rats.Length + bosses.Length + gooberts.Length;
+
+        Debug.Log("Enemies alive: " + enemyCount);
+        Debug.Log("Rats alive: " + rats.Length);
+        Debug.Log("Bosses alive: " + bosses.Length);
+        Debug.Log("Gooberts alive: " + gooberts.Length);
+        
+
+        if(isLocked && enemyCount == 0){
             print("UNLOCK");
             cam.GetComponent<CameraController>().enabled = true;
             isLocked = false;

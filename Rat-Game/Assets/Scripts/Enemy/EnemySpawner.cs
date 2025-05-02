@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     private Transform player;                // reference to the player
     private Vector3 playerPos;              // player's current position
     private float spawnTimer;               // time until next enemy spawns
-    private int enemyCount;                 // number of total enemies alive
+    [SerializeField] public int enemyCount = 1; // number of total enemies alive
 
     private void Start()
     {
@@ -41,17 +41,11 @@ public class EnemySpawner : MonoBehaviour
         //     spawnTimer = spawnRate;
         //     // Debug.Log("Next spawn: " + spawnTimer);
         // }
-    }
 
-    private void LateUpdate()
-    {
-        GameObject[] rats = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject[] bosses = GameObject.FindGameObjectsWithTag("Boss");
-        GameObject[] gooberts = GameObject.FindGameObjectsWithTag("Goobert");
         
-        enemyCount = rats.Length + bosses.Length + gooberts.Length;
         // print(EnemiesAlive());
     }
+
 
     private void SpawnEnemy(GameObject enemy)
     {
@@ -77,15 +71,5 @@ public class EnemySpawner : MonoBehaviour
             SpawnEnemy(enemies[i]);
         }
     }
-    
-    public bool EnemiesAlive()
-    {
-        if (enemyCount > 0)
-        {
-            return true;
-        }
-
-        return false;
-    }
-    
+        
 }
