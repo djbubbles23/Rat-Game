@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 90
   bounceHeight: 0.5
-  bounceSpeed: 2
+  bounceSpeed: 10
   pickupSound: {fileID: 8300000, guid: 0911283d9682cd04398b6af134cbe6ed, type: 3}
   pickupVolume: 1
 --- !u!1001 &101099904562072439
@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2684987433343351570, guid: ceaa389efac58f34f96ccd5123ea5b8d, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -2684987433343351570, guid: ceaa389efac58f34f96ccd5123ea5b8d, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
@@ -192,7 +192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -113181020801827196, guid: ceaa389efac58f34f96ccd5123ea5b8d, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -113181020801827196, guid: ceaa389efac58f34f96ccd5123ea5b8d, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
@@ -200,7 +200,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b95ec9db5a7fa2e49b3a9bc3bae9cd73, type: 2}
     - target: {fileID: 4063835366044962077, guid: ceaa389efac58f34f96ccd5123ea5b8d, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4063835366044962077, guid: ceaa389efac58f34f96ccd5123ea5b8d, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
@@ -208,7 +208,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b95ec9db5a7fa2e49b3a9bc3bae9cd73, type: 2}
     - target: {fileID: 5897117715462685243, guid: ceaa389efac58f34f96ccd5123ea5b8d, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5897117715462685243, guid: ceaa389efac58f34f96ccd5123ea5b8d, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
