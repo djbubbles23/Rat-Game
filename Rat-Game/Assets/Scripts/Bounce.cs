@@ -1,3 +1,4 @@
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class Bounce : MonoBehaviour
@@ -21,5 +22,16 @@ public class Bounce : MonoBehaviour
 
         float newY = startPos.y + Mathf.Sin(Time.time * bounceSpeed) * bounceHeight;
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            if (pickupSound != null)
+            {
+                AudioSource.PlayClipAtPoint(pickupSound, transform.position, pickupVolume);
+            }
+        }
     }
 }
