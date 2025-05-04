@@ -3808,6 +3808,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCaps
       objectReference: {fileID: 0}
+    - target: {fileID: 3824486503609017436, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824486503609017436, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: 'm_Materials.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b95ec9db5a7fa2e49b3a9bc3bae9cd73, type: 2}
     - target: {fileID: 3857530025925883978, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.22
@@ -3824,6 +3832,14 @@ PrefabInstance:
       propertyPath: invManager
       value: 
       objectReference: {fileID: 345941805}
+    - target: {fileID: 8355148707671567297, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355148707671567297, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b95ec9db5a7fa2e49b3a9bc3bae9cd73, type: 2}
     - target: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
       propertyPath: m_LocalPosition.x
       value: -448
