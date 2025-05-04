@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4702376254955734221}
-  - component: {fileID: 868599806930427348}
   - component: {fileID: 8074721023165063453}
   - component: {fileID: 5032910811092597221}
   - component: {fileID: -4465985404753387874}
@@ -36,33 +35,6 @@ Transform:
   - {fileID: 4908247520274423917}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &868599806930427348
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3346387157386070137}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &8074721023165063453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 90
   bounceHeight: 0.5
-  bounceSpeed: 10
+  bounceSpeed: 2
   pickupSound: {fileID: 8300000, guid: 0911283d9682cd04398b6af134cbe6ed, type: 3}
   pickupVolume: 1
 --- !u!1001 &101099904562072439
