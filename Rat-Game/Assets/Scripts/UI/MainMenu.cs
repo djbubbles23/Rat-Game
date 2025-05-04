@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("SurfacePipesComp");
+        SceneManager.LoadScene("Starting cutscene");
     }
 
     public void QuitGame()
