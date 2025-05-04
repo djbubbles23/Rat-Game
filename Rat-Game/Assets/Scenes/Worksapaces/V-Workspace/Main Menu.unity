@@ -2613,7 +2613,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7577315455268773854, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -3825,7 +3825,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4987925590155871196}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -6106,7 +6106,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7577315455268773854, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -6472,7 +6472,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7577315455268773854, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -7151,6 +7151,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094679978}
   m_CullTransparentMesh: 1
+--- !u!1001 &4987925590155871195
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 614639061966242403, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
+      propertyPath: m_Name
+      value: UI CLICK SOUND
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634774785075835209, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 47.926647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634774785075835209, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.2217412
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634774785075835209, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 20.99352
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634774785075835209, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634774785075835209, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634774785075835209, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634774785075835209, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634774785075835209, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634774785075835209, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634774785075835209, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
+--- !u!82 &4987925590155871196 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7577315455268773854, guid: 0f14f659c8283764a99e178e29ebcd7b, type: 3}
+  m_PrefabInstance: {fileID: 4987925590155871195}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6949814290733376899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7224,3 +7286,4 @@ SceneRoots:
   - {fileID: 1865550219}
   - {fileID: 166938441}
   - {fileID: 1940217896}
+  - {fileID: 4987925590155871195}
