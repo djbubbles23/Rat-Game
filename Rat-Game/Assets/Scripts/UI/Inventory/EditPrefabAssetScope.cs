@@ -1,6 +1,6 @@
 using System;
 using Unity;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 public class EditPrefabAssetScope : IDisposable {
 
