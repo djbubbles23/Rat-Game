@@ -21,17 +21,17 @@ public class StateControllerScript : MonoBehaviour
     {
         zoneOrder.Clear();
         zoneOrder.Add("Entrance");
-        zoneOrder.Add("Combat1"); // teir 1 dagger/long sword
-        zoneOrder.Add("Cafe");
-        // 1/3 (d6, with teir 2 dagger)
+        zoneOrder.Add("Combat1"); 
+        zoneOrder.Add("Shop1");
+        
         zoneOrder.Add("Combat2");
-        zoneOrder.Add("Combat1"); // teir 2 longsword/sword
-        zoneOrder.Add("Shop");
-        // 2/3 (long sword teir 3 with d8)
-        zoneOrder.Add("Combat2");
-        zoneOrder.Add("Combat3"); // teir 3 sword/dagger
-        zoneOrder.Add("Cafe"); 
-        // 3/3 (nothing...)
+        zoneOrder.Add("Combat3"); 
+        zoneOrder.Add("Shop2");
+        
+        zoneOrder.Add("Combat4");
+        zoneOrder.Add("Combat5"); 
+        zoneOrder.Add("Shop3"); 
+        
         zoneOrder.Add("Boss");
 
         /*

@@ -5,8 +5,7 @@ public class ZoneControllerScript : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] Transform entranceDoor;
     [SerializeField] Transform[] combatDoors; 
-    [SerializeField] Transform cafeDoor;
-    [SerializeField] Transform shopDoor;
+    [SerializeField] Transform[] shopDoor;
     [SerializeField] Transform bossDoor;
 
     private void Awake()
@@ -30,11 +29,11 @@ public class ZoneControllerScript : MonoBehaviour
         Vector3 pos;
         switch (levelType)
         {
+            // Combat 
             case "Entrance":
                 pos = entranceDoor.position;
                 pos.x += 5;
                 break;
-
             case "Combat1":
                 pos = combatDoors[0].position;
                 pos.z -= 2;
@@ -47,17 +46,30 @@ public class ZoneControllerScript : MonoBehaviour
                 pos = combatDoors[2].position;
                 pos.z -= 2;
                 break;
-
-            case "Cafe":
-                pos = cafeDoor.position;
+            case "Combat4":
+                pos = combatDoors[3].position;
+                pos.z -= 2;
+                break;
+            case "Combat5":
+                pos = combatDoors[4].position;
+                pos.z -= 2;
+                break;
+            
+            // Shop 
+            case "Shop1":
+                pos = shopDoor[0].position;
                 pos.z -= 5;
                 break;
-
-            case "Shop":
-                pos = shopDoor.position;
+            case "Shop2":
+                pos = shopDoor[1].position;
                 pos.z -= 5;
                 break;
-
+            case "Shop3":
+                pos = shopDoor[2].position;
+                pos.z -= 5;
+                break;
+            
+            // Boss
             case "Boss":
                 pos = bossDoor.position;
                 pos.z -= 5;

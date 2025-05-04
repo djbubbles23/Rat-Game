@@ -54,6 +54,7 @@ public class triggerLock : MonoBehaviour
             cam.GetComponent<CameraController>().enabled = true;
             isLocked = false;
             //barriers.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
