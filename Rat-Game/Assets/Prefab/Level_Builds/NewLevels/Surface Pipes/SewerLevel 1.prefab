@@ -637,7 +637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4237072946226313455
 Transform:
   m_ObjectHideFlags: 0
@@ -725,8 +725,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 0.9633695}
+  m_Center: {x: 0, y: 0, z: 0.018315276}
 --- !u!114 &6292979686898342419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,7 +752,7 @@ GameObject:
   - component: {fileID: 2897093572750531438}
   - component: {fileID: 3143813677494106251}
   - component: {fileID: 283186538916587536}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor Rear
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -3623,7 +3623,7 @@ GameObject:
   - component: {fileID: 5262810668011120943}
   - component: {fileID: 432826918592570442}
   - component: {fileID: 645955688766262374}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor Front
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -4024,6 +4024,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7487892180307601018}
     m_Modifications:
+    - target: {fileID: 6158800456096477819, guid: de732aa1f7f6ba841b05e5dc2cd81768, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.39
+      objectReference: {fileID: 0}
     - target: {fileID: 7220576652386003595, guid: de732aa1f7f6ba841b05e5dc2cd81768, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
