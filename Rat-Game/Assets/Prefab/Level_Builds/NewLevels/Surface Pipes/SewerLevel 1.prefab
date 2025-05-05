@@ -3054,8 +3054,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.4149611, z: 0.82706296}
-  m_Center: {x: 0, y: 0.20748055, z: -0.08646868}
+  m_Size: {x: 1, y: 1.4266326, z: 0.6245799}
+  m_Center: {x: 0, y: 0.21331632, z: -0.07719733}
 --- !u!114 &9024044586033443560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8260,6 +8260,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8176495284999429928}
     m_Modifications:
+    - target: {fileID: 2083500370804381803, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
+      propertyPath: m_Size.x
+      value: 149.58002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083500370804381803, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
+      propertyPath: m_Size.y
+      value: 8.920231
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083500370804381803, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
+      propertyPath: m_Center.x
+      value: 66.93848
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083500370804381803, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
+      propertyPath: m_Center.y
+      value: 1.2773905
+      objectReference: {fileID: 0}
     - target: {fileID: 3077405178553092404, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.534511
@@ -8300,6 +8316,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4401688156852855290, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
+      propertyPath: m_Size.x
+      value: 149.4664
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401688156852855290, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
+      propertyPath: m_Size.y
+      value: 8.629327
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401688156852855290, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
+      propertyPath: m_Center.x
+      value: 66.88167
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401688156852855290, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
+      propertyPath: m_Center.y
+      value: 1.1319385
+      objectReference: {fileID: 0}
     - target: {fileID: 4969297892860368962, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
       propertyPath: 'Tracks.Array.data[0]'
       value: 
@@ -8311,6 +8343,22 @@ PrefabInstance:
     - target: {fileID: 7934595929918143364, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
       propertyPath: m_Name
       value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164786003536855752, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
+      propertyPath: m_Size.x
+      value: 149.87671
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164786003536855752, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
+      propertyPath: m_Size.y
+      value: 9.050882
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164786003536855752, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
+      propertyPath: m_Center.x
+      value: 67.08682
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164786003536855752, guid: 05d89d0b70ba4d24fbf27519297e6c53, type: 3}
+      propertyPath: m_Center.y
+      value: 1.3427162
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
