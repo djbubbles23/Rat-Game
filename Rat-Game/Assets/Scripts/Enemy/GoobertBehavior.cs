@@ -12,8 +12,8 @@ public class GoobertBehavior : MonoBehaviour
     public GameObject bloodPrefab;              // Blood particles that play when enemy is damaged
     public Transform bloodSpawnPoint;           // Where the blood should spawn from
     public AudioClip takeDamageSound;           // sound to play when hurt
-    public AudioClip swipeSound;                // sound to play when enemy attack
-    // public Animator animator;
+    public AudioClip attackSound;               // sound to play when enemy attack
+    public Animator animator;
     
     public float maxHealth = 100f;              // Starting health of the enemy
 
@@ -79,13 +79,13 @@ public class GoobertBehavior : MonoBehaviour
         agent.isStopped = true;
 
         // Play animation
-        // animator.SetTrigger("Attack");
+        animator.SetTrigger("Attack");
 
         // Activate collider halfway through
         // yield return new WaitForSeconds(1.18f);
-        // audioSource.PlayOneShot(swipeSound);
+        audioSource.PlayOneShot(attackSound);
         
-        Vector3 bulletPos = (this.transform.forward * 2) + this.transform.position;
+        Vector3 bulletPos = (this.transform.forward * 1.2f) + this.transform.position;
         Instantiate(bulletPrefab, bulletPos, this.transform.localRotation);
 
         yield return new WaitForSeconds(1.2f);
