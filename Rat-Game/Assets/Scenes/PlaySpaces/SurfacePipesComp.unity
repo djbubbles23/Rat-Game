@@ -1208,6 +1208,18 @@ PrefabInstance:
       propertyPath: crossFadePrefab
       value: 
       objectReference: {fileID: 742589483}
+    - target: {fileID: 5588652683410726654, guid: 94f08a3a4f7026f4bbfd6a935776bbfd, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5036671
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588652683410726654, guid: 94f08a3a4f7026f4bbfd6a935776bbfd, type: 3}
+      propertyPath: m_Center.y
+      value: 0.25183356
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588652683410726654, guid: 94f08a3a4f7026f4bbfd6a935776bbfd, type: 3}
+      propertyPath: m_Center.z
+      value: -0.0864687
+      objectReference: {fileID: 0}
     - target: {fileID: 5759786878284683326, guid: 94f08a3a4f7026f4bbfd6a935776bbfd, type: 3}
       propertyPath: m_Size.x
       value: 149.39026
@@ -1590,7 +1602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1363192907930961389, guid: b11f8777fac8e444790a749f01d27edc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5042,12 +5054,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 0ec7ffcf0e122334a9659de84f6afc76, type: 2}
     - target: {fileID: 2474702842819790703, guid: 2459807540f826b46b6308b52a06dfc2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9760198
+      objectReference: {fileID: 0}
+    - target: {fileID: 2474702842819790703, guid: 2459807540f826b46b6308b52a06dfc2, type: 3}
       propertyPath: m_Size.y
-      value: 0.16129068
+      value: 0.5521579
+      objectReference: {fileID: 0}
+    - target: {fileID: 2474702842819790703, guid: 2459807540f826b46b6308b52a06dfc2, type: 3}
+      propertyPath: m_Center.x
+      value: 0.011990118
       objectReference: {fileID: 0}
     - target: {fileID: 2474702842819790703, guid: 2459807540f826b46b6308b52a06dfc2, type: 3}
       propertyPath: m_Center.y
-      value: 0.52170694
+      value: 0.7171405
       objectReference: {fileID: 0}
     - target: {fileID: 3735793108218208977, guid: 2459807540f826b46b6308b52a06dfc2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
