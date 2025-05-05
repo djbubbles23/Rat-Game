@@ -2044,6 +2044,7 @@ BoxCollider:
   serializedVersion: 3
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Size: {x: 0.9735779, y: 0.4190139, z: 0.7823937}
   m_Center: {x: 0.01321125, y: 0.65056807, z: -0.0775015}
 =======
@@ -2054,6 +2055,10 @@ BoxCollider:
   m_Size: {x: 1, y: 0.067371905, z: 0.8336576}
   m_Center: {x: 0, y: 0.4747475, z: -0.0831728}
 >>>>>>> parent of 55075e7 (Merge branch 'UI/Menu' into new-main)
+=======
+  m_Size: {x: 1, y: 0.26509655, z: 0.7823937}
+  m_Center: {x: 0, y: 0.5736093, z: -0.0775015}
+>>>>>>> parent of f3712a5 (sewer hitboxes)
 --- !u!114 &2814694967963599653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2936,6 +2941,7 @@ Transform:
   - {fileID: 1132041766524345414}
   - {fileID: 4926576406213318158}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   - {fileID: 8145714954577700158}
   - {fileID: 4633396935686456774}
@@ -2943,6 +2949,9 @@ Transform:
   - {fileID: 7332791150356695957}
   - {fileID: 6742545988439067570}
 >>>>>>> parent of 55075e7 (Merge branch 'UI/Menu' into new-main)
+=======
+  - {fileID: 5497089294911741390}
+>>>>>>> parent of f3712a5 (sewer hitboxes)
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9130670662040426137
@@ -4541,13 +4550,18 @@ Transform:
   m_PrefabInstance: {fileID: 3520000198214965727}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1001 &3544747773410889710
+=======
+--- !u!1001 &3617167811692887712
+>>>>>>> parent of f3712a5 (sewer hitboxes)
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
+<<<<<<< HEAD
     m_TransformParent: {fileID: 9090670969962876948}
     m_Modifications:
     - target: {fileID: 1685509777986540962, guid: a5103b870bc052b4b8ed5fa5d8e561f0, type: 3}
@@ -4653,6 +4667,51 @@ PrefabInstance:
       value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 3002270614852960408, guid: d52f03e53f4803745a5fe95b76ef8179, type: 3}
+=======
+    m_TransformParent: {fileID: 1066737308833090242}
+    m_Modifications:
+    - target: {fileID: 3082459267581247369, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_Name
+      value: PlayerCaps
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.095
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.423
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.719284
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+>>>>>>> parent of f3712a5 (sewer hitboxes)
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
@@ -4660,6 +4719,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
+<<<<<<< HEAD
   m_SourcePrefab: {fileID: 100100000, guid: d52f03e53f4803745a5fe95b76ef8179, type: 3}
 --- !u!4 &2009382226562553690 stripped
 Transform:
@@ -4667,6 +4727,14 @@ Transform:
   m_PrefabInstance: {fileID: 3623417799664801730}
   m_PrefabAsset: {fileID: 0}
 >>>>>>> parent of 55075e7 (Merge branch 'UI/Menu' into new-main)
+=======
+  m_SourcePrefab: {fileID: 100100000, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+--- !u!4 &5497089294911741390 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9113974353849967470, guid: 2562fd067bb9eaf4f865668608864093, type: 3}
+  m_PrefabInstance: {fileID: 3617167811692887712}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> parent of f3712a5 (sewer hitboxes)
 --- !u!1001 &3700883379182990836
 PrefabInstance:
   m_ObjectHideFlags: 0
