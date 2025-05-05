@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.SceneManagement;
 using UnityEngine.VFX;
 using Random = UnityEngine.Random;
 
@@ -202,7 +201,6 @@ public class BossBehavior : MonoBehaviour
             if (animator != null)
             {
                 animator.SetTrigger("Death");
-                SceneManager.LoadScene("Cutscene");
             }
         }
     }
