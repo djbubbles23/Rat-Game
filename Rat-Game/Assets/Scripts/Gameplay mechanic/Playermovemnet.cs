@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpInput;                // State flag for jump input
     private bool attackInput;              // State flag for attack input
     private bool canAttack = true;         // State flag for whether the player can attack
-    public float attackDelay = 3f;         // Delay between attacks in seconds
+    public float attackDelay = .75f;       // Delay between attacks in seconds
     private float attackCounter;           // Counter for attack delay
     private int facing;                    // Direction the player is facing
 
