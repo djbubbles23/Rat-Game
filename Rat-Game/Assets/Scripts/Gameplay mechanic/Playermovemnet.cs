@@ -75,6 +75,9 @@ public class PlayerMovement : MonoBehaviour
                 {
                     changeWeapon("longSword");
                 }
+                else{
+                    changeWeapon("sword");
+                }
             }
             else
             {

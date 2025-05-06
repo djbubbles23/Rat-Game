@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
 
     public INVManager invM;
+    public GameObject optionsMenuUI; // Reference to the options menu UI
 
     void Update()
     {
@@ -32,6 +34,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1; // Ensure time resumes
         GameIsPaused = false;
+        optionsMenuUI.SetActive(false); // Hide options menu if it was open
     }
 
     void Pause()

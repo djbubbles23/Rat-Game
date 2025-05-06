@@ -170,8 +170,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -321, y: 218}
-  m_SizeDelta: {x: 871.3035, y: 100}
+  m_AnchoredPosition: {x: -326.52768, y: 218}
+  m_SizeDelta: {x: 814.7982, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1216710460313161468
 CanvasRenderer:
@@ -381,7 +381,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3082459267581247369}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 20
+  jumpForce: 24
   attackHitbox: {fileID: 6786733609769656331}
   atc: {fileID: 675141929262993325}
   attackDelay: 1
@@ -566,15 +566,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3662496979572467538, guid: 19ad1952919114446ab32647516f23c6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.33
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 3662496979572467538, guid: 19ad1952919114446ab32647516f23c6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3662496979572467538, guid: 19ad1952919114446ab32647516f23c6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.26
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 3662496979572467538, guid: 19ad1952919114446ab32647516f23c6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1011,6 +1011,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -5014799237027920480, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -5014799237027920480, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8870c565c93487749917b596e861add5, type: 2}
@@ -1026,6 +1030,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[3]'
       value: 
       objectReference: {fileID: 2100000, guid: 5afc1b16fb503c34493c270bea8a62b9, type: 2}
+    - target: {fileID: -5014799237027920480, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
+      propertyPath: 'm_Materials.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b95ec9db5a7fa2e49b3a9bc3bae9cd73, type: 2}
     - target: {fileID: -4915730427919741714, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1283,9 +1291,17 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8973395753036335677, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973395753036335677, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 32291c0d1b5580e4f941ec4f5b4cd515, type: 2}
+    - target: {fileID: 8973395753036335677, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b95ec9db5a7fa2e49b3a9bc3bae9cd73, type: 2}
     - target: {fileID: 9141596644302480556, guid: c199f5bae370e974ab442e65b733f4c2, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1362,6 +1378,14 @@ PrefabInstance:
     - target: {fileID: 2737944223136710541, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5902776537691132780, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
+      propertyPath: invManager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5902776537691132780, guid: fdb3d2b7acbfc5946b362bcc55ff9159, type: 3}
+      propertyPath: 'diceSlots.Array.data[0]'
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
