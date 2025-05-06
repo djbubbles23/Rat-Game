@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 8692603254202827271}
   - component: {fileID: 6804287887524376202}
   - component: {fileID: 2237904430476337636}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: damage trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ Transform:
   m_GameObject: {fileID: 974661724282119061}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52, y: 6.35, z: 7}
+  m_LocalPosition: {x: 52, y: 6.1, z: 7}
   m_LocalScale: {x: 150, y: 2, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -215,8 +215,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.4161505, z: 1}
-  m_Center: {x: 0, y: 0.20807533, z: 0}
+  m_Size: {x: 1, y: 1.4351654, z: 1}
+  m_Center: {x: 0, y: 0.21758273, z: 0}
 --- !u!114 &2237904430476337636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,7 +258,7 @@ Transform:
   m_GameObject: {fileID: 1137961170052218152}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52, y: 5.59, z: 7.0091734}
+  m_LocalPosition: {x: 52, y: 4.43, z: 7.0091734}
   m_LocalScale: {x: 150, y: 2, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 3187904387210242406}
   - component: {fileID: 7104579743509779213}
   - component: {fileID: 6024422014003548331}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Floor Rear
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2433,7 +2433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8667520579313432635
 Transform:
   m_ObjectHideFlags: 0
@@ -2521,8 +2521,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.1047053, z: 1}
-  m_Center: {x: 0, y: 0.052352667, z: 0}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &629591882761632470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2924,7 +2924,7 @@ GameObject:
   - component: {fileID: 8379290133314182808}
   - component: {fileID: 5383420001994374312}
   - component: {fileID: 2472588685931636931}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Floor Front
   m_TagString: Ground
   m_Icon: {fileID: 0}
