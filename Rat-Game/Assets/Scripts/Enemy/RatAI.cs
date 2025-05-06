@@ -37,6 +37,7 @@ public class RatAI : MonoBehaviour
 
     private void Update()
     {
+        agent.velocity = agent.desiredVelocity;
         if (agent.enabled)
         {
             // Check if player is in range
