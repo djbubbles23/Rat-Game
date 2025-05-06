@@ -8,9 +8,11 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    public INVManager invM;
+
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape) && !invM.menuActivated)
         {
             if (GameIsPaused)
             {

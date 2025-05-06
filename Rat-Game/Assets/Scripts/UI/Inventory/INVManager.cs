@@ -27,9 +27,11 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public weaponController weaponController;
 
+    public PauseMenu pauseMenu;
+
     void Start()
     {
-        
+
         GameObject defaultWeapon = Instantiate(itemPrefab);
 
         INVItem defaultWeaponItem = defaultWeapon.GetComponent<INVItem>();
@@ -63,7 +65,7 @@ public class INVManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
 
         // Inventory toggle
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && !PauseMenu.GameIsPaused)
         {
             menuActivated = !menuActivated;
             InventoryMenu.SetActive(menuActivated);
