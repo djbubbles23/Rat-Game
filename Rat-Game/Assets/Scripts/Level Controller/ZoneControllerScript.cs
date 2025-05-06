@@ -24,6 +24,12 @@ public class ZoneControllerScript : MonoBehaviour
         player.position = GetDoorPos(StateControllerScript.currLevel);
     }
 
+    public void Update()
+    {
+        Debug.Log("Current Level: " + StateControllerScript.currLevel);
+        Debug.Log("Current Zone: " + StateControllerScript.currZone);
+    }
+
     private Vector3 GetDoorPos(string levelType)
     {
         Vector3 pos;
