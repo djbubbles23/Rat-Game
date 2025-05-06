@@ -91,7 +91,11 @@ public class weaponController : MonoBehaviour
         weaponInstance.transform.localScale = weaponScale;
         weaponInstance.transform.localRotation = Quaternion.identity;
 
-
+        // if no weapon, return
+        if (newWeapon == null)
+        {
+            return;
+        }
         /*
         if(newWeapon.weaponObj.gameObject.name == "DaggerOBJ"){
             weaponInstance.transform.localRotation = Quaternion.Euler(90, 90, 90);

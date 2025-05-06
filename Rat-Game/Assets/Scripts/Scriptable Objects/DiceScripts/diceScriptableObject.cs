@@ -84,7 +84,7 @@ public class diceScriptableObject : ScriptableObject
         diceValue = new int[diceType]; // Array size matches diceType
         //Debug.Log("Dice Type createdicevalues: d" + diceType);
         for (int i = 0; i < diceType; i++) { // Loop runs from 0 to diceType - 1
-            diceValue[i] = Random.Range(0, diceType);
+            diceValue[i] = Random.Range(1, diceType+1);
         }
         return diceValue;
     }
