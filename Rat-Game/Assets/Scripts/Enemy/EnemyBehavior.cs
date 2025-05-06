@@ -102,7 +102,7 @@ public class EnemyBehavior : MonoBehaviour
         audioSource.PlayOneShot(swipeSound);
         attackCollider.enabled = true;
 
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(attackLength);
         attackCollider.enabled = false;
 
         // Resume movement

@@ -192,7 +192,7 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 8
   rotateSpeed: 5
-  sightRange: 10
+  sightRange: 30
   attackRange: 1.8
   playerInSightRange: 0
   playerInAttackRange: 0
@@ -219,6 +219,7 @@ MonoBehaviour:
   attackLength: 0.2
   flashDuration: 0.2
   ratGeo: {fileID: 4962742971436257738}
+  cockroachGeo: {fileID: 0}
 --- !u!82 &9171713289002263120
 AudioSource:
   m_ObjectHideFlags: 0
