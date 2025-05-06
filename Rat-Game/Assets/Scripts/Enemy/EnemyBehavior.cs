@@ -39,6 +39,10 @@ public class EnemyBehavior : MonoBehaviour
     private List<SkinnedMeshRenderer> skinnedRenderers = new List<SkinnedMeshRenderer>();
     private List<Color> originalColors = new List<Color>();
 
+    public GameObject cockroachGeo;
+    private MeshRenderer roachRenderer;
+    private Color originalColor;
+
 
     private void Start()
     {
@@ -51,6 +55,12 @@ public class EnemyBehavior : MonoBehaviour
 
         // Get all SkinnedMeshRenderers in children of ratGeo
         skinnedRenderers.AddRange(ratGeo.GetComponentsInChildren<SkinnedMeshRenderer>());
+
+        if (cockroachGeo != null)
+        {
+            roachRenderer = cockroachGeo.GetComponent<MeshRenderer>();
+            originalColor = roachRenderer.material.color;
+        }
 
         foreach (var renderer in skinnedRenderers)
         {
@@ -153,11 +163,21 @@ public class EnemyBehavior : MonoBehaviour
             skinnedRenderers[i].material.color = Color.red;
         }
 
+        if (cockroachGeo != null)
+        {
+            cockroachGeo.GetComponent<MeshRenderer>().material.color = new Color(0.62f, 0.027f, 0.027f);
+        }
+
         yield return new WaitForSeconds(duration);
 
         for (int i = 0; i < skinnedRenderers.Count; i++)
         {
             skinnedRenderers[i].material.color = originalColors[i];
+        }
+        
+        if (cockroachGeo != null)
+        {
+            cockroachGeo.GetComponent<MeshRenderer>().material.color = originalColor;
         }
     }
 
