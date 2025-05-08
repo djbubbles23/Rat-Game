@@ -7509,7 +7509,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 971753748513895935, guid: a70572608a33df34e9fe60650f023f48, type: 3}
       propertyPath: maxSpawnDistance
-      value: 18
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 971753748513895935, guid: a70572608a33df34e9fe60650f023f48, type: 3}
+      propertyPath: minSpawnDistance
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
