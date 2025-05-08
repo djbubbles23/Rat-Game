@@ -240,10 +240,10 @@ NavMeshAgent:
   m_GameObject: {fileID: 4099962275998187353}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5000001
+  m_Radius: 0.7
   m_Speed: 1.5
   m_Acceleration: 8
-  avoidancePriority: 50
+  avoidancePriority: 60
   m_AngularSpeed: 80
   m_StoppingDistance: 0.25
   m_AutoTraverseOffMeshLink: 1
@@ -305,7 +305,7 @@ MonoBehaviour:
   attackCollider: {fileID: 5491360622617788326}
   slamCollider: {fileID: 973218568397348900}
   ratGeo: {fileID: 2624717001404919772}
-  maxHealth: 150
+  maxHealth: 500
   damage: 15
   attackDelay: 3
   jumpHeight: 0

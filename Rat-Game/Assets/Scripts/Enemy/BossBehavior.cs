@@ -21,7 +21,7 @@ public class BossBehavior : MonoBehaviour
     public Collider slamCollider;               // the attack hb attached to the slam
     public GameObject ratGeo;                   // rat geometry gameobject
     
-    public float maxHealth = 100f;              // Starting health of the enemy
+    public float maxHealth = 500f;              // Starting health of the enemy
     public float damage = 10f;                  // How powerful enemy's attack is
 
     public float attackDelay = 5.0f;            // time between attack/ start-up time
